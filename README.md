@@ -1,12 +1,12 @@
 ### UNI-APP 仿转转二手市场APP页面模板
 
-本项目使用了 `ColorUI`框架进行开发 `https://github.com/weilanwl/ColorUI`
+本项目使用了 `ColorUI`框架进行开发 https://github.com/weilanwl/ColorUI
 
 在此感谢 `@文晓港` 提供的非常优秀的UI框架，推荐大家使用。
 
 
 
-项目演示图查看地址：`https://www.yuque.com/itianc/ui/artboards/123285`
+项目演示图查看地址：https://www.yuque.com/itianc/ui/artboards/123285
 
 
 
@@ -43,6 +43,7 @@
   - 商品详情页有三种模板，注意查看区别。
   
   - 购物车
+
 
 本来想仿一个完整的转转APP后，再发布的，但由于某些原因，我不得不提前发布了，具体原因和一些可能出现的问题，我写在代码里了。
 
