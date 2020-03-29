@@ -1,0 +1,34 @@
+{
+	"pages": [
+		{ 
+			"path": "pages/app/index"
+		},
+		{
+			"path": "pages/home/reward"
+		},
+		{
+			"path": "pages/home/sort_list"
+		},
+		{
+			"path": "pages/home/goods"
+		},
+		{
+			"path": "pages/home/sort"
+		},
+		{
+			"path": "pages/home/search"
+		},
+		{
+			"path": "pages/home/second_hand"
+		},
+		{
+			"path": "pages/home/second_terrace"
+		},
+		{
+			"path": "pages/home/my_cart"
+		}
+	],
+	"globalStyle": {
+		"navigationStyle": "custom"
+	}
+}

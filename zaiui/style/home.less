@@ -1,0 +1,134 @@
+.zaiui-head-search-box {
+	position: fixed;
+	width: 100%;
+	top: 0;
+	z-index: 9999;
+	background-color: rgba(229, 77, 66,0);
+	padding-top: var(--status-bar-height);
+	transition: top .25s;
+	padding-bottom: 10rpx;
+	.zaiui-search-box {
+		position: relative;
+	}
+	.zaiui-flex-tab {
+		position: relative;
+		transition: opacity .25s;
+		.flex {
+			.basis-xxl {
+				flex-basis: 90%;
+				width: 90%;
+				z-index: 1;
+			}
+			.basis-xxs {
+				flex-basis: 10%;
+				z-index: 1;
+				width: 10%;
+			}
+			.nav {
+				box-shadow: -16px 0px 15px -13px #807f7f47 inset;
+			}
+			.sort-icon {
+				font-size: 55rpx;
+				height: 64rpx;
+				line-height: 64rpx;
+				text-align: center;
+			}
+		}
+	}
+}
+.zaiui-head-search-box.welcome {
+	top: calc(var(--status-bar-height) + 101rpx);
+	transition: top .25s;
+}
+
+.zaiui-view-content {
+	display: none;
+	width: 100%;
+	
+	/* #ifdef APP-PLUS */
+	margin-top: calc(var(--status-bar-height) + 30rpx);
+	/* #endif */
+	
+	/* #ifdef H5 */
+	margin-top: calc(var(--status-bar-height) + 70rpx);
+	/* #endif */
+	
+	.zaiui-tab-list {
+		position: relative;
+		width: 100%;
+	}
+}
+.zaiui-view-content.welcome {
+	/* #ifdef APP-PLUS */
+	margin-top: calc(var(--status-bar-height) + 180rpx);
+	/* #endif */
+	
+	/* #ifdef H5 */
+	margin-top: calc(var(--status-bar-height) + 220rpx);
+	/* #endif */
+	
+	transition: all .25s;
+}
+.zaiui-view-content.show {
+	display: block;
+}
+
+.zaiui-swiper-box {
+	width: 100%;
+	.screen-swiper {
+		height: 230rpx;
+		min-height: 230rpx;
+		.swiper-padding {
+			padding: 0 25rpx;
+		}
+	}
+}
+
+.red-envelopes {
+	width: 100%;
+}
+
+.zaiui-goods-tab-box {
+	padding: 2rpx 0;
+	transition: all .25s;
+	.cu-tag.z {
+		top: 0px;
+		right: -28rpx;
+		font-size: 20rpx;
+		padding: 19rpx 6rpx;
+	}
+}
+.zaiui-goods-tab-box.goods-tab-fixed {
+	background: #fff;
+	padding: 2rpx 0;
+	position: fixed;
+	top: calc(var(--status-bar-height) + 101rpx);
+	width: 100%;
+	z-index: 9999;
+	transition: all .25s;
+}
+.goods-tab-fixed-height {
+	height: 108rpx;
+	width: 100%;
+}
+
+.zaiui-ad-img {
+	width: 100%;
+}
+
+.zaiui-tab-list-title {
+	.img-aau {
+		width: 101.81rpx;
+		margin-top: 12.72rpx;
+	}
+	.text-right {
+		.img-aau {
+			margin-right: 14.54rpx;
+		}
+	}
+	.text-left {
+		.img-aau {
+			margin-left: 14.54rpx;
+		}
+	}
+}
