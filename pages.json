@@ -26,6 +26,12 @@
 		},
 		{
 			"path": "pages/home/my_cart"
+		},
+		{
+			"path": "pages/news/notice"
+		},
+		{
+			"path": "pages/news/details"
 		}
 	],
 	"globalStyle": {

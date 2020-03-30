@@ -44,21 +44,23 @@
 		<!--消息列表-->
 		<view class="bg-white zaiui-news-list-box">
 			<view class="margin-bottom cu-list menu-avatar">
-				<view class="cu-item" :class="modalName=='move-box-'+ index?'move-cur':''" v-for="(item,index) in 4" :key="index"
-				 @touchstart="ListTouchStart" @touchmove="ListTouchMove" @touchend="ListTouchEnd" :data-target="'move-box-' + index">
-					<view class="cu-avatar round" style="background-image:url(../../static/images/news/4.png);">
-						<view class="cu-tag badge"></view>
+				<block v-for="(item,index) in 4" :key="index">
+					<view class="cu-item" :class="modalName=='move-box-'+ index?'move-cur':''" @touchstart="ListTouchStart" @touchmove="ListTouchMove"
+					 @touchend="ListTouchEnd" :data-target="'move-box-' + index" @tap="tapNews(index)">
+						<view class="cu-avatar round" style="background-image:url(../../static/images/news/4.png);">
+							<view class="cu-tag badge"></view>
+						</view>
+						<view class="content">
+							<view class="text-black">通知助手</view>
+							<view class="text-gray text-sm text-cut">小米1{{index+1}}:“我忍你很久了!”</view>
+							<view class="text-gray text-sm">{{index+1}}小时前</view>
+						</view>
+						<view class="move">
+							<view class="bg-grey">置顶</view>
+							<view class="bg-red">删除</view>
+						</view>
 					</view>
-					<view class="content">
-						<view class="text-black">通知助手</view>
-						<view class="text-gray text-sm text-cut">小米1{{index+1}}:“我忍你很久了!”</view>
-						<view class="text-gray text-sm">{{index+1}}小时前</view>
-					</view>
-					<view class="move">
-						<view class="bg-grey">置顶</view>
-						<view class="bg-red">删除</view>
-					</view>
-				</view>
+				</block>
 			</view>
 		</view>
 		
@@ -145,6 +147,15 @@
 					this.modalName = null
 				}
 				this.listTouchDirection = null
+			},
+			//被点击
+			tapNews(index) {
+				console.log(index);
+				if(index == 0) {
+					uni.navigateTo({
+						url: '/pages/news/notice',
+					});
+				}
 			}
 		}
 	}
