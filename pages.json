@@ -32,6 +32,9 @@
 		},
 		{
 			"path": "pages/news/details"
+		},
+		{
+			"path": "pages/home/settlement"
 		}
 	],
 	"globalStyle": {

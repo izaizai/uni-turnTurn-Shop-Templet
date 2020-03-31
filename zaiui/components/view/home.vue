@@ -77,8 +77,7 @@
 			<activity-list :list_data='activity' @listTap='activityTap'></activity-list>
 			
 			<!--商品tab-->
-			<view class="goods-tab-fixed-height" v-if="tabFixed"><!--当tab悬浮时，开启这个占位块，就不会闪屏--></view>
-			<view class="zaiui-goods-tab-box" :class="tabFixed?'goods-tab-fixed':''" id="goods_tab_fixed">
+			<view class="zaiui-goods-tab-box">
 				<scroll-view scroll-x class="nav z margin-tb-sm">
 					<view class="flex text-center">
 						<block v-for="(item,index) in goodsTabData.list" :key="index">
@@ -192,7 +191,7 @@
 		data() {
 			return {
 				swiperInfo: {index: 0, show: true, welcome: true, list: []}, headInfo: {Class: "", opacity: 0,}, goodsShow: true, 
-				headTab: {TabCur: 0, scrollLeft: 0, list: []}, viewContent: {welcome: true,}, tabFixed: false, gridMenuData: [], identifyData: [],
+				headTab: {TabCur: 0, scrollLeft: 0, list: []}, viewContent: {welcome: true,}, gridMenuData: [], identifyData: [],
 				quickly: {}, activity: [], goodsTabData: {TabCur: 0, list: []}, goodsData: [], liveData: [], videoData: [],
 				gridSortData: [], modalShow: true,
 			}
@@ -263,12 +262,6 @@
 					} else if(scrollTop > 100) {
 						this.headInfo.opacity = 1;
 					}
-					//由于uni-app无法获取元素距离顶部的距离，此处需要自行进行适配，下面的简单的在小米9 pro机型上测试的友好过渡数值。
-					if(scrollTop >= 1000) {
-						this.tabFixed = true;
-					} else if(scrollTop < 1000) {
-						this.tabFixed = false;
-					}
 				}
 			},
 			//触底了
@@ -324,10 +317,19 @@
 			//商品列表上的分类tab被点击
 			goodsTab(e) {
 				this.goodsTabData.TabCur = e.currentTarget.dataset.id;
+				// #ifdef H5
+				uni.pageScrollTo({
+				    scrollTop: 1060,
+				    duration: 200
+				});
+				// #endif
+				
+				// #ifdef APP-PLUS
 				uni.pageScrollTo({
 				    scrollTop: 1010,
 				    duration: 200
 				});
+				// #endif
 			},
 			goodsListTap(e) {
 				console.log(e);

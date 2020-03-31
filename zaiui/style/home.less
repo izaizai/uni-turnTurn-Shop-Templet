@@ -89,8 +89,12 @@
 }
 
 .zaiui-goods-tab-box {
+	position: sticky;
 	padding: 2rpx 0;
 	transition: all .25s;
+	z-index: 9999;
+	background: #fff;
+	top: calc(var(--status-bar-height) + 101rpx);
 	.cu-tag.z {
 		top: 0px;
 		right: -28rpx;
