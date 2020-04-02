@@ -2,20 +2,26 @@
 	<view class="zaiui-find-box" :class="show?'show':''">
 		<!--分类标题栏-->
 		<view class="bg-white zaiui-title-tab-box">
+			
+			<!--小程序端的标题-->
+			<!-- #ifdef MP -->
+			<view class="text-center text-black zaiui-small-routine-title">发现</view>
+			<!-- #endif -->
+			
 			<view class="flex flex-wrap">
 				<view class="basis-l">
 					<scroll-view scroll-x class="nav z">
 						<block v-for="(item,index) in TabData" :key="index">
 							<view class="cu-item text-black" :class="index==TabCur?'select':''" @tap="tabSelect" :data-id="index">
 								<view>{{item}}</view>
-								<view class="tab-dot bg-red"></view>
+								<view class="tab-dot bg-red"/>
 							</view>
 						</block>
 					</scroll-view>
 				</view>
 				<view class="basis-s text-right">
 					<button class="cu-btn sm bg-red margin-top-xs">
-						<text class="cuIcon-write"></text>
+						<text class="cuIcon-write"/>
 						<text class="margin-left-xs">发布</text>
 					</button>
 				</view>
@@ -23,7 +29,7 @@
 		</view>
 		
 		<!--占位的-->
-		<view class="zaiui-seat-height"></view>
+		<view class="zaiui-seat-height"/>
 		
 		<!--中间内容区域-->
 		<view class="zaiui-view-content" v-if="TabCur == 0">
@@ -32,10 +38,10 @@
 			<trends-list :list_data="followTrendsData" :viewBtn="true"
 			@userTap="trends_userTap" @followTap="trends_followTap" @contentTap="trends_contentTap"
 			@imgTap="trends_imgTap" @talkTap="trends_talkTap" @viewBtnTap="trends_viewBtnTap"
-			@commentTap="trends_commentTap" @appreciateTap="trends_appreciateTap"></trends-list>
+			@commentTap="trends_commentTap" @appreciateTap="trends_appreciateTap"/>
 
 			<!--占位底部距离-->
-			<view class="cu-tabbar-height"></view>
+			<view class="cu-tabbar-height"/>
 		</view>
 		
 		<!--中间内容区域-->
@@ -45,39 +51,44 @@
 			<trends-list :list_data="trendsData" :isMax="2" 
 			@userTap="trends_userTap" @followTap="trends_followTap" @contentTap="trends_contentTap"
 			@imgTap="trends_imgTap" @talkTap="trends_talkTap" @forwardTap="trends_forwardTap"
-			@commentTap="trends_commentTap" @appreciateTap="trends_appreciateTap"></trends-list>
+			@commentTap="trends_commentTap" @appreciateTap="trends_appreciateTap"/>
 			
-			<!--热门话题-->
-			<hot-topic-list :list_data="hotTopicData" @listTap="hotTopicTap" @viewAllTap="viewAllTap"></hot-topic-list>
+			<!--热门话题,小程序上无效，待查原因-->
+			<!-- #ifndef MP -->
+			<hot-topic-list :list_data="hotTopicData" @listTap="hotTopicTap" @viewAllTap="viewAllTap"/>
+			<!-- #endif -->
 			
 			<!--为你推荐-->
 			<recommend-scroll-list :list_data="recommendScrollData" @userTap="r_userTap"
-			@followTap="r_followTap" @viewAllTap="r_viewAllTap"></recommend-scroll-list>
+			@followTap="r_followTap" @viewAllTap="r_viewAllTap"/>
 			
 			<!--动态列表2-->
 			<trends-list :list_data="trendsData" :isMin="2" 
 			@userTap="trends_userTap" @followTap="trends_followTap" @contentTap="trends_contentTap"
 			@imgTap="trends_imgTap" @talkTap="trends_talkTap" @forwardTap="trends_forwardTap"
-			@commentTap="trends_commentTap" @appreciateTap="trends_appreciateTap"></trends-list>
+			@commentTap="trends_commentTap" @appreciateTap="trends_appreciateTap"/>
 			
 			<!--占位底部距离-->
-			<view class="cu-tabbar-height"></view>
+			<view class="cu-tabbar-height"/>
 		</view>
 		
 		<!--中间内容区域-->
 		<view class="margin-top" v-show="TabCur == 2?true:false">
 			<!--话题类型-->
-			<topic-grid-list :list_data="topicGridData" @listTap="topicGridTap"></topic-grid-list>
+			<topic-grid-list :list_data="topicGridData" @listTap="topicGridTap"/>
 			
 			<view class="zaiui-view-content">
-				<!--热门话题-->
-				<hot-topic-list isSort="topic" :list_data="hotTopicData" @listTap="hotTopicTap" @viewAllTap="viewAllTap"></hot-topic-list>
+				<!--热门话题,小程序上无效，待查原因-->
+				
+				<!-- #ifndef MP  -->
+				<hot-topic-list isSort="topic" :list_data="hotTopicData" @listTap="hotTopicTap" @viewAllTap="viewAllTap"/>
+				<!-- #endif -->
 				
 				<!--话题列表-->
-				<topic-card-list :list_data="topicCardData" @listTap="topicCardTap" @viewTap="topicCardViewTap"></topic-card-list>
+				<topic-card-list :list_data="topicCardData" @listTap="topicCardTap" @viewTap="topicCardViewTap"/>
 				
 				<!--占位底部距离-->
-				<view class="cu-tabbar-height"></view>
+				<view class="cu-tabbar-height"/>
 			</view>
 		</view>
 		
@@ -149,6 +160,9 @@
 			});
 		},
 		methods: {
+			getImgUrl(url) {
+				return _tool.getImgUrl(url);
+			},
 			//页面被滚动
 			setPageScroll(scrollTop) {
 				//console.log(scrollTop);
@@ -219,7 +233,7 @@
 	}
 </script>
 
-<style lang="less" scoped>
-	@import "../../../zaiui/style/find.less";
+<style lang="scss" scoped>
+	@import "../../../zaiui/style/find.scss";
 	
 </style>

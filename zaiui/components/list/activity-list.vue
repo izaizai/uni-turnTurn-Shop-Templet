@@ -12,8 +12,8 @@
 					</view>
 					<view class="flex-sub">
 						<view class="padding-right-sm">
-							<!-- #ifdef H5 -->
-							<image class="location-img" src="../../../static/images/home/sundry/9.png" mode="widthFix"></image>
+							<!-- #ifndef APP-PLUS -->
+							<image class="location-img"  src="../../../static/images/home/sundry/9.png" mode="widthFix"></image>
 							<!-- #endif -->
 							
 							<!-- #ifdef APP-PLUS -->
@@ -29,7 +29,7 @@
 						<view class="text-black text-lg text-bold text-left">{{item.title}}</view>
 						<view class="text-orange text-sm text-left">{{item.text}}</view>
 						<view class="margin-tb-sm">
-							<image class="width-img" :src="item.img" mode="widthFix"></image>
+							<image class="width-img" :src="getImgUrl(item.img)" mode="widthFix"></image>
 						</view>
 					</view>
 				</view>
@@ -39,7 +39,7 @@
 					<view class="padding-lr-xs" v-for="(item,index) in list_data" :key="index" v-if="index >= 2 && index < 4" @tap="listTap(item,index)">
 						<view class="text-black text-lg text-bold text-left ">{{item.title}}</view>
 						<view class="margin-top-sm">
-							<image class="width-img" :src="item.img" mode="widthFix"></image>
+							<image class="width-img" :src="getImgUrl(item.img)" mode="widthFix"></image>
 						</view>
 					</view>
 				</view>
@@ -49,7 +49,7 @@
 					<view class="padding-left-sm" v-for="(item,index) in list_data" :key="index" v-if="index >= 4 && index < 6" @tap="listTap(item,index)">
 						<view class="text-black text-lg text-bold text-left ">{{item.title}}</view>
 						<view class="margin-top-sm">
-							<image class="width-img" :src="item.img" mode="widthFix"></image>
+							<image class="width-img" :src="getImgUrl(item.img)" mode="widthFix"></image>
 						</view>
 					</view>
 				</view>
@@ -59,6 +59,7 @@
 </template>
 
 <script>
+	import _tool from '@/util/tools.js';
 	export default {
 		name: 'activity-list',
 		props: {
@@ -70,6 +71,9 @@
 			}
 		},
 		methods: {
+			getImgUrl(url) {
+				return _tool.getImgUrl(url);
+			},
 			listTap(data,index) {
 				this.$emit('listTap', {
 					data,
@@ -80,7 +84,7 @@
 	}
 </script>
 
-<style lang="less" scoped>
+<style lang="scss" scoped>
 	.zaiui-activity {
 		.cu-list.grid>.cu-item {
 			padding: 0;

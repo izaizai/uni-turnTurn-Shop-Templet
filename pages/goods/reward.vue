@@ -15,6 +15,7 @@
 
 <script>
 	import barTitle from '@/zaiui/components/basics/bar-title';
+	import _tool from '@/util/tools.js';	//工具函数
 	export default {
 		components: {
 			barTitle, 
@@ -34,10 +35,12 @@
 	}
 </script>
 
-<style lang="less">
-	@import "../../static/colorui/main.css";
-	@import "../../static/colorui/icon.css";
-	@import "../../zaiui/style/app.less";
+<style lang="scss">
+	/* #ifdef APP-PLUS */
+		@import "../../static/colorui/main.css";
+		@import "../../static/colorui/icon.css";
+		@import "../../zaiui/style/app.scss";
+	/* #endif */
 	
 	image {
 		width: 100%;

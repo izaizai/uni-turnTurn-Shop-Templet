@@ -1,7 +1,7 @@
 <template>
 	<view>
 		<!--标题栏-->
-		<bar-title bgColor="bg-white" isBack backText=''>
+		<bar-title bgColor="bg-white" isBack backText=' '>
 			<block slot="content">通知助手</block>
 		</bar-title>
 		
@@ -10,7 +10,7 @@
 			<view class="text-gray text-center">3月30日 15:30</view>
 			<!--内容-->
 			<view class="bg-white margin-top radius card-view" @tap="tapCard">
-				<view class="cu-avatar head-img" :style="[{backgroundImage:'url('+ bg_img +')'}]"></view>
+				<view class="cu-avatar head-img" :style="[{backgroundImage:'url('+ getttImgUrl(bg_img) +')'}]"></view>
 				<view class="zaiui-content-view">
 					<view class="text-black text-cut">全网首发iPhone11系列低至4349</view>
 					<view class="text-gray text-sm text-cut margin-tb-sm">苹果官方货源机,送1年苹果原厂配件质保!</view>
@@ -81,6 +81,9 @@
 			});
 		},
 		methods: {
+			getttImgUrl(url) {
+				return _tool.getttImgUrl(url);
+			},
 			tapCard() {
 				uni.navigateTo({
 					url: '/pages/news/details'
@@ -92,10 +95,12 @@
 </script>
 
 
-<style lang="less">
-	@import "../../static/colorui/main.css";
-	@import "../../static/colorui/icon.css";
-	@import "../../zaiui/style/app.less";
+<style lang="scss">
+	/* #ifdef APP-PLUS */
+		@import "../../static/colorui/main.css";
+		@import "../../static/colorui/icon.css";
+		@import "../../zaiui/style/app.scss";
+	/* #endif */
 	
 	.zaiui-cart-view-box {
 		padding: 36.36rpx 27.27rpx;

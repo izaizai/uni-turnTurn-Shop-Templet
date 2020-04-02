@@ -23,7 +23,7 @@
 				<block v-for="(items,indexs) in list_data" :key="indexs">
 					<view :id="['scroll' + (indexs + 1 )]" class="text-center recommend-scroll-item">
 						<view @tap="listTap('userTap',items,indexs)">
-							<view class="cu-avatar xl round" :style="[{backgroundImage:'url('+ items.avatar +')'}]"></view>
+							<view class="cu-avatar xl round" :style="[{backgroundImage:'url('+ getttImgUrl(items.avatar) +')'}]"></view>
 							<view class="text-black text-cut margin-tb-sm">{{items.name}}</view>
 						</view>
 						
@@ -40,6 +40,7 @@
 </template>
 
 <script>
+	import _tool from '@/util/tools.js';
 	export default {
 		name: 'recommend-scroll-list',
 		props: {
@@ -51,6 +52,9 @@
 			}
 		},
 		methods: {
+			getttImgUrl(url) {
+				return _tool.getttImgUrl(url);
+			},
 			listTap(tap,data,index) {
 				this.$emit(tap, {
 					data,
@@ -64,7 +68,7 @@
 	}
 </script>
 
-<style lang="less" scoped>
+<style lang="scss" scoped>
 	.zaiui-recommend-box {
 		border-radius: 18.18rpx;
 		.recommend-title {

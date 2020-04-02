@@ -1,10 +1,18 @@
 <template>
 	<view>
 		<!--标题栏-->
-		<bar-title bgColor='bg-white' backText='' @rightTap="barEditTap">
+		<bar-title bgColor='bg-white' backText=' ' @rightTap="barEditTap">
 			<block slot="content">购物车</block>
+			<!--小程序端不显示-->
+			<!-- #ifndef MP -->
 			<block slot="right">编辑</block>
+			<!-- #endif -->
 		</bar-title>
+		
+		<!--小程序端显示-->
+		<!-- #ifdef MP -->
+		<text class="cu-tag radius zaiui-right-tag">编辑</text>
+		<!-- #endif -->
 		
 		<view class="bg-white zaiui-cart-list-view">
 			<checkbox-group class="block" @change="CheckboxChange">
@@ -18,7 +26,7 @@
 						<view class="light goods-list-item-view">
 							<checkbox class='round red sm zaiui-checked' :class="items.checked?'checked':''" 
 							:checked="items.checked?true:false" :value="items.id + ''"/>
-							<view class="cu-avatar radius lg" :style="[{backgroundImage:'url('+ items.img +')'}]"></view>
+							<view class="cu-avatar radius lg" :style="[{backgroundImage:'url('+ getttImgUrl(items.img) +')'}]"></view>
 							<view class="goods-info-view">
 								<view class="text-cut text-black">{{items.name}}</view>
 								<view class="text-sm text-gray">{{items.rule}}</view>
@@ -91,6 +99,9 @@
 			});
 		},
 		methods: {
+			getttImgUrl(url) {
+				return _tool.getttImgUrl(url);
+			},
 			CheckboxChange(e) {
 				let items = this.goodsList, values = e.detail.value;
 				for (let i = 0; i < items.length; i++) {
@@ -125,16 +136,18 @@
 			},
 			tapBtn() {
 				uni.navigateTo({
-					url: '/pages/home/settlement'
+					url: '/pages/goods/settlement'
 				});
 			}
 		}
 	}
 </script>
 
-<style lang="less">
-	@import "../../static/colorui/main.css";
-	@import "../../static/colorui/icon.css";
-	@import "../../zaiui/style/app.less";
-	@import "../../zaiui/style/my_cart.less";
+<style lang="scss">
+	/* #ifdef APP-PLUS */
+		@import "../../static/colorui/main.css";
+		@import "../../static/colorui/icon.css";
+		@import "../../zaiui/style/app.scss";
+	/* #endif */
+	@import "../../zaiui/style/my_cart.scss";
 </style>

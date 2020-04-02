@@ -1,5 +1,5 @@
 {
-    "name" : "商城模板",
+    "name" : "uni-turnTurn-Shop-Templet",
     "appid" : "",
     "description" : "基于colorui开发的二手商城模板，开发者，仔仔，806606688@qq.com",
     "versionName" : "1.0.0",
@@ -45,11 +45,28 @@
     },
     "h5" : {
         "sdkConfigs" : {
-            "maps" : {
-                "qqmap" : {
-                    "key" : ""
-                }
-            }
+            "maps" : {}
+        }
+    },
+    "mp-weixin" : {
+        "appid" : "",
+        "setting" : {
+            "urlCheck" : false
+        }
+    },
+    "mp-baidu" : {
+        "setting" : {
+            "urlCheck" : false
+        }
+    },
+    "mp-toutiao" : {
+        "setting" : {
+            "urlCheck" : false
+        }
+    },
+    "mp-qq" : {
+        "setting" : {
+            "urlCheck" : false
         }
     }
 }

@@ -1,10 +1,18 @@
 <template>
 	<view class="zaiui-sell-box" :class="show?'show':''">
-		<!--标题栏-->
-		<view class="text-gray zaiui-bar-box">
-			<text class="text-black text-lg">发布闲置</text>
-			<text class="margin-left-sm">平台帮你卖 极速成交</text>
-			<text class="cuIcon-close text-right close" @tap="closeTap"></text>
+		
+		<view class="zaiui-bar-view-box">
+			<!--小程序端的标题-->
+			<!-- #ifdef MP -->
+			<view class="text-center text-black zaiui-small-routine-title">卖二手</view>
+			<!-- #endif -->
+			
+			<!--标题栏-->
+			<view class="text-gray zaiui-bar-box">
+				<text class="text-black text-lg">发布闲置</text>
+				<text class="margin-left-sm">平台帮你卖 极速成交</text>
+				<text class="cuIcon-close text-right close" @tap="closeTap"></text>
+			</view>
 		</view>
 		
 		<!--占位的-->
@@ -89,7 +97,7 @@
 	}
 </script>
 
-<style lang="less" scoped>
-	@import "../../../zaiui/style/sell.less";
+<style lang="scss" scoped>
+	@import "../../../zaiui/style/sell.scss";
 	
 </style>

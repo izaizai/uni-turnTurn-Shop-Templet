@@ -10,6 +10,10 @@
 		    margin: 0 0.8em 0 0.8em;
 		}
 		.search-form {
+			/* #ifdef MP */
+			margin-right: 181.81rpx;
+			/* #endif */
+			
 			margin-left: 9.09rpx;
 			.close-icon {
 				font-size: 29.09rpx;	

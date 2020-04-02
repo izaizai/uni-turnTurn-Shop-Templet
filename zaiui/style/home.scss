@@ -24,9 +24,6 @@
 				z-index: 1;
 				width: 10%;
 			}
-			.nav {
-				box-shadow: -16px 0px 15px -13px #807f7f47 inset;
-			}
 			.sort-icon {
 				font-size: 55rpx;
 				height: 64rpx;
@@ -53,6 +50,10 @@
 	margin-top: calc(var(--status-bar-height) + 70rpx);
 	/* #endif */
 	
+	/* #ifdef MP */
+	margin-top: calc(var(--status-bar-height) + 85rpx);
+	/* #endif */
+	
 	.zaiui-tab-list {
 		position: relative;
 		width: 100%;
@@ -64,6 +65,10 @@
 	/* #endif */
 	
 	/* #ifdef H5 */
+	margin-top: calc(var(--status-bar-height) + 220rpx);
+	/* #endif */
+	
+	/* #ifdef MP */
 	margin-top: calc(var(--status-bar-height) + 220rpx);
 	/* #endif */
 	
@@ -94,7 +99,15 @@
 	transition: all .25s;
 	z-index: 9999;
 	background: #fff;
+	
+	/* #ifndef MP */
 	top: calc(var(--status-bar-height) + 101rpx);
+	/* #endif */
+	
+	/* #ifdef MP */
+	top: calc(var(--status-bar-height) + 161rpx);
+	/* #endif */
+	
 	.cu-tag.z {
 		top: 0px;
 		right: -28rpx;
@@ -102,24 +115,9 @@
 		padding: 19rpx 6rpx;
 	}
 }
-.zaiui-goods-tab-box.goods-tab-fixed {
-	background: #fff;
-	padding: 2rpx 0;
-	position: fixed;
-	top: calc(var(--status-bar-height) + 101rpx);
-	width: 100%;
-	z-index: 9999;
-	transition: all .25s;
-}
-.goods-tab-fixed-height {
-	height: 108rpx;
-	width: 100%;
-}
-
 .zaiui-ad-img {
 	width: 100%;
 }
-
 .zaiui-tab-list-title {
 	.img-aau {
 		width: 101.81rpx;

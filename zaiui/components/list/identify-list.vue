@@ -13,7 +13,7 @@
 			<view class="padding-xs live-box" v-for="(item,index) in list_data" :key="index" @tap="listTap(item,index)">
 				<view class="flex flex-wrap">
 					<view class="basis-xs">
-						<image class="img" :src="item.img" mode="widthFix"></image>
+						<image class="img" :src="getImgUrl(item.img)" mode="widthFix"/>
 					</view>
 					<view class="basis-xl">
 						<view class="text-black margin-left-xs">{{item.name}}</view>
@@ -26,6 +26,7 @@
 </template>
 
 <script>
+	import _tool from '@/util/tools.js';
 	export default {
 		name: 'identify-list',
 		props: {
@@ -37,6 +38,9 @@
 			}
 		},
 		methods: {
+			getImgUrl(url) {
+				return _tool.getImgUrl(url);
+			},
 			listTap(data,index) {
 				this.$emit('listTap', {
 					data,
@@ -47,7 +51,7 @@
 	}
 </script>
 
-<style lang="less" scoped>
+<style lang="scss" scoped>
 	.zaiui-identify-box {
 		.live-box {
 			position: relative;

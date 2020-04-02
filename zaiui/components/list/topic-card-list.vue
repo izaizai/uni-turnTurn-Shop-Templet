@@ -4,7 +4,7 @@
 			<view class="bg-white margin-top radius zaiui-topic-card-list-box">
 				<!--标题-->
 				<view class="head-img-box" @tap="viewBtnTap(item,index)">
-					<view class="cu-avatar" :style="[{backgroundImage:'url('+ item.bg_img +')'}]"></view>
+					<view class="cu-avatar" :style="[{backgroundImage:'url('+ getttImgUrl(item.bg_img) +')'}]"></view>
 					<view class="bg-shade"></view>
 					<view class="zaiui-text">
 						<view class="text-xl">
@@ -18,7 +18,7 @@
 				<view class="cu-list menu-avatar margin-tb-sm">
 					<block v-for="(items,indexs) in item.list" :key="indexs" v-if="indexs < 5">
 						<view class="cu-item" @tap="listTap(items,indexs)">
-							<view class="cu-avatar lg" :style="[{backgroundImage:'url('+ items.img +')'}]"></view>
+							<view class="cu-avatar lg" :style="[{backgroundImage:'url('+ getttImgUrl(items.img) +')'}]"></view>
 							<view class="corner-mark text-sm text-bold one" v-if="indexs == 0">{{indexs + 1}}</view>
 							<view class="corner-mark text-sm text-bold two" v-if="indexs == 1">{{indexs + 1}}</view>
 							<view class="corner-mark text-sm text-bold three" v-if="indexs == 2">{{indexs + 1}}</view>
@@ -44,6 +44,7 @@
 </template>
 
 <script>
+	import _tool from '@/util/tools.js';
 	export default {
 		name: 'topic-card-list',
 		props: {
@@ -55,6 +56,9 @@
 			}
 		},
 		methods: {
+			getttImgUrl(url) {
+				return _tool.getttImgUrl(url);
+			},
 			listTap(data,index) {
 				this.$emit('listTap', {
 					data,
@@ -71,7 +75,7 @@
 	}
 </script>
 
-<style lang="less" scoped>
+<style lang="scss" scoped>
 	.zaiui-topic-card-list-box {
 		position: relative;
 		border-radius: 18.18rpx;

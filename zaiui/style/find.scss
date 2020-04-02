@@ -22,7 +22,14 @@
 }
 .zaiui-seat-height {
 	width: 100%;
+	
+	/* #ifndef MP */
 	height: calc(var(--status-bar-height) + 81.81rpx);
+	/* #endif */
+	
+	/* #ifdef MP */
+	margin-top: calc(var(--status-bar-height) + 185rpx);
+	/* #endif */
 }
 .zaiui-view-content {
 	padding: 0 27.27rpx 54.54rpx;

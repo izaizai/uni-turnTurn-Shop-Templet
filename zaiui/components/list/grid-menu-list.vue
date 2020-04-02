@@ -6,7 +6,7 @@
 					<block v-for="(item,index) in ListData" :key="index" v-if="index < 10">
 						<view class="cu-item" @tap="listTap(item,index)">
 							<view class="grid-icon">
-								<image class="icon" :src="item.img" mode="widthFix"></image>
+								<image class="icon" :src="getImgUrl(item.img)" mode="widthFix"/>
 							</view>
 							<view class="cu-tag badge z" :class="['bg-' + item.color]" v-if="item.badge">{{item.badge}}</view>
 							<text class="text-black">{{item.name}}</text>
@@ -19,7 +19,7 @@
 					<block v-for="(item,index) in ListData" :key="index" v-if="index >= 10">
 						<view class="cu-item" @tap="listTap(item,index)">
 							<view class="grid-icon">
-								<image class="icon" :src="item.img" mode="widthFix"></image>
+								<image class="icon" :src="getImgUrl(item.img)" mode="widthFix"></image>
 							</view>
 							<view class="cu-tag badge z" :class="['bg-' + item.color]" v-if="item.badge">{{item.badge}}</view>
 							<text class="text-black">{{item.name}}</text>
@@ -64,6 +64,9 @@
 			}
 		},
 		methods: {
+			getImgUrl(url) {
+				return _tool.getImgUrl(url);
+			},
 			getScrollPageNum() {
 				this.scrollPage =  _tool.getPageNum(this.ListData.length,10);
 			},
@@ -83,7 +86,7 @@
 	}
 </script>
 
-<style lang="less" scoped>
+<style lang="scss" scoped>
 	.zaiui-scroll-view-box {
 		position: relative;
 		.zaiui-scroll-view {

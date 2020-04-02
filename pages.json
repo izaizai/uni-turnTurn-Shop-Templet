@@ -4,40 +4,47 @@
 			"path": "pages/app/index"
 		},
 		{
-			"path": "pages/home/reward"
-		},
-		{
-			"path": "pages/home/sort_list"
-		},
-		{
-			"path": "pages/home/goods"
-		},
-		{
 			"path": "pages/home/sort"
 		},
 		{
 			"path": "pages/home/search"
 		},
 		{
-			"path": "pages/home/second_hand"
+			"path": "pages/home/sort_list"
 		},
 		{
-			"path": "pages/home/second_terrace"
+			"path": "pages/goods/reward"
 		},
 		{
-			"path": "pages/home/my_cart"
+			"path": "pages/goods/goods"
+		},
+		{
+			"path": "pages/goods/second_hand"
+		},
+		{
+			"path": "pages/goods/second_terrace"
+		},
+		{
+			"path": "pages/goods/my_cart"
+		},
+		{
+			"path": "pages/goods/settlement"
+		},
+		{
+			"path": "pages/goods/pay"
 		},
 		{
 			"path": "pages/news/notice"
 		},
 		{
 			"path": "pages/news/details"
-		},
-		{
-			"path": "pages/home/settlement"
 		}
 	],
 	"globalStyle": {
-		"navigationStyle": "custom"
+		"navigationStyle": "custom",
+		"mp-alipay": {
+			"allowsBounceVertical": "NO",
+			"transparentTitle": "always"
+		}
 	}
 }

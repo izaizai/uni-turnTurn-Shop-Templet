@@ -133,9 +133,13 @@
 	}
 </script>
 
-<style lang="less">
-	@import "../../static/colorui/main.css";
-	@import "../../static/colorui/icon.css";
-	@import "../../zaiui/style/app.less";
-	@import "../../zaiui/style/sort_vue.less";
+<style lang="scss">
+	/* #ifdef APP-PLUS */
+		@import "../../static/colorui/main.css";
+		@import "../../static/colorui/icon.css";
+		@import "../../zaiui/style/app.scss";
+	/* #endif */
+	
+	@import "../../zaiui/style/sort_vue.scss";
+	
 </style>

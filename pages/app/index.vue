@@ -94,11 +94,12 @@
 	}
 </script>
 
-<style lang="less">
+<style lang="scss">
 	//APP端引用。玄学问题，在这里引入css文件后，APP端才生效，在app.vue里引入无效。原因未知...
 	//可自行测试在APP上是否有效，如果有效，可删除下面的引入代码。
-	@import "../../static/colorui/main.css";
-	@import "../../static/colorui/icon.css";
-	@import "../../zaiui/style/app.less";
-	
+	/* #ifdef APP-PLUS */
+		@import "../../static/colorui/main.css";
+		@import "../../static/colorui/icon.css";
+		@import "../../zaiui/style/app.scss";
+	/* #endif */
 </style>

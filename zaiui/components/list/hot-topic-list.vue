@@ -23,10 +23,9 @@
 				<block v-for="(item,index) in list_num" :key="index">
 					<view :id="[isSort + (index + 1 )]" class="hot-topic-scroll-item">
 						<view class="cu-list menu-avatar">
-							
 							<block v-for="(items,indexs) in list_data" :key="indexs" v-if="getItmeList(index,indexs)">
 								<view class="cu-item" @tap="listTap(items,indexs)">
-									<view class="cu-avatar radius xl" :style="[{backgroundImage:'url('+ items.img +')'}]"></view>
+									<view class="cu-avatar radius xl" :style="[{backgroundImage:'url('+ getttImgUrl(items.img) +')'}]"></view>
 									<view class="content">
 										<view class="text-black">
 											<view class="text-cut">{{items.title}}</view>
@@ -79,6 +78,12 @@
 			this.getScrollPageNum(this.list_data);
 		},
 		methods: {
+			getttImgUrl(url) {
+				return _tool.getttImgUrl(url);
+			},
+			getImgUrl(url) {
+				return _tool.getImgUrl(url);
+			},
 			listTap(data,index) {
 				this.$emit('listTap', {
 					data,
@@ -104,7 +109,7 @@
 	}
 </script>
 
-<style lang="less" scoped>
+<style lang="scss" scoped>
 	.zaiui-hot-topic-box {
 		border-radius: 18.18rpx;
 		.hot-topic-title {

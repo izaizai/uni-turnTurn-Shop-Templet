@@ -8,8 +8,17 @@ page {
 		min-height: calc(var(--status-bar-height) + 101rpx);
 		.content {
 			top: var(--status-bar-height);
+			
+			/* #ifndef MP */
 			left: 18.18rpx;
 			width: calc(100% - 127.27rpx);
+			/* #endif */
+			
+			/* #ifdef MP */
+			left: -140rpx;
+			width: calc(100% - 300rpx);
+			/* #endif */
+			
 			.search-form {
 				display: inherit;
 				flex: inherit;

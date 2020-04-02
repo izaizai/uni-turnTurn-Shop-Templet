@@ -112,7 +112,8 @@
 		    position: absolute;
 		}
 		.text-black-view {
-		    padding-left: 30px;	
+			padding-left: 63.63rpx;
+			line-height: 47.27rpx;
 		}
 	}
 	.zaiui-service-view {
@@ -219,12 +220,13 @@
 		position: absolute;
 	}
 	.text-black-view {
-		padding-left: 54.54rpx;	
+		padding-left: 63.63rpx;
+		line-height: 47.27rpx;
 	}
 }
 
 .zaiui-footer-fixed {
-	box-shadow: 0 -2rpx 9.09rpx 0 #96949433;
+	box-shadow: 0 -2rpx 9.09rpx 0 #ececec;
 	z-index: 99999;
 	.cu-bar {
 		width: 100%;

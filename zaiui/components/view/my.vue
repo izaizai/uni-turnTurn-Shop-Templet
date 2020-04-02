@@ -2,18 +2,27 @@
 	<view class="zaiui-my-box" :class="show?'show':''">
 		<view class="bg-gradual-red zaiui-head-box">
 			<!--标题栏-->
+			<!--小程序端不显示-->
+			<!-- #ifndef MP -->
 			<bar-title :isBack="false" :fixed="false">
 				<block slot="right">
 					<text class="cuIcon-camera"></text>
 					<text class="cuIcon-settings"></text>
 				</block>
 			</bar-title>
+			<!-- #endif -->
 			
 			<!--用户信息-->
 			<view class="zaiui-user-info-box">
 				<view class="cu-list menu-avatar">
 					<view class="cu-item">
-						<view class="cu-avatar round lg" style="background-image:url(../../static/images/avatar/1.jpg);"></view>
+						<!-- #ifndef MP-TOUTIAO -->
+						<view class="cu-avatar round lg" style="background-image:url(../../static/images/avatar/1.jpg);"/>
+						<!-- #endif -->
+						
+						<!-- #ifdef MP-TOUTIAO -->
+						<view class="cu-avatar round lg" style="background-image:url(static/images/avatar/1.jpg);"/>
+						<!-- #endif -->
 						<view class="content text-xl">
 							<view class="text-white">凯尔</view>
 							<view class="text-white-bg text-sm">
@@ -85,7 +94,13 @@
 				<view class="grid col-2 money-col">
 					<view class="money-item">
 						<view class="money-item-view">
-							<view class="cu-avatar lg" style="background-image:url(../../static/images/my/1.png);"></view>
+							<!-- #ifndef MP-TOUTIAO -->
+							<view class="cu-avatar lg" style="background-image:url(../../static/images/my/1.png);"/>
+							<!-- #endif -->
+							
+							<!-- #ifdef MP-TOUTIAO -->
+							<view class="cu-avatar lg" style="background-image:url(static/images/my/1.png);"/>
+							<!-- #endif -->
 							<view class="money-content">
 								<view class="text-black text-cut">边逛边赚钱</view>
 								<view class="text-gray text-sm text-cut">最高提现20元</view>
@@ -94,7 +109,13 @@
 					</view>
 					<view class="money-item">
 						<view class="money-item-view">
-							<view class="cu-avatar lg" style="background-image:url(../../static/images/my/2.png);"></view>
+							<!-- #ifndef MP-TOUTIAO -->
+							<view class="cu-avatar lg" style="background-image:url(../../static/images/my/2.png);"/>
+							<!-- #endif -->
+							
+							<!-- #ifdef MP-TOUTIAO -->
+							<view class="cu-avatar lg" style="background-image:url(static/images/my/2.png);"/>
+							<!-- #endif -->
 							<view class="money-content">
 								<view class="text-black text-cut">发条借钱</view>
 								<view class="text-gray text-sm text-cut">最高额度50000</view>
@@ -126,7 +147,6 @@
 			</view>
 			
 		</view>
-		
 		
 		<!--占位底部距离-->
 		<view class="cu-tabbar-height"></view>
@@ -198,7 +218,7 @@
 	}
 </script>
 
-<style lang="less" scoped>
-	@import "../../../zaiui/style/my.less";
+<style lang="scss" scoped>
+	@import "../../../zaiui/style/my.scss";
 	
 </style>

@@ -11,7 +11,10 @@
 					<text class="cuIcon-close close-icon" v-if="search_close" @tap="closeInput"></text>
 				</view>
 				<view class="action">
+					<!--小程序端不显示-->
+					<!-- #ifndef MP -->
 					<text class="text-red">搜索</text>
+					<!-- #endif -->
 				</view>
 			</view>
 			<!--占位的-->
@@ -128,10 +131,11 @@
 	}
 </script>
 
-<style lang="less">
-	@import "../../static/colorui/main.css";
-	@import "../../static/colorui/icon.css";
-	@import "../../zaiui/style/app.less";
-	@import "../../zaiui/style/search.less";
-	
+<style lang="scss">
+	/* #ifdef APP-PLUS */
+		@import "../../static/colorui/main.css";
+		@import "../../static/colorui/icon.css";
+		@import "../../zaiui/style/app.scss";
+	/* #endif */
+	@import "../../zaiui/style/search.scss";
 </style>

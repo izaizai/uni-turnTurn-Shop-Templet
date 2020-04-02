@@ -15,7 +15,7 @@
 							<view class="swiper-padding">
 								<view class="flex flex-wrap swiper-item" :class="index == indexs?'show':''">
 									<view class="basis-xs">
-										<image class="img" :src="item.img" mode="widthFix"></image>
+										<image class="img" :src="getImgUrl(item.img)" mode="widthFix"></image>
 									</view>
 									<view class="basis-xl text-cut">
 										<text class="text-xs">{{item.text}}</text>
@@ -28,7 +28,7 @@
 			</view>
 			<block v-for="(item,index) in ListData.list" :key="index" v-if="index < 3">
 				<view class="live-box text-center zaiui-sell-quickly-list" @tap="listTap(item,index)">
-					<image class="img" :src="item.img" mode="widthFix"></image>
+					<image class="img" :src="getImgUrl(item.img)" mode="widthFix"></image>
 					<view class="text-black">{{item.title}}</view>
 					<view class="text-xs text-gray text-cut">{{item.text}}</view>
 				</view>
@@ -38,6 +38,7 @@
 </template>
 
 <script>
+	import _tool from '@/util/tools.js';
 	export default {
 		name: 'sell-quickly-list',
 		data() {
@@ -62,6 +63,9 @@
 			}
 		},
 		methods: {
+			getImgUrl(url) {
+				return _tool.getImgUrl(url);
+			},
 			earnSwiper(e) {
 				this.indexs = e.detail.current;
 			},
@@ -75,7 +79,7 @@
 	}
 </script>
 
-<style lang="less" scoped>
+<style lang="scss" scoped>
 	.zaiui-sell-quickly-box {
 		.live-box {
 			position: relative;

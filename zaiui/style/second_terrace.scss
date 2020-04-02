@@ -12,52 +12,85 @@
 			height: 47.27rpx;
 		}
 		.text-right-view {
+			border-radius: 54.54rpx 0 0 54.54rpx;
+			padding: 0px 27.27rpx;
 			position: absolute;
-		    right: 0;
-		    top: 7.27rpx;	
+		    right: -29.09rpx;
+		    top: 0;
+			.icon-text {
+			    position: relative;
+			    top: 2rpx;	
+			}
 		}
 	}
 	.price-view {
 		position: relative;
+		.text-price {
+			font-size: 54.54rpx;
+		}
 		text {
-			margin-right: 9.09rpx;
+			margin-right: 18.18rpx;
+		}
+		.cu-tag {
+			position: relative;
+		    top: -9.09rpx;
+			.icon-text {
+				position: relative;
+				margin-right: 3.63rpx;
+			    top: 2rpx;
+			}
 		}
 	}
-	.zaiui-map-view {
+	.zaiui-hot-view-box {
 		position: relative;
-		background-image: url('../../static/images/home/sundry/map.png');
-		background-size: cover;
-		background-position: center;
-		padding: 10.9rpx 27.27rpx;
-		border-radius: 90.9rpx;
-		opacity: 0.8;
-		.cut-view {
-			padding-right: 218.18rpx;	
+		.flex {
+			.basis-1 {
+				flex-basis: 10%;
+			}
+			.basis-8 {
+				flex-basis: 80%;
+			}
 		}
-		.text-right-view {
-			position: absolute;
-			right: 27.27rpx;
-			top: 10.9rpx;
+		.tag-view-box {
+			position: relative;
+			margin-bottom: 10.9rpx;
+			.cu-tag {
+				position: relative;
+			    top: -2rpx;	
+			}
+		}
+		.icon-view {
+			height: 100%;
+			display: flex;
+			align-items: center;
+			.icon {
+				position: absolute;
+				right: 15px;
+			}
 		}
 	}
 }
 
 .zaiui-service-view-box {
 	position: relative;
+	padding-bottom: 18.18rpx;
 	.flex {
 		.basis-1 {
 			flex-basis: 10%;
 		}
-		.basis-7 {
-			flex-basis: 70%;
-		}
-		.basis-2 {
-			flex-basis: 20%;
+		.basis-8 {
+			flex-basis: 80%;
 		}
 	}
 	.tag-view-box {
+		position: relative;
+		top: -3.63rpx;
 		.tag-view {
-			margin-right: 9.09rpx;
+		    margin-right: 18.18rpx;
+		    padding: 0;
+		}
+		.cu-tag + .cu-tag {
+		    margin-left: 0;
 		}
 	}
 	.icon-view {
@@ -93,10 +126,23 @@
 			margin-top: 18.18rpx;
 		}
 	}
+	.zaiui-bubble-view {
+		position: relative;
+		margin-top: 36.36rpx;
+		background-color: #F8F8F8;
+		width: 100%;
+		.usefull-icon {
+		    position: absolute;
+			font-size: 32.72rpx;
+		    top: -21.81rpx;
+		    color: #F8F8F8;
+		    left: 18.18rpx;
+		}
+	}
 }
 
 .zaiui-footer-fixed {
-	box-shadow: 0 -2rpx 9.09rpx 0 #96949433;
+	box-shadow: 0 -2rpx 9.09rpx 0 #ececec;
 	.cu-bar, .flex-wrap {
 		width: 100%;
 	}
@@ -106,7 +152,7 @@
 			flex-basis: 15%;
 		}
 		.basis-sm{
-			flex-basis: 42.5%;
+			flex-basis: 35%;
 		}
 		.btn-view {
 			padding: 0 18.18rpx;
@@ -125,26 +171,6 @@
 	width: 100%;
 }
 
-.zaiui-steps-view {
-	box-shadow: 0 0 14.54rpx rgba(26, 26, 26, 0.2);
-	margin: 9.09rpx 0 29.09rpx 0;
-	--ShadowSize: 0 1rpx 6rpx;
-    border-radius: 9.09rpx;
-    padding: 29.09rpx;
-	.cu-steps.steps-arrow .cu-item::before, .cu-steps.steps-arrow .cu-item::after {
-	    content: "\E7F6";
-		border-bottom-width: 0;
-	    font-family: 'cuIcon';
-		font-size: 36.36rpx;
-	    height: 29.09rpx;
-	    color: #D0E0FA;
-	    line-height: 0;
-	    top: -30.9rpx;
-		margin: auto;
-	    bottom: 0;
-	}
-}
-
 .zaiui-selll-user-view-box {
 	.cu-list.menu-avatar>.cu-item {
 		height: 99.99rpx;
@@ -152,6 +178,13 @@
 			left: 127.27rpx;
 			width: calc(100% - 94.54rpx - 127.27rpx);
 			.cu-tag.sm {
+				line-height: 29.09rpx;
+				padding: 0 5.45rpx;
+				.margin-left-xs {
+				    margin-left: 3.63rpx;	
+				}
+			}
+			.cu-tag.sm.just {
 				padding: 0;
 				width: 27.27rpx;
 				height: 27.27rpx;
@@ -228,90 +261,21 @@
 	.zaiui-interaction-view {
 		position: relative;
 		width: 100%;
-		.user-input-view {
-			position: relative;
-			width: 100%;
-			.cu-avatar {
-				position: absolute;	
-			}
-			.input-view-box {
-			    position: relative;
-			    padding-left: 99.99rpx;
-				.arrow-view {
-				    border-top: 18.18rpx solid transparent;
-				    border-bottom: 18.18rpx solid transparent;
-				    border-right: 18.18rpx solid #F8F8F8;
-				    position: absolute;
-				    left: 83.63rpx;
-				    top: 13.63rpx;
-					height: 0;
-					width: 0;
-				}
-				.input-view {
-					margin-right: 141.81rpx;
-					background: #F8F8F8;
-					font-size: 25.45rpx;
-					padding: 0 27.27rpx;
-				    height: 63.63rpx;
-				}
-				.cu-btn {
-					border-radius: 0 72.72rpx 72.72rpx 0;
-				    position: absolute;
-					padding: 0 45.45rpx;
-					font-size: 25.45rpx;
-				    right: 0;
-				    top: 0;
-				}
-			}
+	}
+	.flex {
+		.basis-1 {
+			flex-basis: 10%;
+		}
+		.basis-9 {
+			flex-basis: 90%;
 		}
 	}
-	.zaiui-interaction-list-view {
+	.zaiui-border-view {
 		position: relative;
+		background: #efebeb;
+		margin: 21.81rpx 0;	
+		height: 2rpx;
 		width: 100%;
-		.list-itme {
-		    position: relative;
-		    width: 100%;
-		    padding: 27.27rpx 0;
-		    border-bottom: 2rpx solid #efebeb;
-			.cu-avatar {
-				position: absolute;	
-			}
-			.view-box {
-				position: relative;
-			    padding-left: 99.99rpx;
-				.content-box {
-				    line-height: 1.6;
-				    margin-top: 9.09rpx;
-				}
-			}
-			.zaiui-comment-view {
-				background: #F8F8F8;
-				margin-top: 27.27rpx;
-				.user-name-box {
-					.cu-tag {
-						position: relative;
-					    top: -2rpx;
-					    margin: 0 9.09rpx;	
-					}
-				}
-				.zaiui-reply-view {
-					margin-top: 9.09rpx;
-					text {
-						margin-right: 9.09rpx;
-					}
-				}
-			}
-		}
-	}
-	.zaiui-tag-view-box {
-		position: relative;
-		.cu-tag {
-			margin-bottom: 18.18rpx;
-			margin-right: 36.36rpx;
-		}
-		.cu-tag + .cu-tag {
-		    margin-left: 0;
-		}
 	}
 	.zaiui-tag-text-view-box {
 		position: relative;
@@ -326,43 +290,23 @@
 	}
 }
 
-.zaiui-recommend-goods-box {
-	.zaiui-goods-info-box {
-		position: relative;
-		.goods-img-view {
-			position: absolute;
-			.cu-avatar {
-			    width: 181.81rpx;
-			    height: 181.81rpx;
-				border-radius: 14.54rpx;
-			}
-			.cu-tag {
-			    position: absolute;
-			    left: 14.54rpx;
-			    top: 14.54rpx;	
-			}
-		}
-		.goods-info-view {
-			position: relative;
-			padding-left: 209.09rpx;
-			height: 181.81rpx;
-			line-height: 1.55;	
-			.tag-view-box {
-				.cu-tag {
-					margin-right: 9.09rpx;
-				}
-				.cu-tag + .cu-tag {
-					margin-left: 0;
-				}
-			}
-		}
-	}
-}
-
 .zaiui-resemble-goods-box {
 	position: relative;
-	.text-title-view {
-		background-image: linear-gradient(0deg, #FAFAFA, #ffffff);
+	.flex {
+		.img-aau {
+			width: 81.81rpx;
+			margin-top: 12.72rpx;
+		}
+		.text-right {
+			.img-aau {
+				margin-right: 14.54rpx;
+			}
+		}
+		.text-left {
+			.img-aau {
+				margin-left: 14.54rpx;
+			}
+		}
 	}
 	.grid {
 		padding: 0 18.18rpx;

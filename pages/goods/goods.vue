@@ -1,12 +1,15 @@
 <template>
 	<view>
 		<!--标题栏-->
-		<bar-title bgColor='bg-white' backText=''>
+		<bar-title bgColor='bg-white' backText=' '>
 			<block slot="content">商品详情</block>
+			<!--小程序端不显示-->
+			<!-- #ifndef MP -->
 			<block slot="right">
 				<text class="cuIcon-forward"></text>
 				<text class="cuIcon-more"></text>
 			</block>
+			<!-- #endif -->
 		</bar-title>
 		
 		<!--提示-->
@@ -164,7 +167,13 @@
 			<view class="zaiui-view-box">
 				<view class="flex flex-wrap text-sm">
 					<view class="basis-1">
-						<view class="cu-avatar sm round" style="background-image:url(../../static/images/avatar/1.jpg)"></view>
+						<!-- #ifndef MP-TOUTIAO -->
+						<view class="cu-avatar sm round" style="background-image:url(../../static/images/avatar/1.jpg)"/>
+						<!-- #endif -->
+						
+						<!-- #ifdef MP-TOUTIAO -->
+						<view class="cu-avatar sm round" style="background-image:url(static/images/avatar/1.jpg)"/>
+						<!-- #endif -->
 					</view>
 					<view class="basis-9 text-sm">
 						<view>仔仔</view>
@@ -177,7 +186,13 @@
 			<view class="zaiui-view-box">
 				<view class="flex flex-wrap text-sm">
 					<view class="basis-1">
-						<view class="cu-avatar sm round" style="background-image:url(../../static/images/avatar/1.jpg)"></view>
+						<!-- #ifndef MP-TOUTIAO -->
+						<view class="cu-avatar sm round" style="background-image:url(../../static/images/avatar/2.jpg)"/>
+						<!-- #endif -->
+						
+						<!-- #ifdef MP-TOUTIAO -->
+						<view class="cu-avatar sm round" style="background-image:url(static/images/avatar/2.jpg)"/>
+						<!-- #endif -->
 					</view>
 					<view class="basis-9 text-sm">
 						<view>仔仔</view>
@@ -191,7 +206,13 @@
 		<!--杂项信息-->
 		<view class="margin-top bg-white zaiui-view-box zaiui-goods-info-view-box">
 			<view class="zaiui-shop-view">
-				<view class="cu-avatar lg round" style="background-image:url(../../static/images/avatar/1.jpg)"></view>
+				<!-- #ifndef MP-TOUTIAO -->
+				<view class="cu-avatar lg round" style="background-image:url(../../static/images/avatar/1.jpg)"/>
+				<!-- #endif -->
+				
+				<!-- #ifdef MP-TOUTIAO -->
+				<view class="cu-avatar lg round" style="background-image:url(static/images/avatar/1.jpg)"/>
+				<!-- #endif -->
 				<view class="text-view">
 					<view class="margin-bottom-xs">仔仔店铺</view>
 					<view class="text-sm text-cut">仔仔店铺，正品保障，售后无忧</view>
@@ -220,7 +241,7 @@
 					<scroll-view class="recommend-scroll" scroll-x>
 						<block v-for="(items,indexs) in goodsList" :key="indexs">
 							<view :id="['scroll' + (indexs + 1 )]" class="recommend-scroll-item">
-								<view class="cu-avatar xl radius" :style="[{backgroundImage:'url('+ items.img +')'}]"></view>
+								<view class="cu-avatar xl radius" :style="[{backgroundImage:'url('+ getttImgUrl(items.img) +')'}]"></view>
 								<view class="text-cut-2 text-sm text-black margin-tb-sm">{{items.title}}</view>
 								<view class="text-red text-price margin-tb-sm text-lg">{{items.price}}</view>
 							</view>
@@ -282,7 +303,7 @@
 						<view class="list-itme">
 							<view class="bg-white list-radius">
 								<view class="goods-img">
-									<view class="cu-avatar" :style="[{backgroundImage:'url('+ items.img +')'}]"></view>
+									<view class="cu-avatar" :style="[{backgroundImage:'url('+ getttImgUrl(items.img) +')'}]"></view>
 									<view class="mold-view" v-if="items.mold">
 										<text class="cu-tag radius sm bg-red">自营</text>
 									</view> 
@@ -395,7 +416,13 @@
 						<!--商品信息-->
 						<view class="cu-list menu-avatar">
 							<view class="cu-item">
-								<view class="cu-avatar radius lg" style="background-image:url(../../static/images/home/goods/1.png);"></view>
+								<!-- #ifndef MP-TOUTIAO -->
+								<view class="cu-avatar radius lg" style="background-image:url(../../static/images/home/goods/1.png);"/>
+								<!-- #endif -->
+								
+								<!-- #ifdef MP-TOUTIAO -->
+								<view class="cu-avatar radius lg" style="background-image:url(static/images/home/goods/1.png);"/>
+								<!-- #endif -->
 								<view class="content">
 									<view class="text-price-view">
 										<text class="text-price text-red margin-right-xs">2699</text>
@@ -494,6 +521,9 @@
 			});
 		},
 		methods: {
+			getttImgUrl(url) {
+				return _tool.getttImgUrl(url);
+			},
 			bannerSwiper(e) {
 				this.bannerCur = e.detail.current;
 			},
@@ -523,17 +553,18 @@
 			},
 			myCartTap(){
 				uni.navigateTo({
-					url: '/pages/home/my_cart'
+					url: '/pages/goods/my_cart'
 				});
 			}
 		}
 	}
 </script>
 
-<style lang="less">
-	@import "../../static/colorui/main.css";
-	@import "../../static/colorui/icon.css";
-	@import "../../zaiui/style/app.less";
-	@import "../../zaiui/style/goods.less";
-	
+<style lang="scss">
+	/* #ifdef APP-PLUS */
+		@import "../../static/colorui/main.css";
+		@import "../../static/colorui/icon.css";
+		@import "../../zaiui/style/app.scss";
+	/* #endif */
+	@import "../../zaiui/style/goods.scss";
 </style>

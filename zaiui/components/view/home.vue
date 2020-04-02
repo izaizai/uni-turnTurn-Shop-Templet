@@ -1,16 +1,22 @@
 <template>
 	<view class="zaiui-home-box" :class="show?'show':''">
 		<!--欢迎-->
-		<welcome-tip content="中午好，仔仔" :show="true" :c_s="3000" @closeFinish="welcomeClose"></welcome-tip>
+		<welcome-tip content="中午好，仔仔" :show="true" :c_s="3000" @closeFinish="welcomeClose"/>
 		
 		<!--轮播背景-->
-		<swiper-background :list_data="swiperInfo.list" :indexs="swiperInfo.index" :show="swiperInfo.show" :welcome="swiperInfo.welcome"></swiper-background>
+		<swiper-background :list_data="swiperInfo.list" :indexs="swiperInfo.index" :show="swiperInfo.show" :welcome="swiperInfo.welcome"/>
 		
 		<view class="zaiui-head-search-box" :class="headInfo.Class" :style="[{backgroundColor:'rgba(229, 77, 66,'+ headInfo.opacity +')'}]">
+			
+			<!--小程序端的标题-->
+			<!-- #ifdef MP -->
+			<view class="text-center text-white zaiui-small-routine-title">首页</view>
+			<!-- #endif -->
+			
 			<!--搜索框-->
 			<view class="cu-bar search zaiui-search-box">
 				<view class="search-form round" @tap="searchTap">
-					<text class="cuIcon-search"></text>
+					<text class="cuIcon-search"/>
 					<text>口罩</text>
 				</view>
 				<view class="action text-white">领现金</view>
@@ -24,14 +30,14 @@
 							<block v-for="(item,index) in headTab.list" :key="index">
 								<view class="cu-item" :class="index==headTab.TabCur?'select':''" @tap="tabSelect" :data-id="index">
 									<view>{{item}}</view>
-									<view class="tab-dot bg-white"></view>
+									<view class="tab-dot bg-white"/>
 								</view>
 							</block>
 						</scroll-view>
 					</view>
 					<view class="basis-xxs">
 						<view class="sort-icon" @tap="sortVueTap">
-							<text class="cuIcon-sort"></text>
+							<text class="cuIcon-sort"/>
 						</view>
 					</view>
 				</view>
@@ -39,42 +45,42 @@
 		</view>
 		
 		<!--中间内容区域-->
-		<view class="zaiui-view-content" :class="`${viewContent.welcome?'welcome':''} ${headTab.TabCur==0?'show':''}`">
+		<view class="zaiui-view-content" :class="[viewContent.welcome?'welcome':'',headTab.TabCur==0?'show':'']">
 			<!--轮播图-->
 			<view class="zaiui-swiper-box">
 				<swiper class="screen-swiper square-dot c" autoplay circular indicator-dots :current="swiperInfo.index"  @change="swiperChange">
 					<swiper-item v-for="(item,index) in swiperInfo.list" :key="index">
 						<view class="swiper-padding">
-							<image :src="item.swiper" mode="widthFix"></image>
+							<image :src="getImgUrl(item.swiper)" mode="widthFix"/>
 						</view>
 					</swiper-item>
 				</swiper>
 			</view>
 			
 			<!--滑动菜单-->
-			<grid-menu-list :list_data='gridMenuData' @listTap='gridMenuTap'></grid-menu-list>
+			<grid-menu-list :list_data='gridMenuData' @listTap='gridMenuTap'/>
 			
 			<!--红包块-->
-			<!-- #ifdef H5 -->
+			<!-- #ifndef APP-PLUS -->
 			<view class="bg-red margin radius padding-sm">
-				<image class="red-envelopes" src="../../../static/images/home/sundry/2.png" mode="widthFix"></image>
+				<image class="red-envelopes" src="../../../static/images/home/sundry/2.png" mode="widthFix"/>
 			</view>
 			<!-- #endif -->
 			
 			<!-- #ifdef APP-PLUS -->
 			<view class="bg-red margin radius padding-sm">
-				<image class="red-envelopes" src="../../static/images/home/sundry/2.png" mode="widthFix"></image>
+				<image class="red-envelopes" src="../../static/images/home/sundry/2.png" mode="widthFix"/>
 			</view>
 			<!-- #endif -->
 			
 			<!--免费鉴别-->
-			<identify-list :list_data='identifyData' @listTap='identifyTap'></identify-list>
+			<identify-list :list_data='identifyData' @listTap='identifyTap'/>
 			
 			<!--省心快卖-->
-			<sell-quickly-list :list_data='quickly' @listTap='quicklyTap'></sell-quickly-list>
+			<sell-quickly-list :list_data='quickly' @listTap='quicklyTap'/>
 			
 			<!--活动区域-->
-			<activity-list :list_data='activity' @listTap='activityTap'></activity-list>
+			<activity-list :list_data='activity' @listTap='activityTap'/>
 			
 			<!--商品tab-->
 			<view class="zaiui-goods-tab-box">
@@ -84,7 +90,7 @@
 							<view class="cu-item flex-sub nf" :class="index==goodsTabData.TabCur?'select':''" @tap="goodsTab" :data-id="index">
 								<view class="cu-tag badge z bg-gradual-pink" v-if="item.tag">{{item.tag}}</view>
 								<view :class="index == goodsTabData.TabCur?'text-red':''">{{item.title}}</view>
-								<view class="tab-dot bg-red"></view>
+								<view class="tab-dot bg-red"/>
 							</view>
 						</block>
 					</view>
@@ -93,35 +99,36 @@
 			
 			<view class="zaiui-tab-list">
 				<!--商品列表-->
-				<goods-list :list_data="goodsData" @listTap="goodsListTap" :show="goodsTabData.TabCur!=2 && goodsTabData.TabCur!=4?true:false"></goods-list>
+				<goods-list :list_data="goodsData" @listTap="goodsListTap" :show="goodsTabData.TabCur!=2 && goodsTabData.TabCur!=4?true:false"/>
 				
 				<!--直播列表-->
-				<live-list :list_data="liveData" @listTap="liveListTap" :show="goodsTabData.TabCur==2?true:false"></live-list>
+				<live-list :list_data="liveData" @listTap="liveListTap" :show="goodsTabData.TabCur==2?true:false"/>
 				
 				<!--视频列表-->
-				<video-list :list_data="videoData" @listTap="videoListTap" :show="goodsTabData.TabCur==4?true:false"></video-list>
+				<video-list :list_data="videoData" @listTap="videoListTap" :show="goodsTabData.TabCur==4?true:false"/>
 			</view>
 			
 			<!--占位底部距离-->
-			<view class="cu-tabbar-height"></view>
+			<view class="cu-tabbar-height"/>
 		</view>
 		
 		<!--中间内容区域-分类-->
 		<view class="zaiui-view-content" :class="headTab.TabCur!=0?'show':''">
 			
 			<!--宫格分类-->
-			<grid-sort-list :list_data="gridSortData" @listTap="gridSortTap"></grid-sort-list>
+			<grid-sort-list :list_data="gridSortData" @listTap="gridSortTap"/>
 			
 			<!--广告-->
-			<!-- #ifdef H5 -->
+			
+			<!-- #ifndef APP-PLUS -->
 			<view class="margin">
-				<image class="zaiui-ad-img" src="../../../static/images/home/swiper/swiper-1.png" mode="widthFix"></image>
+				<image class="zaiui-ad-img" src="../../../static/images/home/swiper/swiper-1.png" mode="widthFix"/>
 			</view>
 			<!-- #endif -->
 			
 			<!-- #ifdef APP-PLUS -->
 			<view class="margin">
-				<image class="zaiui-ad-img" src="../../static/images/home/swiper/swiper-1.png" mode="widthFix"></image>
+				<image class="zaiui-ad-img" src="../../static/images/home/swiper/swiper-1.png" mode="widthFix"/>
 			</view>
 			<!-- #endif -->
 			
@@ -129,38 +136,46 @@
 			<view class="margin-bottom-sm zaiui-tab-list-title">
 				<view class="flex flex-wrap">
 					<view class="basis-sm text-right">
-						<!-- #ifdef H5 -->
-						<image class="img-aau" src="../../../static/zaiui-img/aau.png" lazy-load mode="widthFix"></image>
+						<!-- #ifndef APP-PLUS -->
+						<image class="img-aau" src="../../../static/zaiui-img/aau.png" lazy-load mode="widthFix"/>
 						<!-- #endif -->
 						
 						<!-- #ifdef APP-PLUS -->
-						<image class="img-aau" src="../../static/zaiui-img/aau.png" lazy-load mode="widthFix"></image>
+						<image class="img-aau" src="../../static/zaiui-img/aau.png" lazy-load mode="widthFix"/>
 						<!-- #endif -->
 					</view>
 					<view class="basis-xs text-center">
 						<text class="text-black text-xl text-bold">为您推荐</text>
 					</view>
 					<view class="basis-sm text-left">
-						<!-- #ifdef H5 -->
-						<image class="img-aau" src="../../../static/zaiui-img/aau.png" lazy-load mode="widthFix"></image>
+						<!-- #ifndef APP-PLUS -->
+						<image class="img-aau" src="../../../static/zaiui-img/aau.png" lazy-load mode="widthFix"/>
 						<!-- #endif -->
 						
 						<!-- #ifdef APP-PLUS -->
-						<image class="img-aau" src="../../static/zaiui-img/aau.png" lazy-load mode="widthFix"></image>
+						<image class="img-aau" src="../../static/zaiui-img/aau.png" lazy-load mode="widthFix"/>
 						<!-- #endif -->
 					</view>
 				</view>
 			</view>
 			
 			<!--商品列表-->
-			<goods-list :list_data="goodsData" @listTap="goodsListTap"></goods-list>
+			<goods-list :list_data="goodsData" @listTap="goodsListTap"/>
 			
 			<!--占位底部距离-->
-			<view class="cu-tabbar-height"></view>
+			<view class="cu-tabbar-height"/>
 		</view>
 		
 		<!--弹出框-->
-		<modal-img :show="modalShow" src="../../static/images/home/sundry/reward.png" @imgTap="imgTap" @closeTap="closeTap"></modal-img>
+		<!-- #ifdef MP -->
+		<modal-img :show="modalShow" src="../../../static/images/home/sundry/reward.png" @imgTap="imgTap" @closeTap="closeTap"/>
+		<!-- #endif -->
+		
+		<!-- #ifdef APP-PLUS || H5 -->
+		<modal-img :show="modalShow" src="../../static/images/home/sundry/reward.png" @imgTap="imgTap" @closeTap="closeTap"/>
+		<!-- #endif -->
+		
+		<view class="bg-red zaiui-reward-btn" @tap="rewardTap">打赏</view>
 		
 	</view>
 </template>
@@ -252,6 +267,9 @@
 			this.gridSortData = _home_data.gridSortData();
 		},
 		methods: {
+			getImgUrl(url) {
+				return _tool.getImgUrl(url);
+			},
 			//页面被滚动
 			setPageScroll(scrollTop) {
 				//console.log(scrollTop);
@@ -335,15 +353,15 @@
 				console.log(e);
 				if(e.index==0) {
 					uni.navigateTo({
-						url: '/pages/home/goods'
+						url: '/pages/goods/goods'
 					});
 				} else if(e.index == 2) {
 					uni.navigateTo({
-						url: '/pages/home/second_hand'
+						url: '/pages/goods/second_hand'
 					});
 				} else if(e.index == 3) {
 					uni.navigateTo({
-						url: '/pages/home/second_terrace'
+						url: '/pages/goods/second_terrace'
 					});
 				} else {
 					
@@ -358,10 +376,15 @@
 			gridSortTap(e) {
 				console.log(e);
 			},
+			rewardTap() {
+				uni.navigateTo({
+					url: "/pages/goods/reward"
+				});
+			},
 			imgTap() {
 				this.modalShow = false;
 				uni.navigateTo({
-					url: "/pages/home/reward"
+					url: "/pages/goods/reward"
 				});
 				console.log('图片被点击');
 			},
@@ -383,8 +406,8 @@
 	}
 </script>
 
-<style lang="less" scoped>
-	@import "../../../zaiui/style/home.less";
+<style lang="scss" scoped>
+	@import "../../../zaiui/style/home.scss";
 	.zaiui-home-box {
 		display: none;
 	}

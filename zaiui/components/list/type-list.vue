@@ -4,7 +4,7 @@
 			<view class="bg-white margin-bottom zaiui-type-list" @tap="listTap(items,indexs)">
 				<view class="cu-list menu-avatar">
 					<view class="cu-item">
-						<view class="cu-avatar round lg" :style="[{backgroundImage:'url('+ items.img +')'}]"></view>
+						<view class="cu-avatar round lg" :style="[{backgroundImage:'url('+ getttImgUrl(items.img) +')'}]"></view>
 						<view class="content">
 							<view class="text-black">
 								<view class="text-cut">{{items.title}}</view>
@@ -22,6 +22,7 @@
 </template>
 
 <script>
+	import _tool from '@/util/tools.js';
 	export default {
 		name: 'type-list',
 		props: {
@@ -33,6 +34,9 @@
 			}
 		},
 		methods: {
+			getttImgUrl(url) {
+				return _tool.getttImgUrl(url);
+			},
 			listTap(data,index) {
 				this.$emit('listTap', {
 					data,
@@ -43,7 +47,7 @@
 	}
 </script>
 
-<style lang="less" scoped>
+<style lang="scss" scoped>
 	.zaiui-type-list-box {
 		.zaiui-type-list {
 			border-radius: 18.18rpx;

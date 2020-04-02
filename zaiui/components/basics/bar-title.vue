@@ -63,7 +63,7 @@
 	}
 </script>
 
-<style lang="less" scoped>
+<style lang="scss" scoped>
 	.zaiui-bar-title-box {
 		.cu-bar {
 			padding-top: var(--status-bar-height);

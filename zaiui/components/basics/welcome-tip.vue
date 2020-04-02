@@ -68,7 +68,7 @@
 	}
 </script>
 
-<style lang="less" scoped>
+<style lang="scss" scoped>
 	.zaiui-welcome-tip {
 		position: relative;
 		width: 100%;

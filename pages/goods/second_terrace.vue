@@ -1,15 +1,18 @@
 <template>
 	<view>
 		<!--标题栏-->
-		<bar-title bgColor='bg-white' backText=''>
+		<bar-title bgColor='bg-white' backText=' '>
 			<block slot="content" v-if="barShow">商品详情</block>
 			<block slot="content" v-else>
 				<text class="text-price text-red text-xxl">3999</text>
 			</block>
+			<!--小程序端不显示-->
+			<!-- #ifndef MP -->
 			<block slot="right">
 				<text class="cuIcon-forward"></text>
 				<text class="cuIcon-more"></text>
 			</block>
+			<!-- #endif -->
 		</bar-title>
 		
 		<!--Tab栏,由于无法获取元素距离顶部，所以，暂时不启用此功能-->
@@ -30,7 +33,13 @@
 		<!--商品简介-->
 		<view class="bg-white padding zaiui-goods-synopsis-view">
 			<view class="user-view">
-				<view class="cu-avatar sm round" style="background-image:url(../../static/images/avatar/1.jpg)"></view>
+				<!-- #ifndef MP-TOUTIAO -->
+				<view class="cu-avatar sm round" style="background-image:url(../../static/images/avatar/1.jpg);"/>
+				<!-- #endif -->
+				
+				<!-- #ifdef MP-TOUTIAO -->
+				<view class="cu-avatar sm round" style="background-image:url(static/images/avatar/1.jpg);"/>
+				<!-- #endif -->
 				<view class="text-black text-name">仔仔</view>
 				<view class="cu-tag text-right-view">
 					<text>今天寄存在平台</text>
@@ -151,7 +160,13 @@
 			</view>
 			<view class="cu-list menu-avatar ">
 				<view class="cu-item">
-					<view class="cu-avatar round" style="background-image:url(../../static/images/avatar/1.jpg);"></view>
+					<!-- #ifndef MP-TOUTIAO -->
+					<view class="cu-avatar round" style="background-image:url(../../static/images/avatar/1.jpg);"/>
+					<!-- #endif -->
+					
+					<!-- #ifdef MP-TOUTIAO -->
+					<view class="cu-avatar round" style="background-image:url(static/images/avatar/1.jpg);"/>
+					<!-- #endif -->
 					<view class="content">
 						<view class="text-black">
 							<view class="text-cut">仔仔</view>
@@ -194,13 +209,14 @@
 					</view>
 				</view>
 			</view>
+			<!-- #ifndef MP-TOUTIAO -->
 			<view class="zaiui-goods-swiper-view">
 				<swiper class="screen-swiper square-dot" indicator-dots circular :autoplay="false">
 					<swiper-item v-for="(item,index) in goodsList.length / 4" :key="index">
 						<view class="grid col-4">
 							<block v-for="(items,indexs) in goodsList" :key="indexs" v-if="setSwiperItem(indexs,index)">
 								<view class="goods-item">
-									<view class="cu-avatar radius xl" :style="[{backgroundImage:'url('+ items.img +')'}]"></view>
+									<view class="cu-avatar radius xl" :style="[{backgroundImage:'url('+ getttImgUrl(items.img) +')'}]"></view>
 									<text class="text-sm text-price-view">￥{{items.price}}</text>
 								</view>
 							</block>
@@ -208,6 +224,7 @@
 					</swiper-item>
 				</swiper>
 			</view>
+			<!-- #endif -->
 		</view>
 		
 		<!--互动-->
@@ -260,7 +277,13 @@
 			<view class="margin-top-sm grid col-2">
 				<view class="grid-item-box">
 					<view class="bg-white item-view">
-						<view class="cu-avatar radius lg" style="background-image:url(../../static/images/home/goods/1.png);"></view>
+						<!-- #ifndef MP-TOUTIAO -->
+						<view class="cu-avatar radius lg" style="background-image:url(../../static/images/home/goods/1.png);"/>
+						<!-- #endif -->
+						
+						<!-- #ifdef MP-TOUTIAO -->
+						<view class="cu-avatar radius lg" style="background-image:url(static/images/home/goods/1.png);"/>
+						<!-- #endif -->
 						<view class="padding-sm zaiui-text-view">
 							<view class="text-cut text-black text-sm">99新 苹果 iPhoneX 256G 银色</view>
 							<view class="text-sm text-gray text-cut tag-view-box">
@@ -280,7 +303,13 @@
 				</view>
 				<view class="grid-item-box">
 					<view class="bg-white item-view">
-						<view class="cu-avatar radius lg" style="background-image:url(../../static/images/home/goods/4.png);"></view>
+						<!-- #ifndef MP-TOUTIAO -->
+						<view class="cu-avatar radius lg" style="background-image:url(../../static/images/home/goods/4.png);"/>
+						<!-- #endif -->
+						
+						<!-- #ifdef MP-TOUTIAO -->
+						<view class="cu-avatar radius lg" style="background-image:url(static/images/home/goods/4.png);"/>
+						<!-- #endif -->
 						<view class="padding-sm zaiui-text-view">
 							<view class="text-cut text-black text-sm">99新 苹果 iPhoneX 256G 银色</view>
 							<view class="text-sm text-gray text-cut tag-view-box">
@@ -299,7 +328,13 @@
 				</view>
 				<view class="grid-item-box">
 					<view class="bg-white item-view">
-						<view class="cu-avatar radius lg" style="background-image:url(../../static/images/home/goods/11.png);"></view>
+						<!-- #ifndef MP-TOUTIAO -->
+						<view class="cu-avatar radius lg" style="background-image:url(../../static/images/home/goods/11.png);"/>
+						<!-- #endif -->
+						
+						<!-- #ifdef MP-TOUTIAO -->
+						<view class="cu-avatar radius lg" style="background-image:url(static/images/home/goods/11.png);"/>
+						<!-- #endif -->
 						<view class="padding-sm zaiui-text-view">
 							<view class="text-cut text-black text-sm">99新 苹果 iPhoneX 256G 银色</view>
 							<view class="text-sm text-gray text-cut tag-view-box">
@@ -319,7 +354,13 @@
 				</view>
 				<view class="grid-item-box">
 					<view class="bg-white item-view">
-						<view class="cu-avatar radius lg" style="background-image:url(../../static/images/home/goods/10.png);"></view>
+						<!-- #ifndef MP-TOUTIAO -->
+						<view class="cu-avatar radius lg" style="background-image:url(../../static/images/home/goods/10.png);"/>
+						<!-- #endif -->
+						
+						<!-- #ifdef MP-TOUTIAO -->
+						<view class="cu-avatar radius lg" style="background-image:url(static/images/home/goods/10.png);"/>
+						<!-- #endif -->
 						<view class="padding-sm zaiui-text-view">
 							<view class="text-cut text-black text-sm">99新 苹果 iPhoneX 256G 银色</view>
 							<view class="text-sm text-gray text-cut tag-view-box">
@@ -403,6 +444,9 @@
 			});
 		},
 		methods: {
+			getttImgUrl(url) {
+				return _tool.getttImgUrl(url);
+			},
 			serviceTap() {
 				this.modalTitle = "服务";
 				this.modalType = 'service';
@@ -480,9 +524,12 @@
 	}
 </script>
 
-<style lang="less">
-	@import "../../static/colorui/main.css";
-	@import "../../static/colorui/icon.css";
-	@import "../../zaiui/style/app.less";
-	@import "../../zaiui/style/second_terrace.less";
+<style lang="scss">
+	/* #ifdef APP-PLUS */
+		@import "../../static/colorui/main.css";
+		@import "../../static/colorui/icon.css";
+		@import "../../zaiui/style/app.scss";
+	/* #endif */
+	
+	@import "../../zaiui/style/second_terrace.scss";
 </style>

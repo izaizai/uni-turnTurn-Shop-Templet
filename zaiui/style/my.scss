@@ -5,6 +5,9 @@
 		padding-top: 0;
 		padding-bottom: 72.72rpx;
 		.zaiui-user-info-box {
+			/* #ifdef MP */
+			padding-top: calc(var(--status-bar-height) + 50rpx);
+			/* #endif */
 			.cu-list.menu-avatar>.cu-item {
 				background-color: inherit;
 				.content {

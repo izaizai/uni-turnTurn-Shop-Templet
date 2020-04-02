@@ -1,6 +1,7 @@
 .zaiui-cart-list-view {
 	.zaiui-checkbox-title-view {
 		position: relative;
+		line-height: 1.6;
 		.zaiui-checked {
 			position: absolute;
 			top: 31.81rpx;
@@ -8,7 +9,7 @@
 		}
 		.shop-title {
 			position: relative;
-		    padding-left: 54.54rpx;
+		    padding-left: 63.63rpx;
 		}
 	}
 	.goods-list-item-view {
@@ -89,8 +90,13 @@
 	}
 }
 
+.zaiui-right-tag {
+	position: fixed;
+	right: 27.27rpx;
+}
+
 .zaiui-footer-fixed {
-	box-shadow: 0 -2rpx 9.09rpx 0 #96949433;
+	box-shadow: 0 -2rpx 9.09rpx 0 #ececec;
 	z-index: 99999;
 	.cu-bar {
 		width: 100%;

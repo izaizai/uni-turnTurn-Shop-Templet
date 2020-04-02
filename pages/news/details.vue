@@ -1,11 +1,14 @@
 <template>
 	<view>
 		<!--标题栏-->
-		<bar-title bgColor="bg-white" isBack backText=''>
+		<bar-title bgColor="bg-white" isBack backText=' '>
 			<block slot="content">小资生活神器</block>
+			<!--小程序端不显示-->
+			<!-- #ifndef MP -->
 			<block slot="right">
 				<text class="cuIcon-forward"></text>
 			</block>
+			<!-- #endif -->
 		</bar-title>
 		
 		<!--文章标题-->
@@ -64,7 +67,13 @@
 			<view class="zaiui-view-box">
 				<view class="flex flex-wrap">
 					<view class="basis-1">
-						<view class="cu-avatar round" style="background-image:url(../../static/images/avatar/1.jpg)"></view>
+						<!-- #ifndef MP-TOUTIAO -->
+						<view class="cu-avatar round" style="background-image:url(../../static/images/avatar/1.jpg)"/>
+						<!-- #endif -->
+						
+						<!-- #ifdef MP-TOUTIAO -->
+						<view class="cu-avatar round" style="background-image:url(static/images/avatar/1.jpg)"/>
+						<!-- #endif -->
 					</view>
 					<view class="basis-9">
 						<view class="text-black">仔仔</view>
@@ -85,7 +94,13 @@
 			<view class="zaiui-view-box">
 				<view class="flex flex-wrap">
 					<view class="basis-1">
-						<view class="cu-avatar round" style="background-image:url(../../static/images/avatar/2.jpg)"></view>
+						<!-- #ifndef MP-TOUTIAO -->
+						<view class="cu-avatar round" style="background-image:url(../../static/images/avatar/2.jpg)"/>
+						<!-- #endif -->
+						
+						<!-- #ifdef MP-TOUTIAO -->
+						<view class="cu-avatar round" style="background-image:url(static/images/avatar/2.jpg)"/>
+						<!-- #endif -->
 					</view>
 					<view class="basis-9">
 						<view class="text-black">仔仔</view>
@@ -106,7 +121,13 @@
 			<view class="zaiui-view-box">
 				<view class="flex flex-wrap">
 					<view class="basis-1">
-						<view class="cu-avatar round" style="background-image:url(../../static/images/avatar/3.jpg)"></view>
+						<!-- #ifndef MP-TOUTIAO -->
+						<view class="cu-avatar round" style="background-image:url(../../static/images/avatar/3.jpg)"/>
+						<!-- #endif -->
+						
+						<!-- #ifdef MP-TOUTIAO -->
+						<view class="cu-avatar round" style="background-image:url(static/images/avatar/3.jpg)"/>
+						<!-- #endif -->
 					</view>
 					<view class="basis-9">
 						<view class="text-black">仔仔</view>
@@ -165,10 +186,12 @@
 </script>
 
 
-<style lang="less">
-	@import "../../static/colorui/main.css";
-	@import "../../static/colorui/icon.css";
-	@import "../../zaiui/style/app.less";
+<style lang="scss">
+	/* #ifdef APP-PLUS */
+		@import "../../static/colorui/main.css";
+		@import "../../static/colorui/icon.css";
+		@import "../../zaiui/style/app.scss";
+	/* #endif */
 	page {
 		background: #FFFFFF;
 	}

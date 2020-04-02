@@ -3,7 +3,7 @@
 		<scroll-view class="scroll-view" scroll-x>
 			<block v-for="(item,index) in list_data" :key="item.id">
 				<view :id="['topicGrid' + (index + 1 )]" class="scroll-item" @tap="listTap(items,index)">
-					<view class="cu-avatar radius" :style="[{backgroundImage:'url('+ item.img +')'}]"></view>
+					<view class="cu-avatar radius" :style="[{backgroundImage:'url('+ getttImgUrl(item.img) +')'}]"></view>
 					<view class="bg-shade"></view>
 					<view class="text-sm text">{{item.title}}</view>
 				</view>
@@ -13,6 +13,7 @@
 </template>
 
 <script>
+	import _tool from '@/util/tools.js';
 	export default {
 		name: 'topic-grid-list',
 		props: {
@@ -24,6 +25,9 @@
 			}
 		},
 		methods: {
+			getttImgUrl(url) {
+				return _tool.getttImgUrl(url);
+			},
 			listTap(data,index) {
 				this.$emit('listTap', {
 					data,
@@ -34,7 +38,7 @@
 	}
 </script>
 
-<style lang="less" scoped>
+<style lang="scss" scoped>
 	.zaiui-topic-grid-box {
 		position: relative;
 		width: 100%;

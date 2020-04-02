@@ -8,7 +8,7 @@
 
 由于图片太大太多，懒得压缩，项目演示图查看地址: https://www.yuque.com/itianc/ui/artboards/123285
 
-目前仅适配了APP端和H5端，小程序端未适配，可自行适配，后续是否适配小程序端，看情况。
+目前适配了APP端、H5端、微信小程序、百度小程序、QQ小程序、头条小程序，支付宝有报错，还未处理。
 
 微信小程序端，有原生开发的商城模板，地址：https://github.com/itianc/WeChat-ColorUI-shop-templet
 
@@ -65,3 +65,9 @@
 ****
 
 欢迎大家下载使用。
+
+---
+
+赞助：
+
+<img src="https://cdn.nlark.com/yuque/0/2020/png/285274/1585816251127-assets/web-upload/10f2801f-6083-4c03-858d-5dc84634cbc3.png" title="" alt="" width="236"> <img title="" src="https://cdn.nlark.com/yuque/0/2020/png/285274/1585816251205-assets/web-upload/787365c3-1e5c-4be6-8acd-f4d6c1c4f874.png" alt="" width="246">

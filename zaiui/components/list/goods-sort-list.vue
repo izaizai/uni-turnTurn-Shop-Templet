@@ -3,7 +3,7 @@
 		<view class="cu-list menu-avatar">
 			<block v-for="(item,index) in list_data" :key="index">
 				<view class="cu-item" @tap="listTap(item,index)">
-					<view class="cu-avatar radius lg" :style="[{backgroundImage:'url('+ item.img +')'}]"></view>
+					<view class="cu-avatar radius lg" :style="[{backgroundImage:'url('+ getttImgUrl(item.img) +')'}]"></view>
 					<view class="content">
 						<view class="text-black text-cut">
 							<text class="cu-tag bg-red radius sm" v-if="item.autarky">自营</text>
@@ -35,6 +35,7 @@
 </template>
 
 <script>
+	import _tool from '@/util/tools.js';
 	export default {
 		name: 'goods-sort-list',
 		props: {
@@ -50,6 +51,9 @@
 			}
 		},
 		methods: {
+			getttImgUrl(url) {
+				return _tool.getttImgUrl(url);
+			},
 			listTap(data,index) {
 				this.$emit('listTap', {
 					data,
@@ -60,7 +64,7 @@
 	}
 </script>
 
-<style lang="less" scoped>
+<style lang="scss" scoped>
 	.zaiui-goods-list-box {
 		display: none;
 		.cu-list.menu-avatar > .cu-item {

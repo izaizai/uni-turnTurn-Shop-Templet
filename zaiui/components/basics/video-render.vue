@@ -75,7 +75,7 @@
 	}
 </script>
 
-<style lang="less" scoped>
+<style lang="scss" scoped>
 	.zaiui-video-h5-view-box {
 		position: relative;
 		width: 100%;

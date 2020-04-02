@@ -1,10 +1,11 @@
-/*
-  uni-turnTurn-Shop-Templet  v1.0 | by 仔仔 2020-02-20 20:20:20
-  仅供学习交流，如作它用所承受的法律责任一概与作者无关 
-*/
-
+//-------全局 CSS 样式-------
+//uni-turnTurn-Shop-Templet  v1.0 | by 仔仔 806606688@qq.com 2020-02-20 20:20:20
+//仅供学习交流，如作它用所承受的法律责任一概与作者无关 
 page, .bg-page {
 	background: #FAFAFA;
+}
+.zaiui-small-routine-title {
+	padding: 18.18rpx 0;
 }
 .zaiui-goods-swiper-view {
 	swiper.screen-swiper .uni-swiper-dot {
@@ -16,8 +17,8 @@ page, .bg-page {
 }
 .zaiui-footer-fixed {
 	position: fixed;
+	z-index: 999999;
 	width: 100%;
-	z-index: 9;
 	bottom: 0;
 	left: 0;
 }
@@ -37,7 +38,6 @@ page, .bg-page {
 		right: 0;
 		width: 40rpx;
 		margin: auto;
-		//background: #fff;
 	}
 }
 .nav.z .cu-item.nf.select {
@@ -77,10 +77,10 @@ page, .bg-page {
 		line-height: 47rpx;
 	}
 	.v-icon {
-	    position: absolute;
-	    width: 20rpx;
-	    bottom: -4rpx;
-	    left: 33rpx;
+		position: absolute;
+		width: 20rpx;
+		bottom: -4rpx;
+		left: 33rpx;
 	}
 }
 
@@ -102,40 +102,24 @@ page, .bg-page {
 	text-decoration:line-through;
 }
 
-
-/* #ifndef MP-ALIPAY */
-radio.sm::before,
-checkbox.sm::before {
-	top: 50%;
-	z-index: 9;
-	right: 7.27rpx;
-	content: "\e645";
-	position: absolute;
-	font-size: 21.81rpx;
-	pointer-events: none;
-	font-family: "cuIcon";
-	margin-top: -14.54rpx;
-	line-height: 29.09rpx;
-	transform: scale(1, 1);
-	color: #ffffff !important;
-	transition: all 0.3s ease-in-out 0s;
-}
-radio.sm .wx-radio-input,
-checkbox.sm .wx-checkbox-input,
-radio.sm .uni-radio-input,
-checkbox.sm .uni-checkbox-input {
-	margin: 0;
-	width: 32.72rpx;
-	height: 32.72rpx;
-}
-checkbox.round.sm .wx-checkbox-input,
-checkbox.round.sm .uni-checkbox-input {
-	border-radius: 100upx;
-}
-/* #endif */
-
 .solid-line {
 	width: 100%;
 	height: 2rpx;
 	background: #f9f9f9;
+}
+.cu-modal {
+	z-index: 9999999;
+}
+
+.zaiui-reward-btn {
+	position: fixed;
+    right: 18.18rpx;
+    bottom: 181.81rpx;
+    width: 90.9rpx;
+    height: 90.9rpx;
+    border-radius: 654.54rpx;
+    text-align: center;
+    line-height: 90.9rpx;
+    box-shadow: 0 0 25.45rpx #cecece;
+    z-index: 99999;	
 }

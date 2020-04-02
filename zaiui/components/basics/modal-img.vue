@@ -31,7 +31,7 @@
 	}
 </script>
 
-<style lang="less" scoped>
+<style lang="scss" scoped>
 	.zaiui-modal-box {
 	    position: fixed;
 		opacity: 0;

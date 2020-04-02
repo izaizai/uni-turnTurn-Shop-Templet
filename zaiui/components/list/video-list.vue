@@ -5,7 +5,7 @@
 				<block v-for="(item,index) in list_data" :key="index" v-if="index%2==0">
 					<view class="margin-bottom-sm img-itme" @tap="listTap(item,index)">
 						<!--背景图-->
-						<image class="cover-img" :src="item.cover_img" lazy-load mode="widthFix"></image>
+						<image class="cover-img" :src="getImgUrl(item.cover_img)" lazy-load mode="widthFix"></image>
 						
 						<!--标题-->
 						<view class="text-cut video-title" v-if="item.title">{{item.title}}</view>
@@ -14,7 +14,7 @@
 						<view class="video-user-info-box" v-if="item.name">
 							<view class="user-box">
 								<!--头像-->
-								<image :src="item.avatar" mode="aspectFill" lazy-load class="cu-avatar sm round" v-if="item.avatar"></image>
+								<image :src="getImgUrl(item.avatar)" mode="aspectFill" lazy-load class="cu-avatar sm round" v-if="item.avatar"></image>
 								<!--名称-->
 								<view class="text-cut text-sm user-name">{{item.name}}</view>
 								<!--点赞-->
@@ -31,7 +31,7 @@
 				<block v-for="(item,index) in list_data" :key="index" v-if="index%2!=0">
 					<view class="margin-bottom-sm img-itme" @tap="listTap(item,index)">
 						<!--背景图-->
-						<image class="cover-img" :src="item.cover_img" lazy-load mode="widthFix"></image>
+						<image class="cover-img" :src="getImgUrl(item.cover_img)" lazy-load mode="widthFix"></image>
 						
 						<!--标题-->
 						<view class="text-cut video-title" v-if="item.title">{{item.title}}</view>
@@ -40,7 +40,7 @@
 						<view class="video-user-info-box" v-if="item.name">
 							<view class="user-box">
 								<!--头像-->
-								<image :src="item.avatar" mode="aspectFill" lazy-load class="cu-avatar sm round" v-if="item.avatar"></image>
+								<image :src="getImgUrl(item.avatar)" mode="aspectFill" lazy-load class="cu-avatar sm round" v-if="item.avatar"></image>
 								<!--名称-->
 								<view class="text-cut text-sm user-name">{{item.name}}</view>
 								<!--点赞-->
@@ -58,6 +58,7 @@
 </template>
 
 <script>
+	import _tool from '@/util/tools.js';
 	export default {
 		name: 'video-list',
 		props: {
@@ -73,6 +74,9 @@
 			}
 		},
 		methods: {
+			getImgUrl(url) {
+				return _tool.getImgUrl(url);
+			},
 			listTap(data,index) {
 				this.$emit('listTap', {
 					data,
@@ -83,7 +87,7 @@
 	}
 </script>
 
-<style lang="less" scoped>
+<style lang="scss" scoped>
 	.zaiui-video-list-box {
 		position: relative;
 		width: 100%;

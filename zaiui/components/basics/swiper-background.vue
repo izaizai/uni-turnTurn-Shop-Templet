@@ -1,13 +1,14 @@
 <template>
-	<view class="zaiui-swiper-background-box" :class="`${show?'show':''} ${welcome?'welcome':''}`">
+	<view class="zaiui-swiper-background-box" :class="[show?'show':'',welcome?'welcome':'']">
 		<block v-for="(item,index) in list_data" :key="index">
-			<view class="swiper-background" :style="[{backgroundImage:'url('+ item.background +')'}]" 
+			<view class="swiper-background" :style="[{backgroundImage:'url('+ getttImgUrl(item.background) +')'}]"
 			:class="index == indexs?'show':''"></view>
 		</block>
 	</view>
 </template>
 
 <script>
+	import _tool from '@/util/tools.js';
 	export default {
 		name: 'swiper-background',
 		props: {
@@ -29,11 +30,16 @@
 				type: Boolean,
 				default: false
 			}
+		},
+		methods: {
+			getttImgUrl(url) {
+				return _tool.getttImgUrl(url);
+			},
 		}
 	}
 </script>
 
-<style lang="less" scoped>
+<style lang="scss" scoped>
 	.zaiui-swiper-background-box {
 		position: absolute;
 		height: 348rpx;

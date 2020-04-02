@@ -2,9 +2,12 @@
 	<view>
 		<!--标题栏-->
 		<bar-search-title bgColor="bg-white" content="苹果8p" @contentTap="searchTap">
+			<!--小程序端不显示-->
+			<!-- #ifndef MP -->
 			<block slot="right">
 				<text class="cuIcon-service"></text>
 			</block>
+			<!-- #endif -->
 		</bar-search-title>
 		
 		<!--轮播图-->
@@ -78,7 +81,7 @@
 					<block v-for="(items,indexs) in goodsSortListData" :key="indexs">
 						<view :id="['scroll' + (indexs + 1 )]" class="recommend-scroll-item">
 							<view class="goods-img-view">
-								<view class="cu-avatar xl radius" :style="[{backgroundImage:'url('+ items.img +')'}]"></view>
+								<view class="cu-avatar xl radius" :style="[{backgroundImage:'url('+ getttImgUrl(items.img) +')'}]"></view>
 								<text class="cu-tag radius sm bg-gradual-pink">直降200</text>
 							</view>
 							<view class="text-cut-2 text-sm text-black text-bold margin-tb-sm">{{items.title}}</view>
@@ -105,11 +108,23 @@
 						</view>
 						<view class="grid col-2 margin-top-sm">
 							<view class="goods-item">
-								<view class="cu-avatar xl radius" style="background-image:url(../../static/images/home/goods/4.png);"></view>
+								<!-- #ifndef MP-TOUTIAO -->
+								<view class="cu-avatar xl radius" style="background-image:url(../../static/images/home/goods/4.png);"/>
+								<!-- #endif -->
+								
+								<!-- #ifdef MP-TOUTIAO -->
+								<view class="cu-avatar xl radius" style="background-image:url(static/images/home/goods/4.png);"/>
+								<!-- #endif -->
 								<text class="text-goods-title">iPhoneX</text>
 							</view>
 							<view class="goods-item">
-								<view class="cu-avatar xl radius" style="background-image:url(../../static/images/home/goods/1.png);"></view>
+								<!-- #ifndef MP-TOUTIAO -->
+								<view class="cu-avatar xl radius" style="background-image:url(../../static/images/home/goods/1.png);"/>
+								<!-- #endif -->
+								
+								<!-- #ifdef MP-TOUTIAO -->
+								<view class="cu-avatar xl radius" style="background-image:url(static/images/home/goods/1.png);"/>
+								<!-- #endif -->
 								<text class="text-goods-title">iPhone7</text>
 							</view>
 						</view>
@@ -121,7 +136,13 @@
 						</view>
 						<view class="margin-top-sm zaiui-list-2-view">
 							<view class="goods-img-view">
-								<view class="cu-avatar xl radius" style="background-image:url(../../static/images/home/goods/5.png);"></view>
+								<!-- #ifndef MP-TOUTIAO -->
+								<view class="cu-avatar xl radius" style="background-image:url(../../static/images/home/goods/5.png);"/>
+								<!-- #endif -->
+								
+								<!-- #ifdef MP-TOUTIAO -->
+								<view class="cu-avatar xl radius" style="background-image:url(static/images/home/goods/5.png);"/>
+								<!-- #endif -->
 								<view class="zaiui-text-view">
 									<view class="text-price text-red text-lg">2999</view>
 									<view class="text-gray text-sm">比回收价高760</view>
@@ -141,10 +162,22 @@
 						</view>
 						<view class="grid col-2 margin-top-sm">
 							<view class="text-left goods-item">
-								<view class="cu-avatar xl radius" style="background-image:url(../../static/images/home/goods/6.png);"></view>
+								<!-- #ifndef MP-TOUTIAO -->
+								<view class="cu-avatar xl radius" style="background-image:url(../../static/images/home/goods/6.png);"/>
+								<!-- #endif -->
+								
+								<!-- #ifdef MP-TOUTIAO -->
+								<view class="cu-avatar xl radius" style="background-image:url(static/images/home/goods/6.png);"/>
+								<!-- #endif -->
 							</view>
 							<view class="text-left goods-item">
-								<view class="cu-avatar xl radius" style="background-image:url(../../static/images/home/goods/10.png);"></view>
+								<!-- #ifndef MP-TOUTIAO -->
+								<view class="cu-avatar xl radius" style="background-image:url(../../static/images/home/goods/10.png);"/>
+								<!-- #endif -->
+								
+								<!-- #ifdef MP-TOUTIAO -->
+								<view class="cu-avatar xl radius" style="background-image:url(static/images/home/goods/10.png);"/>
+								<!-- #endif -->
 							</view>
 						</view>
 					</view>
@@ -155,10 +188,22 @@
 						</view>
 						<view class="grid col-2 margin-top-sm">
 							<view class="text-left goods-item">
-								<view class="cu-avatar xl radius" style="background-image:url(../../static/images/home/goods/11.png);"></view>
+								<!-- #ifndef MP-TOUTIAO -->
+								<view class="cu-avatar xl radius" style="background-image:url(../../static/images/home/goods/11.png);"/>
+								<!-- #endif -->
+								
+								<!-- #ifdef MP-TOUTIAO -->
+								<view class="cu-avatar xl radius" style="background-image:url(static/images/home/goods/11.png);"/>
+								<!-- #endif -->
 							</view>
 							<view class="text-left goods-item">
-								<view class="cu-avatar xl radius" style="background-image:url(../../static/images/home/goods/9.png);"></view>
+								<!-- #ifndef MP-TOUTIAO -->
+								<view class="cu-avatar xl radius" style="background-image:url(../../static/images/home/goods/9.png);"/>
+								<!-- #endif -->
+								
+								<!-- #ifdef MP-TOUTIAO -->
+								<view class="cu-avatar xl radius" style="background-image:url(static/images/home/goods/9.png);"/>
+								<!-- #endif -->
 							</view>
 						</view>
 					</view>
@@ -221,6 +266,9 @@
 			});
 		},
 		methods: {
+			getttImgUrl(url) {
+				return _tool.getttImgUrl(url);
+			},
 			swiperChange(e) {
 				this.swiperIndex = e.detail.current;
 			},
@@ -239,10 +287,11 @@
 	}
 </script>
 
-<style lang="less">
-	@import "../../static/colorui/main.css";
-	@import "../../static/colorui/icon.css";
-	@import "../../zaiui/style/app.less";
-	@import "../../zaiui/style/sort_list.less";
-	
+<style lang="scss">
+	/* #ifdef APP-PLUS */
+		@import "../../static/colorui/main.css";
+		@import "../../static/colorui/icon.css";
+		@import "../../zaiui/style/app.scss";
+	/* #endif */
+	@import "../../zaiui/style/sort_list.scss";
 </style>

@@ -5,7 +5,7 @@
 				<!--用户信息-->
 				<view class="cu-list menu-avatar">
 					<view class="cu-item">
-						<view class="cu-avatar round" :style="[{backgroundImage:'url('+ item.avatar +')'}]" @tap="listTap('userTap',item,index)"></view>
+						<view class="cu-avatar round" :style="[{backgroundImage:'url('+ getttImgUrl(item.avatar) +')'}]" @tap="listTap('userTap',item,index)"></view>
 						<view class="content" @tap="listTap('userTap',item,index)">
 							<view class="text-black">
 								<view class="text-cut">{{item.username}}</view>
@@ -38,7 +38,7 @@
 					</text>
 				</view>
 				
-				<!-- #ifdef H5 -->
+				<!-- #ifndef APP-PLUS -->
 				<view class="zaiui-video-box" v-if="item.video">
 					<video class="video-view" :src="item.video" @error="videoErrorCallback"></video>
 				</view>
@@ -53,14 +53,14 @@
 				<view class="zaiui-img-grid-col" v-if="item.img.length > 0">
 					<!--单图-->
 					<view class="one-img" v-if="item.img.length == 1" @tap="imgTap(item.img[0],item.img,0)">
-						<view class="img-grid" :style="[{backgroundImage:'url('+ item.img[0] +')'}]"></view>
+						<view class="img-grid" :style="[{backgroundImage:'url('+ getttImgUrl(item.img[0]) +')'}]"></view>
 					</view>
 					
 					<!--两图-->
 					<view class="grid col-2" v-if="item.img.length == 2">
 						<block v-for="(items,indexs) in item.img" :key="indexs">
 							<view class="img-grid-view" @tap="imgTap(items,items,indexs)">
-								<view class="img-grid" :style="[{backgroundImage:'url('+ items +')'}]"></view>
+								<view class="img-grid" :style="[{backgroundImage:'url('+ getttImgUrl(items) +')'}]"></view>
 							</view>
 						</block>
 					</view>
@@ -69,7 +69,7 @@
 					<view class="grid col-3" v-if="item.img.length > 2">
 						<block v-for="(items,indexs) in item.img" :key="indexs" v-if="indexs < 9">
 							<view class="img-grid-view" @tap="imgTap(items,items,indexs)">
-								<view class="img-grid" :style="[{backgroundImage:'url('+ items +')'}]"></view>
+								<view class="img-grid" :style="[{backgroundImage:'url('+ getttImgUrl(items) +')'}]"></view>
 							</view>
 						</block>
 					</view>
@@ -105,7 +105,7 @@
 
 <script>
 	import videoRender from '@/zaiui/components/basics/video-render';
-	
+	import _tool from '@/util/tools.js';
 	export default {
 		name: 'trends-list',
 		components: {
@@ -132,6 +132,9 @@
 			}
 		},
 		methods: {
+			getttImgUrl(url) {
+				return _tool.getttImgUrl(url);
+			},
 			listTap(tap,data,index) {
 				this.$emit(tap, {
 					data,
@@ -182,7 +185,7 @@
 	}
 </script>
 
-<style lang="less" scoped>
+<style lang="scss" scoped>
 	.zaiui-trends {
 		border-radius: 18.18rpx;
 		.cu-list {

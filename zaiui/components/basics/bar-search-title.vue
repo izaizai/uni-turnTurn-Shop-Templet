@@ -58,14 +58,22 @@
 	}
 </script>
 
-<style lang="less" scoped>
+<style lang="scss" scoped>
 	.zaiui-bar-search-title-box {
 		.cu-bar {
 			padding-top: var(--status-bar-height);
 			min-height: calc(var(--status-bar-height) + 101rpx);
 			.content {
 				top: var(--status-bar-height);
+				/* #ifndef MP */
 				width: calc(100% - 181.81rpx);
+				/* #endif */
+				
+				/* #ifdef MP */
+				left: -140rpx;
+				width: calc(100% - 300rpx);
+				/* #endif */
+				
 				.search-form {
 					display: inherit;
 					flex: inherit;

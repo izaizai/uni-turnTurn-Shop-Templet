@@ -1,7 +1,7 @@
 <template>
 	<view>
 		<!--标题栏-->
-		<bar-title bgColor='bg-white' backText=''>
+		<bar-title bgColor='bg-white' backText=' '>
 			<block slot="content">确认订单</block>
 		</bar-title>
 		
@@ -35,7 +35,13 @@
 		<view class="margin-tb-sm zaiui-view-box">
 			<view class="bg-white zaiui-card goods-view">
 				<view class="margin-bottom-sm title-view">
-					<view class="cu-avatar sm round" style="background-image:url(../../static/images/avatar/1.jpg)"></view>
+					<!-- #ifndef MP-TOUTIAO -->
+					<view class="cu-avatar sm round" style="background-image:url(../../static/images/avatar/1.jpg)"/>
+					<!-- #endif -->
+					
+					<!-- #ifdef MP-TOUTIAO -->
+					<view class="cu-avatar sm round" style="background-image:url(static/images/avatar/1.jpg)"/>
+					<!-- #endif -->
 					<view class="title-box">
 						<text class="text-black margin-right-xs">仔仔自营</text>
 						<text class="bg-red cu-tag sm radius">自营</text>
@@ -43,7 +49,7 @@
 				</view>
 				
 				<view class="goods-info-view-box solid-bottom">
-					<view class="cu-avatar radius lg" :style="[{backgroundImage:'url('+ goods_img +')'}]"></view>
+					<view class="cu-avatar radius lg" :style="[{backgroundImage:'url('+ getttImgUrl(goods_img) +')'}]"></view>
 					<view class="goods-info-view">
 						<view class="text-cut text-black">商品名称 99新 苹果 iPhoneX 256G 银色</view>
 						<view class="text-sm text-gray">比加入时降￥50元</view>
@@ -188,7 +194,7 @@
 					<text>合计：￥9999.00</text>
 				</view>
 				<view class="btn-view">
-					<button class="cu-btn radius bg-red">确认下单</button>
+					<button class="cu-btn radius bg-red" @tap="payTap">确认下单</button>
 				</view>
 			</view>
 		</view>
@@ -198,8 +204,6 @@
 
 <script>
 	import barTitle from '@/zaiui/components/basics/bar-title';
-	
-	//import _my_cart_data from '@/zaiui/data/my_cart.js';	//虚拟数据
 	import _tool from '@/util/tools.js';	//工具函数
 	export default {
 		components: {
@@ -211,7 +215,7 @@
 			}
 		},
 		onLoad() {
-			//this.goodsList = _my_cart_data.goodsListData();
+			
 		},
 		onReady() {
 			_tool.setBarColor(true);
@@ -221,15 +225,23 @@
 			});
 		},
 		methods: {
-			
+			getttImgUrl(url) {
+				return _tool.getttImgUrl(url);
+			},
+			payTap() {
+				uni.navigateTo({
+					url: "/pages/goods/pay"
+				});
+			}
 		}
 	}
 </script>
 
-<style lang="less">
-	@import "../../static/colorui/main.css";
-	@import "../../static/colorui/icon.css";
-	@import "../../zaiui/style/app.less";
-	@import "../../zaiui/style/settlement.less";
-	
+<style lang="scss">
+	/* #ifdef APP-PLUS */
+		@import "../../static/colorui/main.css";
+		@import "../../static/colorui/icon.css";
+		@import "../../zaiui/style/app.scss";
+	/* #endif */
+	@import "../../zaiui/style/settlement.scss";
 </style>
