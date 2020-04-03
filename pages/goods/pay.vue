@@ -36,7 +36,7 @@
 						<view class="text-gray text-sm">亿万用户的选择，更快更安全</view>
 					</view>
 					<view class="action">
-						<radio class="red" :class="radio=='wechat'?'checked':''" :checked="radio=='wechat'?true:false" value="wechat"/>
+						<radio class="red zaiui-radio" :class="radio=='wechat'?'checked':''" :checked="radio=='wechat'?true:false" value="wechat"/>
 					</view>
 				</view>
 				
@@ -56,7 +56,7 @@
 						<view class="text-gray text-sm">数亿用户都在用，安全可托付</view>
 					</view>
 					<view class="action">
-						<radio class="red" :class="radio=='alipay'?'checked':''" :checked="radio=='alipay'?true:false" value="alipay"/>
+						<radio class="red zaiui-radio" :class="radio=='alipay'?'checked':''" :checked="radio=='alipay'?true:false" value="alipay"/>
 					</view>
 				</view>
 			</radio-group>

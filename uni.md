@@ -47,8 +47,12 @@
   - 通知助手
   
   - 文章详情
+  
+  - 聊天界面
 
 - 个人中心
+  
+  - 我的足迹
 
 - 商品详情
   
@@ -57,6 +61,8 @@
   - 购物车
   
   - 确认订单
+  
+  - 立即支付
 
 ****
 
@@ -64,10 +70,6 @@
 
 ****
 
-欢迎大家下载使用。
-
----
-
-赞助：
+打赏：
 
 <img src="https://cdn.nlark.com/yuque/0/2020/png/285274/1585816251127-assets/web-upload/10f2801f-6083-4c03-858d-5dc84634cbc3.png" title="" alt="" width="236"> <img title="" src="https://cdn.nlark.com/yuque/0/2020/png/285274/1585816251205-assets/web-upload/787365c3-1e5c-4be6-8acd-f4d6c1c4f874.png" alt="" width="246">

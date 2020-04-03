@@ -110,6 +110,7 @@
 		position: relative;
 		.zaiui-checked {
 		    position: absolute;
+			transform: scale(0.7);
 		}
 		.text-black-view {
 			padding-left: 63.63rpx;
@@ -218,6 +219,7 @@
 	padding: 18.18rpx 27.27rpx;
 	.zaiui-checked {
 		position: absolute;
+		transform: scale(0.7);
 	}
 	.text-black-view {
 		padding-left: 63.63rpx;

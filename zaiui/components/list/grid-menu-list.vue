@@ -109,6 +109,9 @@
 				.cu-list.grid>.cu-item text {
 					color: #333333;
 				}
+				.cu-list.grid>.cu-item .cu-tag {
+				    transform: scale(0.8);
+				}
 			}
 		}
 		.zaiui-scroll-h-view {

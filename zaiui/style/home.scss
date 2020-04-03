@@ -110,9 +110,10 @@
 	
 	.cu-tag.z {
 		top: 0px;
-		right: -28rpx;
+		right: -32.72rpx;
 		font-size: 20rpx;
 		padding: 19rpx 6rpx;
+		transform: scale(0.8);
 	}
 }
 .zaiui-ad-img {
@@ -132,5 +133,22 @@
 		.img-aau {
 			margin-left: 14.54rpx;
 		}
+	}
+}
+
+.zaiui-add-btn-view-box {
+	position: fixed;
+	z-index: 999999;
+	bottom: 181.81rpx;
+	right: 27.27rpx;
+	.cu-btn {
+		margin: auto;
+		width: 81.81rpx;
+		height: 81.81rpx;
+		font-weight: 800;
+		border-radius: 50%;
+		font-size: 36.36rpx;
+		border: 9.09rpx solid #fff;
+		box-shadow: 0 0 14.54rpx 7.27rpx #d0d0d0;
 	}
 }

@@ -28,7 +28,13 @@
 				<text class="text-lg text-bold text-black">腾讯战略投资</text>
 				<text class="text-sm margin-left-sm">严格质检消毒，4重保障放心购买</text>
 			</view>
-			<view class="img" style="background-image:url(../../static/images/home/sundry/16.png)"></view>
+			<!-- #ifndef MP-TOUTIAO -->
+			<view class="img" style="background-image:url(../../static/images/home/sundry/16.png)"/>
+			<!-- #endif -->
+			
+			<!-- #ifdef MP-TOUTIAO -->
+			<view class="img" style="background-image:url(static/images/home/sundry/16.png)"/>
+			<!-- #endif -->
 		</view>
 		
 		<!--圆图标导航-->

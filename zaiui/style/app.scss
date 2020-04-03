@@ -123,3 +123,15 @@ page, .bg-page {
     box-shadow: 0 0 25.45rpx #cecece;
     z-index: 99999;	
 }
+
+.zaiui-bar-title-box .cu-bar .content {
+	.cu-tag {
+		position: relative;
+		top: -2.72rpx;
+		padding: 0 5.45rpx;
+		text {
+			position: relative;
+			top: 0;
+		}
+	}
+}

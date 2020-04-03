@@ -9,11 +9,6 @@
 			<!-- #endif -->
 		</bar-title>
 		
-		<!--小程序端显示-->
-		<!-- #ifdef MP -->
-		<text class="cu-tag radius zaiui-right-tag">编辑</text>
-		<!-- #endif -->
-		
 		<view class="bg-white zaiui-cart-list-view">
 			<checkbox-group class="block" @change="CheckboxChange">
 				<block v-for="(item,index) in goodsList" :key="item.id">
@@ -71,6 +66,14 @@
 			</view>
 		</view>
 		
+		<!--小程序端显示-->
+		<!-- #ifdef MP -->
+			<!--编辑-->
+			<view class="zaiui-add-btn-view-box" @tap="barEditTap">
+				<button class="cu-btn cuIcon-check bg-red" v-if="goods_checked"></button>
+				<button class="cu-btn cuIcon-write bg-red" v-else></button>
+			</view>
+		<!-- #endif -->
 	</view>
 </template>
 
@@ -85,7 +88,7 @@
 		},
 		data() {
 			return {
-				goodsList: [], checkAll: true,
+				goodsList: [], checkAll: true, goods_checked: false,
 			}
 		},
 		onLoad() {
@@ -132,7 +135,11 @@
 				}
 			},
 			barEditTap() {
-				console.log('11');
+				if (this.goods_checked) {
+					this.goods_checked = false;
+				} else {
+					this.goods_checked = true;
+				}
 			},
 			tapBtn() {
 				uni.navigateTo({

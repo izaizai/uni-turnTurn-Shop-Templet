@@ -37,11 +37,33 @@
 				margin-top: 18.18rpx;
 			    width: calc(100% - 90.9rpx - 54.54rpx - 18.18rpx);
 			    line-height: 1.7em;	
+				.cu-tag {
+					padding: 0 3.63rpx;
+					text {
+						position: relative;
+						top: -2rpx;
+					}
+				}
 			}
 			&:after {
 				width: 0;
 				height: 0;
 				border-bottom: 0;
+			}
+		}
+		.cu-list.menu-avatar>.cu-item.goods {
+			.content {
+			    width: calc(100% - 309.09rpx);
+			}
+			.action {
+				position: absolute;	
+			    right: 23.63rpx;
+				width: 127.27rpx;
+				.cu-avatar {
+					width: 127.27rpx;
+					height: 127.27rpx;
+					margin-top: 18.18rpx;
+				}
 			}
 		}
 	}

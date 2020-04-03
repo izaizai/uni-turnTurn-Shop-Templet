@@ -1,0 +1,252 @@
+.zaiui-goods-details-box {
+	position: relative;
+	padding: 18.18rpx;
+	z-index: 9999;
+	.cu-avatar {
+		position: absolute;
+		height: 90.9rpx;
+		width: 90.9rpx;
+		left: 18.18rpx;
+	}
+	.goods-info-view {
+		position: relative;
+		padding-left: 118.18rpx;
+		height: 90.9rpx;
+		.title-view {
+			text {
+				display: none;
+			}
+		}
+		.price-tools-view {
+			position: relative;
+			margin-top: 18.18rpx;
+			.zaiui-tag-view {
+				position: absolute;
+				bottom: 3.63rpx;
+				right: 0;
+			}
+		}
+	}
+	.zaiui-goods-info-btn-view {
+		position: absolute;
+		width: 72.72rpx;
+		height: 36.36rpx;
+		background: #Fff;
+		bottom: -36.36rpx;
+		left: calc((100% / 2) - 36.36rpx);
+		border-radius: 0 0 9.09rpx 9.09rpx;
+		.h-line-view {
+			position: relative;
+			padding: 0 18.18rpx;
+			height: 100%;
+			.h-line {
+				background-color: rgba(0, 0, 0, 0.1);
+				margin: 9.09rpx 0;
+				height: 3.63rpx;
+				width: 100%;
+			}
+		}
+	}
+	.zaiui-goods-tip-view {
+		display: none;
+		position: relative;
+		margin-top: 18.18rpx;
+		padding-top: 18.18rpx;
+		border-top: 2rpx solid #f3f3f3;
+		.icon {
+			position: absolute;
+		    top: 23.63rpx;	
+		}
+		.content {
+		    position: relative;
+		    padding-left: 36.36rpx;	
+		}
+	}
+	.zaiui-goods-tip-view.show {
+		display: block;
+	}
+}
+
+.zaiui-goods-details-box.pay_status .goods-info-view{
+	.title-view {
+		position: relative;
+		view {
+			padding-right: 181.81rpx;
+		}
+		text {
+			display: block;
+			position: absolute;
+			top: 5.45rpx;
+			right: 0;
+		}
+	}
+}
+
+.zaiui-chat-scroll-view {
+	position: relative;
+	width: 100%;
+	height: calc(100vh - 380rpx);
+	.scroll-view {
+		position: relative;
+		height: 100%;
+		.news-view-item {
+			position: relative;
+			display: grid;
+			margin: 36.36rpx 27.27rpx;
+			&:first-child { 
+				margin-top: 54.54rpx;
+			}
+			.cu-avatar {
+			    background-color: #fff;
+			}
+			.news-content {
+				position: relative;
+			    padding-left: 81.81rpx;
+				padding-right: 254.54rpx;
+			    min-height: 63.63rpx;
+				.content {
+					position: relative;	
+				    padding: 12.72rpx;
+					font-size: 25.45rpx;
+					width: fit-content;
+				    top: 0;
+					.status {
+						position: absolute;
+					    left: -63.63rpx;
+					    bottom: 0;	
+					}
+					.sound-icon {
+						font-size: 36.36rpx;
+					}
+					.s-text {
+						position: relative;
+						top: -5.45rpx;
+					}
+				}
+			}
+		}
+		.news-view-item.time {
+			text-align: center;
+		}
+		.news-view-item.left {
+			.cu-avatar {
+			    position: absolute;	
+			}
+			.news-content {
+			    padding-left: 81.81rpx;
+				padding-right: 250.9rpx;
+				.content {
+					border-radius: 0 18.18rpx 18.18rpx 18.18rpx;
+				}
+				.img-content {
+					position: relative;
+					height: 218.18rpx;
+					width: 363.63rpx;
+					border-radius: 0 18.18rpx 18.18rpx 18.18rpx;
+				}
+			}
+		}
+		.news-view-item.right {
+			.news-content {
+				padding-left: 254.54rpx;
+				padding-right: 81.81rpx;
+				.content {
+					float: right;
+					border-radius: 18.18rpx 0 18.18rpx 18.18rpx;
+					.s-text {
+						color: #ececec;
+					}
+				}
+				.img-content {
+					position: relative;
+					height: 218.18rpx;
+					width: 363.63rpx;
+					border-radius: 18.18rpx 0 18.18rpx 18.18rpx;
+					.status {
+						position: absolute;
+					    left: -63.63rpx;
+					    bottom: 0;	
+					}
+				}
+			}
+			.cu-avatar {
+			    position: absolute;
+				right: 0;
+				top: 0;
+			}
+		}
+		.news-view-item.notice {
+			.notice-content-view {
+				position: relative;
+				border-radius: 9.09rpx;
+				padding: 18.18rpx;
+				.cu-avatar {
+					position: absolute;	
+				}
+				.notice-content {
+					position: relative;
+					padding-left: 81.81rpx;
+					.introduce {
+					    margin-top: 9.09rpx;	
+					}
+				}
+			}
+		}
+		.news-view-item.order {
+			.order-content-view {
+				position: relative;
+				border-radius: 9.09rpx;
+				padding: 18.18rpx;
+				.cu-avatar {
+					position: absolute;
+					width: 72.72rpx;
+					height: 72.72rpx;
+				}
+				.order-content {
+					position: relative;
+					padding-left: 90.9rpx;
+					.title-view {
+						position: relative;
+						.text-right {
+						    position: absolute;
+							top: 3.63rpx;	
+						    right: 0;
+						}
+					}
+					.introduce {
+						margin-top: 2rpx;
+					}
+				}
+			}
+		}
+		.news-view-item.tip {
+			text-align: center;
+		}
+		
+	}
+}
+
+.zaiui-foot-bar-input-tools {
+	.action {
+		margin-left: 18.18rpx;
+		&:first-child {
+		    margin-left: 18.18rpx;
+		    font-size: 29.09rpx;
+		}
+		&:last-child {
+			margin-right: 0;
+		}
+	}
+	.input-radius {
+	    background: #F8F8F8;
+	    border-radius: 90.9rpx;
+	    padding: 0 27.27rpx;
+		font-size: 25.45rpx;
+		margin: 0 18.18rpx;
+		margin-left: 0;
+	}
+	.input-radius + .action {
+	    margin-right: 0;
+	    margin-left: 0;
+	}
+}

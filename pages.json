@@ -38,6 +38,12 @@
 		},
 		{
 			"path": "pages/news/details"
+		},
+		{
+			"path": "pages/news/chat"
+		},
+		{
+			"path": "pages/my/footmark"
 		}
 	],
 	"globalStyle": {

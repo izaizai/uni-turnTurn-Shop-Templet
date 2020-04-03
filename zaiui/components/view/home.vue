@@ -175,7 +175,10 @@
 		<modal-img :show="modalShow" src="../../static/images/home/sundry/reward.png" @imgTap="imgTap" @closeTap="closeTap"/>
 		<!-- #endif -->
 		
-		<view class="bg-red zaiui-reward-btn" @tap="rewardTap">打赏</view>
+		<!--打赏-->
+		<view class="zaiui-add-btn-view-box" @tap="rewardTap">
+			<button class="cu-btn cuIcon-likefill bg-red"></button>
+		</view>
 		
 	</view>
 </template>

@@ -70,6 +70,15 @@
 			min-height: calc(var(--status-bar-height) + 101rpx);
 			.content {
 				top: var(--status-bar-height);
+				.cu-tag {
+				    position: relative;
+				    top: -2.72rpx;
+				    padding: 0 5.45rpx;
+					text {
+						position: relative;
+						top: 2rpx;
+					}
+				}
 			}
 		}
 		.cu-bar.fixed.no-shadow {

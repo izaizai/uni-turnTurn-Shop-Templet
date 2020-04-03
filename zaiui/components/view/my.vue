@@ -37,11 +37,11 @@
 			<!--用户数据-->
 			<view class="zaiui-user-info-num-box">
 				<view class="cu-list grid col-4 no-border">
-					<view class="cu-item">
+					<view class="cu-item" @tap="cartTap">
 						<view class="text-xl">0</view>
 						<text class="text-sm">购物车</text>
 					</view>
-					<view class="cu-item">
+					<view class="cu-item" @tap="footmarkTap">
 						<view class="text-xl">4</view>
 						<text class="text-sm">足迹</text>
 					</view>
@@ -213,6 +213,18 @@
 			//触底了
 			setReachBottom() {
 				console.log('触底了');
+			},
+			//购物车
+			cartTap() {
+				uni.navigateTo({
+					url: "/pages/goods/my_cart"
+				});
+			},
+			//足迹
+			footmarkTap() {
+				uni.navigateTo({
+					url: "/pages/my/footmark"
+				});
 			}
 		}
 	}
