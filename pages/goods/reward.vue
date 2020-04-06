@@ -6,8 +6,8 @@
 		</bar-title>
 		
 		<view class="padding bg-white">
-			<image src="../../static/images/reward/zfb.png" mode="widthFix"></image>
-			<image src="../../static/images/reward/wx.png" mode="widthFix"></image>
+			<image src="/static/images/reward/zfb.png" mode="widthFix"/>
+			<image src="/static/images/reward/wx.png" mode="widthFix"/>
 		</view>
 		
 	</view>

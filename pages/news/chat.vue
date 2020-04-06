@@ -5,20 +5,20 @@
 			<block slot="content">
 				<text class="margin-right-xs">仔仔</text>
 				<text class="cu-tag bg-blue sm radius">
-					<text class="cuIcon-male"></text>
+					<text class="cuIcon-male"/>
 				</text>
 			</block>
 			<!--小程序端不显示-->
 			<!-- #ifndef MP -->
 			<block slot="right">
-				<text class="cuIcon-more"></text>
+				<text class="cuIcon-more"/>
 			</block>
 			<!-- #endif -->
 		</bar-title>
 		
 		<!--商品信息-->
 		<view class="bg-white zaiui-goods-details-box pay_status">
-			<view class="cu-avatar radius" :style="[{backgroundImage:'url('+ getttImgUrl(goods_img) +')'}]"></view>
+			<view class="cu-avatar radius" :style="[{backgroundImage:'url('+ goods_img +')'}]"/>
 			<view class="goods-info-view">
 				<view class="title-view">
 					<view class="text-cut text-black">商品名称 99新 苹果 iPhoneX 256G 银色</view>
@@ -30,7 +30,7 @@
 						<text class="cu-tag bg-red radius sm">马上买</text>
 						<text class="cu-tag line-black radius sm">钱款去向</text>
 						<text class="cu-tag line-black radius sm">
-							<text class="cuIcon-more"></text>
+							<text class="cuIcon-more"/>
 						</text>
 					</view>
 				</view>
@@ -48,15 +48,15 @@
 			<!--按钮-->
 			<view class="zaiui-goods-info-btn-view" @tap="tipShowTap">
 				<view class="h-line-view">
-					<view class="h-line"></view>
-					<view class="h-line"></view>
+					<view class="h-line"/>
+					<view class="h-line"/>
 				</view>
 			</view>
 		</view>
 		
 		<!--聊天框-->
-		<view class="zaiui-chat-scroll-view">
-			<scroll-view scroll-into-view="news13" scroll-y class="scroll-view">
+		<view class="zaiui-chat-scroll-view" :class="chatShow?'tools':''" @tap="setToolsHidden">
+			<scroll-view scroll-into-view="news15" scroll-y class="scroll-view" @scroll="chatScroll" :scroll-top="scroll_top">
 				<!--时间-->
 				<view id="news1" class="news-view-item time">
 					<text class="text-sm text-gray">14:52</text>
@@ -64,13 +64,7 @@
 				
 				<!--对方-->
 				<view id="news2" class="news-view-item left">
-					<!-- #ifndef MP-TOUTIAO -->
-					<view class="cu-avatar round" style="background-image:url(../../static/images/avatar/1.jpg);"/>
-					<!-- #endif -->
-					
-					<!-- #ifdef MP-TOUTIAO -->
-					<view class="cu-avatar round" style="background-image:url(static/images/avatar/1.jpg);"/>
-					<!-- #endif -->
+					<view class="cu-avatar round" style="background-image:url(/static/images/avatar/1.jpg);"/>
 					<view class="news-content">
 						<view class="bg-white text-black content">您好</view>
 					</view>
@@ -79,13 +73,7 @@
 				<!--提示-->
 				<view id="news3" class="news-view-item notice">
 					<view class="bg-white notice-content-view">
-						<!-- #ifndef MP-TOUTIAO -->
-						<view class="cu-avatar round" style="background-image:url(../../static/images/news/abb.png);"/>
-						<!-- #endif -->
-						
-						<!-- #ifdef MP-TOUTIAO -->
-						<view class="cu-avatar round" style="background-image:url(static/images/news/abb.png);"/>
-						<!-- #endif -->
+						<view class="cu-avatar round" style="background-image:url(/static/images/news/abb.png);"/>
 						<view class="notice-content">
 							<view class="text-black">温馨提示</view>
 							<view class="text-gray text-sm introduce">请礼貌用语友好沟通，如遇骚扰等不文明行为，可以将对方屏蔽并投诉。</view>
@@ -101,24 +89,12 @@
 							<text>稍等一下下</text>
 						</view>
 					</view>
-					<!-- #ifndef MP-TOUTIAO -->
-					<view class="cu-avatar round" style="background-image:url(../../static/images/avatar/2.jpg);"/>
-					<!-- #endif -->
-					
-					<!-- #ifdef MP-TOUTIAO -->
-					<view class="cu-avatar round" style="background-image:url(static/images/avatar/2.jpg);"/>
-					<!-- #endif -->
+					<view class="cu-avatar round" style="background-image:url(/static/images/avatar/2.jpg);"/>
 				</view>
 				
 				<!--对方-->
 				<view id="news5" class="news-view-item left">
-					<!-- #ifndef MP-TOUTIAO -->
-					<view class="cu-avatar round" style="background-image:url(../../static/images/avatar/1.jpg);"/>
-					<!-- #endif -->
-					
-					<!-- #ifdef MP-TOUTIAO -->
-					<view class="cu-avatar round" style="background-image:url(static/images/avatar/1.jpg);"/>
-					<!-- #endif -->
+					<view class="cu-avatar round" style="background-image:url(/static/images/avatar/1.jpg);"/>
 					<view class="news-content">
 						<view class="bg-white text-black content">测试多行内容，测试多行内容，测试多行内容，测试多行内容，测试多行内容，测试多行内容</view>
 					</view>
@@ -132,13 +108,7 @@
 							<text>测试多行内容，测试多行内容，测试多行内容，测试多行内容，测试多行内容，测试多行内容</text>
 						</view>
 					</view>
-					<!-- #ifndef MP-TOUTIAO -->
-					<view class="cu-avatar round" style="background-image:url(../../static/images/avatar/2.jpg);"/>
-					<!-- #endif -->
-					
-					<!-- #ifdef MP-TOUTIAO -->
-					<view class="cu-avatar round" style="background-image:url(static/images/avatar/2.jpg);"/>
-					<!-- #endif -->
+					<view class="cu-avatar round" style="background-image:url(/static/images/avatar/2.jpg);"/>
 				</view>
 				
 				<!--时间-->
@@ -149,7 +119,7 @@
 				<!--订单状态-->
 				<view id="news8" class="news-view-item order">
 					<view class="bg-white order-content-view">
-						<view class="cu-avatar radius" :style="[{backgroundImage:'url('+ getttImgUrl(goods_img) +')'}]"/>
+						<view class="cu-avatar radius" :style="[{backgroundImage:'url('+ goods_img +')'}]"/>
 						<view class="order-content">
 							<view class="title-view">
 								<view class="text-black">卖家已发货</view>
@@ -167,46 +137,28 @@
 				
 				<!--对方-->
 				<view id="news10" class="news-view-item left">
-					<!-- #ifndef MP-TOUTIAO -->
-					<view class="cu-avatar round" style="background-image:url(../../static/images/avatar/1.jpg);"/>
-					<!-- #endif -->
-					
-					<!-- #ifdef MP-TOUTIAO -->
-					<view class="cu-avatar round" style="background-image:url(static/images/avatar/1.jpg);"/>
-					<!-- #endif -->
+					<view class="cu-avatar round" style="background-image:url(/static/images/avatar/1.jpg);"/>
 					<view class="news-content">
-						<view class="cu-avatar img-content" :style="[{backgroundImage:'url('+ getttImgUrl(goods_img) +')'}]"/>
+						<view class="cu-avatar img-content" :style="[{backgroundImage:'url('+ goods_img +')'}]"/>
 					</view>
 				</view>
 				
 				<!--我-->
 				<view id="news11" class="news-view-item right">
 					<view class="news-content">
-						<view class="cu-avatar img-content" :style="[{backgroundImage:'url('+ getttImgUrl(goods_img) +')'}]">
+						<view class="cu-avatar img-content" :style="[{backgroundImage:'url('+ goods_img +')'}]">
 							<text class="text-sm text-blue status">未读</text>
 						</view>
 					</view>
-					<!-- #ifndef MP-TOUTIAO -->
-					<view class="cu-avatar round" style="background-image:url(../../static/images/avatar/2.jpg);"/>
-					<!-- #endif -->
-					
-					<!-- #ifdef MP-TOUTIAO -->
-					<view class="cu-avatar round" style="background-image:url(static/images/avatar/2.jpg);"/>
-					<!-- #endif -->
+					<view class="cu-avatar round" style="background-image:url(/static/images/avatar/2.jpg);"/>
 				</view>
 				
 				<!--对方-->
 				<view id="news12" class="news-view-item left">
-					<!-- #ifndef MP-TOUTIAO -->
-					<view class="cu-avatar round" style="background-image:url(../../static/images/avatar/1.jpg);"/>
-					<!-- #endif -->
-					
-					<!-- #ifdef MP-TOUTIAO -->
-					<view class="cu-avatar round" style="background-image:url(static/images/avatar/1.jpg);"/>
-					<!-- #endif -->
+					<view class="cu-avatar round" style="background-image:url(/static/images/avatar/1.jpg);"/>
 					<view class="news-content">
 						<view class="bg-white text-black content">
-							<text class="cuIcon-sound sound-icon"></text>
+							<text class="cuIcon-sound sound-icon"/>
 							<text class="margin-left-sm text-gray s-text">33”</text>
 						</view>
 					</view>
@@ -217,34 +169,148 @@
 					<view class="news-content">
 						<view class="bg-blue content">
 							<text class="text-sm text-gray status">已读</text>
-							<text class="cuIcon-sound sound-icon"></text>
+							<text class="cuIcon-sound sound-icon"/>
 							<text class="margin-left-sm s-text">33”</text>
 						</view>
 					</view>
-					<!-- #ifndef MP-TOUTIAO -->
-					<view class="cu-avatar round" style="background-image:url(../../static/images/avatar/2.jpg);"/>
-					<!-- #endif -->
-					
-					<!-- #ifdef MP-TOUTIAO -->
-					<view class="cu-avatar round" style="background-image:url(static/images/avatar/2.jpg);"/>
-					<!-- #endif -->
+					<view class="cu-avatar round" style="background-image:url(/static/images/avatar/2.jpg);"/>
+				</view>
+				
+				<!--对方-->
+				<view id="news14" class="news-view-item left">
+					<view class="cu-avatar round" style="background-image:url(/static/images/avatar/1.jpg);"/>
+					<view class="news-content">
+						<view class="bg-white text-black content">
+							<text>测试</text>
+							<image class="emoji" src="/static/images/emoji_1/1.png" mode="widthFix"/>
+							<text>表情的</text>
+						</view>
+					</view>
+				</view>
+				
+				<!--我-->
+				<view id="news15" class="news-view-item right">
+					<view class="news-content">
+						<view class="bg-blue content">
+							<text class="text-sm text-gray status">已读</text>
+							<text>测试</text>
+							<image class="emoji" src="/static/images/emoji/1.png" mode="widthFix"/>
+							<text>表情的</text>
+						</view>
+					</view>
+					<view class="cu-avatar round" style="background-image:url(/static/images/avatar/2.jpg);"/>
 				</view>
 				
 			</scroll-view>
 		</view>
 		
-		<!--操作区域-->
-		<view class="cu-bar foot input zaiui-foot-bar-input-tools">
-			<view class="action">
-				<text class="cuIcon-rounddown text-gray"></text>
+		<!--底部区域-->
+		<view class="bg-white zaiui-footer-fixed">
+			<!--操作区域-->
+			<view class="cu-bar input zaiui-foot-bar-input-tools">
+				<view class="action">
+					<text class="cuIcon-rounddown text-gray" @tap="speedyTap"/>
+				</view>
+				<input class="input-radius" placeholder="输入聊天内容"/>
+				<view class="action">
+					<text class="cuIcon-emoji text-gray" @tap="emojiTap"/>
+				</view>
+				<view class="action">
+					<text class="cuIcon-roundaddfill text-red" @tap="toolsTap"/>
+				</view>
 			</view>
-			<input class="input-radius" placeholder="输入聊天内容"></input>
-			<view class="action">
-				<text class="cuIcon-emoji text-gray"></text>
+			
+			<!--快捷输入-->
+			<view class="zaiui-speedy-view" :class="speedyShow?'show':''">
+				<view class="key-bar text-center">走平台，支持平台验机吗？</view>
+				<view class="key-bar text-center">能便宜一点吗？</view>
+				<view class="key-bar text-center">是否包邮？</view>
+				<view class="key-bar text-center">机器有发票吗？</view>
+				<view class="key-bar text-center">机器配件都在吗？</view>
+				<view class="key-bar text-center">能发个视频或图片吗？</view>
 			</view>
-			<view class="action">
-				<text class="cuIcon-roundaddfill text-red"></text>
+			
+			<!--表情栏-->
+			<view class="zaiui-emoji-view" :class="emojiShow?'show':''">
+				<view class="emoji-scroll-view-box">
+					<swiper class="emoji-swiper" indicator-dots>
+						<swiper-item>
+							<view class="cu-list grid no-border">
+								<block v-for="(item,index) in emojiNum" :key="index" v-if="index < 20">
+									<image class="emoji" :src="getEmojiUrl(index)" mode="widthFix"/>
+								</block>
+								<image class="del_btn" src="/static/zaiui-img/aa2.png" mode="widthFix"/>
+							</view>
+						</swiper-item>
+						<swiper-item>
+							<view class="cu-list grid no-border">
+								<block v-for="(item,index) in emojiNum" :key="index" v-if="index >= 20 && index < 40">
+									<image class="emoji" :src="getEmojiUrl(index)" mode="widthFix"/>
+								</block>
+								<image class="del_btn" src="/static/zaiui-img/aa2.png" mode="widthFix"/>
+							</view>
+						</swiper-item>
+					</swiper>
+				</view>
+				<!--选择表情类型栏-->
+				<scroll-view class="emoji-tools-scroll-view" scroll-x>
+					<view id="emoji_tools1" class="emoji-tools-item" :class="emojiUrl=='emoji'?'select':''" @tap="emoji_tools_tap('emoji')">
+						<image class="emoji" src="/static/images/emoji/1.png" mode="widthFix"/>
+					</view>
+					<view id="emoji_tools2" class="emoji-tools-item" :class="emojiUrl=='emoji_1'?'select':''" @tap="emoji_tools_tap('emoji_1')">
+						<image class="emoji" src="/static/images/emoji_1/1.png" mode="widthFix"/>
+					</view>
+				</scroll-view>
 			</view>
+			
+			<!--更多工具-->
+			<view class="zaiui-tools-view" :class="toolsShow?'show':''">
+				<view class="cu-list grid col-4 no-border">
+					<view class="cu-item">
+						<view class="img-view">
+							<image class="img" src="/static/images/news/az2.png" mode="widthFix"/>
+						</view>
+						<text>拍照</text>
+					</view>
+					<view class="cu-item">
+						<view class="img-view">
+							<image class="img" src="/static/images/news/ayy.png" mode="widthFix"/>
+						</view>
+						<text>相册</text>
+					</view>
+					<view class="cu-item">
+						<view class="img-view">
+							<image class="img" src="/static/images/news/azf.png" mode="widthFix"/>
+						</view>
+						<text>语音通话</text>
+					</view>
+					<view class="cu-item">
+						<view class="img-view">
+							<image class="img" src="/static/images/news/aze.png" mode="widthFix"/>
+						</view>
+						<text>视频</text>
+					</view>
+					<view class="cu-item">
+						<view class="img-view">
+							<image class="img" src="/static/images/news/az4.png" mode="widthFix"/>
+						</view>
+						<text>位置</text>
+					</view>
+					<view class="cu-item">
+						<view class="img-view">
+							<image class="img" src="/static/images/news/az3.png" mode="widthFix"/>
+						</view>
+						<text>宝贝</text>
+					</view>
+					<view class="cu-item">
+						<view class="img-view">
+							<image class="img" src="/static/images/news/azg.png" mode="widthFix"/>
+						</view>
+						<text>联系卡</text>
+					</view>
+				</view>
+			</view>
+			
 		</view>
 		
 	</view>
@@ -259,7 +325,8 @@
 		},
 		data() {
 			return {
-				goods_img: '../../static/images/home/goods/10.png', tipShow: false,
+				goods_img: '/static/images/home/goods/10.png', scroll_top: 0, tipShow: false, chatShow: false,
+				speedyShow: false, scrollHeight: 0, emojiShow: false, emojiNum: 40, emojiUrl: "emoji", toolsShow: false,
 			}
 		},
 		onLoad() {
@@ -273,8 +340,11 @@
 			});
 		},
 		methods: {
-			getttImgUrl(url) {
-				return _tool.getttImgUrl(url);
+			getEmojiUrl(index) {
+				//更多表情图片包下载：https://download.csdn.net/download/qq_31763107/12304958
+				let num = index + 1;
+				let url = "/static/images/" + this.emojiUrl + "/" + num + ".png";
+				return url;
 			},
 			tipShowTap() {
 				if(this.tipShow) {
@@ -282,12 +352,60 @@
 				} else {
 					this.tipShow = true;
 				}
+			},
+			chatScroll(event) {
+				this.scrollHeight = event.detail.scrollHeight;
+			},
+			speedyTap() {
+				if(this.speedyShow) {
+					this.speedyShow = false;
+					this.setChatShow(false);
+				} else {
+					this.setViewHidden();
+					this.speedyShow = true;
+					this.setChatShow(true);
+				}
+			},
+			emojiTap() {
+				if(this.emojiShow) {
+					this.emojiShow = false;
+					this.setChatShow(false);
+				} else {
+					this.setViewHidden();
+					this.emojiShow = true;
+					this.setChatShow(true);
+				}
+			},
+			toolsTap() {
+				if(this.toolsShow) {
+					this.toolsShow = false;
+					this.setChatShow(false);
+				} else {
+					this.setViewHidden();
+					this.toolsShow = true;
+					this.setChatShow(true);
+				}
+			},
+			setViewHidden() {
+				this.speedyShow = false;
+				this.emojiShow = false;
+				this.toolsShow = false;
+			},
+			setChatShow(status){
+				this.chatShow = status;
+				this.scroll_top = this.scrollHeight;
+			},
+			setToolsHidden() {
+				this.setViewHidden();
+				this.setChatShow(false);
+			},
+			emoji_tools_tap(type) {
+				this.emojiUrl = type;
 			}
 		}
 	}
 	
 </script>
-
 
 <style lang="scss">
 	/* #ifdef APP-PLUS */

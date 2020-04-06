@@ -7,7 +7,7 @@
 			<!--小程序端不显示-->
 			<!-- #ifndef MP -->
 			<block slot="right">
-				<text class="cuIcon-info"></text>
+				<text class="cuIcon-info"/>
 			</block>
 			<!-- #endif -->
 			
@@ -29,33 +29,15 @@
 		<view class="margin-bottom zaiui-grid-menu">
 			<view class="bg-white cu-list grid col-3 no-border">
 				<view class="cu-item">
-					<!-- #ifndef MP-TOUTIAO -->
-					<view class="cu-avatar lg round" style="background-image:url(../../static/images/news/1.png);"/>
-					<!-- #endif -->
-					
-					<!-- #ifdef MP-TOUTIAO -->
-					<view class="cu-avatar lg round" style="background-image:url(static/images/news/1.png);"/>
-					<!-- #endif -->
+					<view class="cu-avatar lg round" style="background-image:url(/static/images/news/1.png);"/>
 					<view class="margin-top-sm text-sm">交易信息</view>
 				</view>
 				<view class="cu-item">
-					<!-- #ifndef MP-TOUTIAO -->
-					<view class="cu-avatar lg round" style="background-image:url(../../static/images/news/2.png);"/>
-					<!-- #endif -->
-					
-					<!-- #ifdef MP-TOUTIAO -->
-					<view class="cu-avatar lg round" style="background-image:url(static/images/news/2.png);"/>
-					<!-- #endif -->
+					<view class="cu-avatar lg round" style="background-image:url(/static/images/news/2.png);"/>
 					<view class="margin-top-sm text-sm">留言信息</view>
 				</view>
 				<view class="cu-item">
-					<!-- #ifndef MP-TOUTIAO -->
-					<view class="cu-avatar lg round" style="background-image:url(../../static/images/news/3.png);"/>
-					<!-- #endif -->
-					
-					<!-- #ifdef MP-TOUTIAO -->
-					<view class="cu-avatar lg round" style="background-image:url(static/images/news/3.png);"/>
-					<!-- #endif -->
+					<view class="cu-avatar lg round" style="background-image:url(/static/images/news/3.png);"/>
 					<view class="margin-top-sm text-sm">互动信息</view>
 				</view>
 			</view>
@@ -67,17 +49,9 @@
 				
 				<view class="cu-item" :class="modalName=='move-box-'+ 0?'move-cur':''" @touchstart="ListTouchStart" @touchmove="ListTouchMove"
 				 @touchend="ListTouchEnd" :data-target="'move-box-' + 0" @tap="tapNews(0)">
-					<!-- #ifndef MP-TOUTIAO -->
-					<view class="cu-avatar round" style="background-image:url(../../static/images/news/4.png);">
+					<view class="cu-avatar round" style="background-image:url(/static/images/news/4.png);">
 						<view class="cu-tag badge"/>
 					</view>
-					<!-- #endif -->
-					 
-					<!-- #ifdef MP-TOUTIAO -->
-					<view class="cu-avatar round" style="background-image:url(static/images/news/4.png);">
-						<view class="cu-tag badge"/>
-					</view>
-					<!-- #endif -->
 					<view class="content">
 						<view class="text-black">通知助手</view>
 						<view class="text-gray text-sm text-cut">小米:“我忍你很久了!”</view>
@@ -91,17 +65,9 @@
 				
 				<view class="cu-item goods" :class="modalName=='move-box-'+ 1?'move-cur':''" @touchstart="ListTouchStart" @touchmove="ListTouchMove"
 				 @touchend="ListTouchEnd" :data-target="'move-box-' + 1" @tap="tapNews(1)">
-					<!-- #ifndef MP-TOUTIAO -->
-					<view class="cu-avatar round" style="background-image:url(../../static/images/avatar/1.jpg);">
+					<view class="cu-avatar round" style="background-image:url(/static/images/avatar/1.jpg);">
 						<view class="cu-tag badge"/>
 					</view>
-					<!-- #endif -->
-
-					<!-- #ifdef MP-TOUTIAO -->
-					<view class="cu-avatar round" style="background-image:url(static/images/avatar/1.jpg);">
-						<view class="cu-tag badge"/>
-					</view>
-					<!-- #endif -->
 					<view class="content">
 						<view class="text-black">
 							<text class="margin-right-xs">仔仔</text>
@@ -113,13 +79,7 @@
 						<view class="text-gray text-sm">4小时前</view>
 					</view>
 					<view class="action">
-						<!-- #ifndef MP-TOUTIAO -->
-						<view class="cu-avatar radius" style="background-image:url(../../static/images/home/goods/11.png);"/>
-						<!-- #endif -->
-						
-						<!-- #ifdef MP-TOUTIAO -->
-						<view class="cu-avatar radius" style="background-image:url(static/images/home/goods/11.png);"/>
-						<!-- #endif -->
+						<view class="cu-avatar radius" style="background-image:url(/static/images/home/goods/11.png);"/>
 					</view>
 					<view class="move">
 						<view class="bg-grey">置顶</view>
@@ -129,17 +89,9 @@
 				
 				<view class="cu-item goods" :class="modalName=='move-box-'+ 2?'move-cur':''" @touchstart="ListTouchStart" @touchmove="ListTouchMove"
 				 @touchend="ListTouchEnd" :data-target="'move-box-' + 2" @tap="tapNews(2)">
-					<!-- #ifndef MP-TOUTIAO -->
-					<view class="cu-avatar round" style="background-image:url(../../static/images/avatar/2.jpg);">
+					<view class="cu-avatar round" style="background-image:url(/static/images/avatar/2.jpg);">
 						<view class="cu-tag badge"/>
 					</view>
-					<!-- #endif -->
-					
-					<!-- #ifdef MP-TOUTIAO -->
-					<view class="cu-avatar round" style="background-image:url(static/images/avatar/2.jpg);">
-						<view class="cu-tag badge"/>
-					</view>
-					<!-- #endif -->
 					<view class="content">
 						<view class="text-black">
 							<text class="margin-right-xs">仔仔22</text>
@@ -151,13 +103,7 @@
 						<view class="text-gray text-sm">6小时前</view>
 					</view>
 					<view class="action">
-						<!-- #ifndef MP-TOUTIAO -->
-						<view class="cu-avatar radius" style="background-image:url(../../static/images/home/goods/10.png);"/>
-						<!-- #endif -->
-						
-						<!-- #ifdef MP-TOUTIAO -->
-						<view class="cu-avatar radius" style="background-image:url(static/images/home/goods/10.png);"/>
-						<!-- #endif -->
+						<view class="cu-avatar radius" style="background-image:url(/static/images/home/goods/10.png);"/>
 					</view>
 					<view class="move">
 						<view class="bg-grey">置顶</view>
@@ -169,7 +115,7 @@
 		</view>
 		
 		<!--占位底部距离-->
-		<view class="cu-tabbar-height"></view>
+		<view class="cu-tabbar-height"/>
 	</view>
 </template>
 

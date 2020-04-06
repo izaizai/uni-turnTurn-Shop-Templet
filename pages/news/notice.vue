@@ -10,14 +10,14 @@
 			<view class="text-gray text-center">3月30日 15:30</view>
 			<!--内容-->
 			<view class="bg-white margin-top radius card-view" @tap="tapCard">
-				<view class="cu-avatar head-img" :style="[{backgroundImage:'url('+ getttImgUrl(bg_img) +')'}]"></view>
+				<view class="cu-avatar head-img" :style="[{backgroundImage:'url('+ bg_img +')'}]"/>
 				<view class="zaiui-content-view">
 					<view class="text-black text-cut">全网首发iPhone11系列低至4349</view>
 					<view class="text-gray text-sm text-cut margin-tb-sm">苹果官方货源机,送1年苹果原厂配件质保!</view>
-					<view class="solid-line"></view>
+					<view class="solid-line"/>
 					<view class="text-gray text-sm margin-top-sm view-text-box">
 						<text class="text-black">查看详情</text>
-						<text class="cuIcon-right"></text>
+						<text class="cuIcon-right"/>
 					</view>
 				</view>
 			</view>
@@ -30,10 +30,10 @@
 				<view class="zaiui-content-view">
 					<view class="text-black text-cut">品质生活的必备神器</view>
 					<view class="text-gray text-sm text-cut margin-tb-sm">都2020了,你也该用上了</view>
-					<view class="solid-line"></view>
+					<view class="solid-line"/>
 					<view class="text-gray text-sm margin-top-sm view-text-box">
 						<text class="text-black">查看详情</text>
-						<text class="cuIcon-right"></text>
+						<text class="cuIcon-right"/>
 					</view>
 				</view>
 			</view>
@@ -46,10 +46,10 @@
 				<view class="zaiui-content-view">
 					<view class="text-black text-cut">买得起的K30 Pro和98寸4K电视来了</view>
 					<view class="text-gray text-sm text-cut margin-tb-sm">这次你有借口换个大房子啦!</view>
-					<view class="solid-line"></view>
+					<view class="solid-line"/>
 					<view class="text-gray text-sm margin-top-sm view-text-box">
 						<text class="text-black">查看详情</text>
-						<text class="cuIcon-right"></text>
+						<text class="cuIcon-right"/>
 					</view>
 				</view>
 			</view>
@@ -67,7 +67,7 @@
 		},
 		data() {
 			return {
-				bg_img: '../../static/images/home/goods/1.png',
+				bg_img: '/static/images/home/goods/1.png',
 			}
 		},
 		onLoad() {
@@ -81,9 +81,6 @@
 			});
 		},
 		methods: {
-			getttImgUrl(url) {
-				return _tool.getttImgUrl(url);
-			},
 			tapCard() {
 				uni.navigateTo({
 					url: '/pages/news/details'

@@ -5,8 +5,8 @@
 				<block v-for="(item,index) in list_data" :key="index" v-if="index%2==0">
 					<view class="bg-white margin-bottom-sm list-radius" v-if="!item.type" @tap="listTap(item,index)">
 						<view class="goods-img">
-							<image :src="getImgUrl(item.img)" mode="widthFix" lazy-load></image>
-							<text class="cuIcon-videofill text-white pay-view" v-if="item.pay"></text>
+							<image :src="item.img" mode="widthFix" lazy-load/>
+							<text class="cuIcon-videofill text-white pay-view" v-if="item.pay"/>
 							<view class="text-right service-view" v-if="item.service.length > 0">
 								<block v-for="(items,indexs) in item.service" :key="indexs">
 									<text class="cu-tag bg-blue radius sm">{{items}}</text>
@@ -35,18 +35,12 @@
 									<view class="flex-sub">
 										<view class="flex flex-wrap user-info">
 											<view class="basis-xs">
-												<image class="cu-avatar sm round img" :src="getImgUrl(item.avatar)" lazy-load mode="widthFix"></image>
+												<image class="cu-avatar sm round img" :src="item.avatar" lazy-load mode="widthFix"/>
 											</view>
 											<view class="basis-xl text-cut line-height">
 												<text class="text-sm margin-left-xs">{{item.username}}</text>
 											</view>
-											<!-- #ifndef APP-PLUS -->
-											<image class="v-icon" src="../../../static/zaiui-img/v.png" lazy-load mode="widthFix" v-if="item.v"></image>
-											<!-- #endif -->
-											
-											<!-- #ifdef APP-PLUS -->
-											<image class="v-icon" src="../../static/zaiui-img/v.png" lazy-load mode="widthFix" v-if="item.v"></image>
-											<!-- #endif -->
+											<image class="v-icon" src="/static/zaiui-img/v.png" lazy-load mode="widthFix" v-if="item.v"/>
 										</view>
 									</view>
 									<view class="flex-sub text-right text-time">
@@ -60,31 +54,19 @@
 					<view class="bg-white margin-bottom-sm list-radius padding-sm recommend-list-box" v-if="item.type=='recommend'">
 						<view class="flex flex-wrap">
 							<view class="basis-xs text-right">
-								<!-- #ifndef APP-PLUS -->
-								<image class="img-aat" src="../../../static/zaiui-img/aat.png" lazy-load mode="widthFix"></image>
-								<!-- #endif -->
-								
-								<!-- #ifdef APP-PLUS -->
-								<image class="img-aat" src="../../static/zaiui-img/aat.png" lazy-load mode="widthFix"></image>
-								<!-- #endif -->
+								<image class="img-aat" src="/static/zaiui-img/aat.png" lazy-load mode="widthFix"/>
 							</view>
 							<view class="basis-lg text-center">
 								<text class="text-black text-bold">您可能感兴趣</text>
 							</view>
 							<view class="basis-xs text-left">
-								<!-- #ifndef APP-PLUS -->
-								<image class="img-aat" src="../../../static/zaiui-img/aat.png" lazy-load mode="widthFix"></image>
-								<!-- #endif -->
-								
-								<!-- #ifdef APP-PLUS -->
-								<image class="img-aat" src="../../static/zaiui-img/aat.png" lazy-load mode="widthFix"></image>
-								<!-- #endif -->
+								<image class="img-aat" src="/static/zaiui-img/aat.png" lazy-load mode="widthFix"/>
 							</view>
 						</view>
 						<view class="grid col-2 text-center margin-top-sm">
 							<block v-for="(items,indexs) in item.list" :key="indexs" v-if="item.list.length < 5">
 								<view class="padding-xs" @tap="listTap(items,indexs)">
-									<view class="img-goods" :style="[{backgroundImage:'url('+ getttImgUrl(items.img) +')'}]"></view>
+									<view class="img-goods" :style="[{backgroundImage:'url('+ items.img +')'}]"/>
 									<view class="text-black text-sm margin-top-xs">{{items.title}}</view>
 								</view>
 							</block>
@@ -96,8 +78,8 @@
 				<block v-for="(item,index) in list_data" :key="index" v-if="index%2!=0">
 					<view class="bg-white margin-bottom-sm list-radius" v-if="!item.type"  @tap="listTap(item,index)">
 						<view class="goods-img">
-							<image :src="getImgUrl(item.img)" mode="widthFix" lazy-load></image>
-							<text class="cuIcon-videofill text-white pay-view" v-if="item.pay"></text>
+							<image :src="item.img" mode="widthFix" lazy-load/>
+							<text class="cuIcon-videofill text-white pay-view" v-if="item.pay"/>
 							<view class="text-right service-view" v-if="item.service.length > 0">
 								<block v-for="(items,indexs) in item.service" :key="indexs">
 									<text class="cu-tag bg-blue radius sm">{{items}}</text>
@@ -126,18 +108,12 @@
 									<view class="flex-sub">
 										<view class="flex flex-wrap user-info">
 											<view class="basis-xs">
-												<image class="cu-avatar sm round img" :src="getImgUrl(item.avatar)" lazy-load mode="widthFix"></image>
+												<image class="cu-avatar sm round img" :src="item.avatar" lazy-load mode="widthFix"/>
 											</view>
 											<view class="basis-xl text-cut line-height">
 												<text class="text-sm margin-left-xs">{{item.username}}</text>
 											</view>
-											<!-- #ifndef APP-PLUS -->
-											<image class="v-icon" src="../../../static/zaiui-img/v.png" lazy-load mode="widthFix" v-if="item.v"></image>
-											<!-- #endif -->
-											
-											<!-- #ifdef APP-PLUS -->
-											<image class="v-icon" src="../../static/zaiui-img/v.png" lazy-load mode="widthFix" v-if="item.v"></image>
-											<!-- #endif -->
+											<image class="v-icon" src="/static/zaiui-img/v.png" lazy-load mode="widthFix" v-if="item.v"/>
 										</view>
 									</view>
 									<view class="flex-sub text-right text-time">
@@ -150,31 +126,19 @@
 					<view class="bg-white margin-bottom-sm list-radius padding-sm recommend-list-box" v-if="item.type=='recommend'">
 						<view class="flex flex-wrap">
 							<view class="basis-xs text-right">
-								<!-- #ifndef APP-PLUS -->
-								<image class="img-aat" src="../../../static/zaiui-img/aat.png" lazy-load mode="widthFix"></image>
-								<!-- #endif -->
-								
-								<!-- #ifdef APP-PLUS -->
-								<image class="img-aat" src="../../static/zaiui-img/aat.png" lazy-load mode="widthFix"></image>
-								<!-- #endif -->
+								<image class="img-aat" src="/static/zaiui-img/aat.png" lazy-load mode="widthFix"/>
 							</view>
 							<view class="basis-lg text-center">
 								<text class="text-black text-bold">您可能感兴趣</text>
 							</view>
 							<view class="basis-xs text-left">
-								<!-- #ifndef APP-PLUS -->
-								<image class="img-aat" src="../../../static/zaiui-img/aat.png" lazy-load mode="widthFix"></image>
-								<!-- #endif -->
-								
-								<!-- #ifdef APP-PLUS -->
-								<image class="img-aat" src="../../static/zaiui-img/aat.png" lazy-load mode="widthFix"></image>
-								<!-- #endif -->
+								<image class="img-aat" src="/static/zaiui-img/aat.png" lazy-load mode="widthFix"/>
 							</view>
 						</view>
 						<view class="grid col-2 text-center margin-top-sm">
 							<block v-for="(items,indexs) in item.list" :key="indexs" v-if="item.list.length < 5">
 								<view class="padding-xs" @tap="listTap(items,indexs)">
-									<view class="img-goods" :style="[{backgroundImage:'url('+ getttImgUrl(items.img) +')'}]"></view>
+									<view class="img-goods" :style="[{backgroundImage:'url('+ items.img +')'}]"/>
 									<view class="text-black text-sm margin-top-xs">{{items.title}}</view>
 								</view>
 							</block>
@@ -203,12 +167,6 @@
 			}
 		},
 		methods: {
-			getttImgUrl(url) {
-				return _tool.getttImgUrl(url);
-			},
-			getImgUrl(url) {
-				return _tool.getImgUrl(url);
-			},
 			listTap(data,index) {
 				this.$emit('listTap', {
 					data,

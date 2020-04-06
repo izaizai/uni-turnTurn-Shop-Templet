@@ -6,8 +6,8 @@
 			<!--小程序端不显示-->
 			<!-- #ifndef MP -->
 			<block slot="right">
-				<text class="cuIcon-forward"></text>
-				<text class="cuIcon-more"></text>
+				<text class="cuIcon-forward"/>
+				<text class="cuIcon-more"/>
 			</block>
 			<!-- #endif -->
 		</bar-title>
@@ -19,7 +19,7 @@
 		<view class="zaiui-banner-swiper-box">
 			<swiper class="screen-swiper" circular autoplay @change="bannerSwiper">
 				<swiper-item v-for="(item,index) in bannerList" :key="index">
-					<image :src="item.url" mode="aspectFill"></image>
+					<image :src="item.url" mode="aspectFill"/>
 				</swiper-item>
 			</swiper>
 			<!--页码-->
@@ -50,7 +50,7 @@
 					<text class="margin-right-sm">官方自营</text>
 					<text class="text-sm">官方自营正品保障新品体验售后无忧</text>
 				</view>
-				<text class="cuIcon-right icon"></text>
+				<text class="cuIcon-right icon"/>
 			</view>
 		</view>
 		
@@ -63,35 +63,35 @@
 				<view class="basis-7">
 					<view>
 						<text class="tag-view">
-							<text class="cuIcon-title text-red"></text>
+							<text class="cuIcon-title text-red"/>
 							<text>已验机</text>
 						</text>
 						
 						<text class="tag-view">
-							<text class="cuIcon-title text-red"></text>
+							<text class="cuIcon-title text-red"/>
 							<text>7天无理由</text>
 						</text>
 						
 						<text class="tag-view">
-							<text class="cuIcon-title text-red"></text>
+							<text class="cuIcon-title text-red"/>
 							<text>180天质保</text>
 						</text>
 					</view>
 					<view class="margin-top-xs">
 						<text class="tag-view">
-							<text class="cuIcon-title text-red"></text>
+							<text class="cuIcon-title text-red"/>
 							<text>顺丰包邮</text>
 						</text>
 						
 						<text class="tag-view">
-							<text class="cuIcon-title text-red"></text>
+							<text class="cuIcon-title text-red"/>
 							<text>半年电池免费换新</text>
 						</text>
 					</view>
 				</view>
 				<view class="basis-2">
 					<view class="text-gray text-right icon-view">
-						<text class="cuIcon-right icon"></text>
+						<text class="cuIcon-right icon"/>
 					</view>
 				</view>
 			</view>
@@ -115,7 +115,7 @@
 				</view>
 				<view class="basis-2">
 					<view class="text-gray text-right icon-view">
-						<text class="cuIcon-right icon"></text>
+						<text class="cuIcon-right icon"/>
 					</view>
 				</view>
 			</view>
@@ -132,7 +132,7 @@
 				</view>
 			</view>
 			
-			<view class="zaiui-border-view"></view>
+			<view class="zaiui-border-view"/>
 			
 			<view class="flex flex-wrap text-sm" @tap="selectTap">
 				<view class="basis-1">
@@ -143,7 +143,7 @@
 				</view>
 				<view class="basis-1">
 					<view class="text-gray text-right">
-						<text class="cuIcon-right icon"></text>
+						<text class="cuIcon-right icon"/>
 					</view>
 				</view>
 			</view>
@@ -159,21 +159,15 @@
 					<view class="text-sm">
 						<text class="margin-right-xs">好评率</text>
 						<text class="text-black text-lg">97%</text>
-						<text class="cuIcon-right icon margin-left-xs"></text>
+						<text class="cuIcon-right icon margin-left-xs"/>
 					</view>
 				</view>
 			</view>
-			<view class="zaiui-border-view"></view>
+			<view class="zaiui-border-view"/>
 			<view class="zaiui-view-box">
 				<view class="flex flex-wrap text-sm">
 					<view class="basis-1">
-						<!-- #ifndef MP-TOUTIAO -->
-						<view class="cu-avatar sm round" style="background-image:url(../../static/images/avatar/1.jpg)"/>
-						<!-- #endif -->
-						
-						<!-- #ifdef MP-TOUTIAO -->
-						<view class="cu-avatar sm round" style="background-image:url(static/images/avatar/1.jpg)"/>
-						<!-- #endif -->
+						<view class="cu-avatar sm round" style="background-image:url(/static/images/avatar/1.jpg)"/>
 					</view>
 					<view class="basis-9 text-sm">
 						<view>仔仔</view>
@@ -182,17 +176,11 @@
 					</view>
 				</view>
 			</view>
-			<view class="zaiui-border-view"></view>
+			<view class="zaiui-border-view"/>
 			<view class="zaiui-view-box">
 				<view class="flex flex-wrap text-sm">
 					<view class="basis-1">
-						<!-- #ifndef MP-TOUTIAO -->
-						<view class="cu-avatar sm round" style="background-image:url(../../static/images/avatar/2.jpg)"/>
-						<!-- #endif -->
-						
-						<!-- #ifdef MP-TOUTIAO -->
-						<view class="cu-avatar sm round" style="background-image:url(static/images/avatar/2.jpg)"/>
-						<!-- #endif -->
+						<view class="cu-avatar sm round" style="background-image:url(/static/images/avatar/2.jpg)"/>
 					</view>
 					<view class="basis-9 text-sm">
 						<view>仔仔</view>
@@ -206,34 +194,28 @@
 		<!--杂项信息-->
 		<view class="margin-top bg-white zaiui-view-box zaiui-goods-info-view-box">
 			<view class="zaiui-shop-view">
-				<!-- #ifndef MP-TOUTIAO -->
-				<view class="cu-avatar lg round" style="background-image:url(../../static/images/avatar/1.jpg)"/>
-				<!-- #endif -->
-				
-				<!-- #ifdef MP-TOUTIAO -->
-				<view class="cu-avatar lg round" style="background-image:url(static/images/avatar/1.jpg)"/>
-				<!-- #endif -->
+				<view class="cu-avatar lg round" style="background-image:url(/static/images/avatar/1.jpg)"/>
 				<view class="text-view">
 					<view class="margin-bottom-xs">仔仔店铺</view>
 					<view class="text-sm text-cut">仔仔店铺，正品保障，售后无忧</view>
 				</view>
 				<button class="cu-btn radius sm line-red">全部商品</button>
 			</view>
-			<view class="zaiui-border-view"></view>
+			<view class="zaiui-border-view"/>
 			<view class="live-tag-view">
 				<view class="text-view">
 					<text class="cu-tag bg-red radius sm">
-						<text class="cuIcon-title"></text>
+						<text class="cuIcon-title"/>
 						<text>直播中</text>
 					</text>
 					<text class="margin-left-xs text-cut">官方直播自营商品在线答疑</text>
 				</view>
 				<view class="text-sm text-red text-right-view">
 					<text class="margin-right-xs">看直播</text>
-					<text class="cuIcon-right"></text>
+					<text class="cuIcon-right"/>
 				</view>
 			</view>
-			<view class="zaiui-border-view"></view>
+			<view class="zaiui-border-view"/>
 			<view class="zaiui-recommend-list-box">
 				<view class="text-sm">官方推荐</view>
 				<!--滑动列表-->
@@ -241,7 +223,7 @@
 					<scroll-view class="recommend-scroll" scroll-x>
 						<block v-for="(items,indexs) in goodsList" :key="indexs">
 							<view :id="['scroll' + (indexs + 1 )]" class="recommend-scroll-item">
-								<view class="cu-avatar xl radius" :style="[{backgroundImage:'url('+ getttImgUrl(items.img) +')'}]"></view>
+								<view class="cu-avatar xl radius" :style="[{backgroundImage:'url('+ items.img +')'}]"/>
 								<view class="text-cut-2 text-sm text-black margin-tb-sm">{{items.title}}</view>
 								<view class="text-red text-price margin-tb-sm text-lg">{{items.price}}</view>
 							</view>
@@ -254,8 +236,8 @@
 		
 		<!--图片详情-->
 		<view class="margin-top zaiui-goods-details-box">
-			<image src="../../static/images/home/goods/goods-1.png" mode="widthFix"></image>
-			<image src="../../static/images/home/goods/goods-2.png" mode="widthFix"></image>
+			<image src="/static/images/home/goods/goods-1.png" mode="widthFix"/>
+			<image src="/static/images/home/goods/goods-2.png" mode="widthFix"/>
 		</view>
 		
 		<!--常见问题-->
@@ -279,7 +261,7 @@
 					<view class="text-sm">版本包括:国行、港澳、国际版(包括美欧日韩等版本)。其中除了零售机还包括:演示机，官换机，官翻机。</view>
 				</view>
 			</view>
-			<view class="zaiui-border-view"></view>
+			<view class="zaiui-border-view"/>
 			<view class="text-center text-blue">查看更多问题</view>
 		</view>
 		
@@ -287,13 +269,13 @@
 		<view class="margin-top zaiui-view-box zaiui-recommend-list-view-box">
 			<view class="flex flex-wrap">
 				<view class="basis-sm text-right">
-					<image class="img-aau" src="../../static/zaiui-img/aau.png" lazy-load mode="widthFix"></image>
+					<image class="img-aau" src="/static/zaiui-img/aau.png" lazy-load mode="widthFix"/>
 				</view>
 				<view class="basis-xs text-center">
 					<text class="text-black text-lg">相似推荐</text>
 				</view>
 				<view class="basis-sm text-left">
-					<image class="img-aau" src="../../static/zaiui-img/aau.png" lazy-load mode="widthFix"></image>
+					<image class="img-aau" src="/static/zaiui-img/aau.png" lazy-load mode="widthFix"/>
 				</view>
 			</view>
 			
@@ -303,7 +285,7 @@
 						<view class="list-itme">
 							<view class="bg-white list-radius">
 								<view class="goods-img">
-									<view class="cu-avatar" :style="[{backgroundImage:'url('+ getttImgUrl(items.img) +')'}]"></view>
+									<view class="cu-avatar" :style="[{backgroundImage:'url('+ items.img +')'}]"/>
 									<view class="mold-view" v-if="items.mold">
 										<text class="cu-tag radius sm bg-red">自营</text>
 									</view> 
@@ -320,13 +302,13 @@
 		</view>
 		
 		<!--占位底部距离-->
-		<view class="cu-tabbar-height"></view>
+		<view class="cu-tabbar-height"/>
 		
 		<!--底部操作-->
 		<view class="zaiui-footer-fixed">
 			<view class="cu-bar bg-white tabbar border shop">
 				<button class="action">
-					<view class="cuIcon-service"></view>
+					<view class="cuIcon-service"/>
 					<view>客服</view>
 				</button>
 				<view class="action" @tap="myCartTap">
@@ -357,35 +339,35 @@
 					<!--服务区域-->
 					<view class="zaiui-view-box service" v-if="modalType=='service'">
 						<view class="text-view">
-							<text class="cuIcon-title text-red"></text>
+							<text class="cuIcon-title text-red"/>
 							<text class="text-cut text-black">已验机</text>
 						</view>
 						<view class="text-sm text-list-view">
 							<view class="margin-left text-cut text-gray">转转&富士康联合制定验机标准，对设备进行专业质检</view>
 						</view>
 						<view class="text-view">
-							<text class="cuIcon-title text-red"></text>
+							<text class="cuIcon-title text-red"/>
 							<text class="text-cut text-black">7天无理由</text>
 						</view>
 						<view class="text-sm text-list-view">
 							<view class="margin-left text-cut text-gray">自收到商品7天内，不喜欢可以申请退货，并自付邮费寄回</view>
 						</view>
 						<view class="text-view">
-							<text class="cuIcon-title text-red"></text>
+							<text class="cuIcon-title text-red"/>
 							<text class="text-cut text-black">180天质保</text>
 						</view>
 						<view class="text-sm text-list-view">
 							<view class="margin-left text-cut text-gray">自订单确认收货起180天,提供免费质保</view>
 						</view>
 						<view class="text-view">
-							<text class="cuIcon-title text-red"></text>
+							<text class="cuIcon-title text-red"/>
 							<text class="text-cut text-black">顺丰包邮</text>
 						</view>
 						<view class="text-sm text-list-view">
 							<view class="margin-left text-cut text-gray">16:00前下单，今日发货，顺丰包邮(偏远地区邮政包邮)</view>
 						</view>
 						<view class="text-view">
-							<text class="cuIcon-title text-red"></text>
+							<text class="cuIcon-title text-red"/>
 							<text class="text-cut text-black">半年电池免费换新</text>
 						</view>
 						<view class="text-sm text-list-view">
@@ -416,19 +398,13 @@
 						<!--商品信息-->
 						<view class="cu-list menu-avatar">
 							<view class="cu-item">
-								<!-- #ifndef MP-TOUTIAO -->
-								<view class="cu-avatar radius lg" style="background-image:url(../../static/images/home/goods/1.png);"/>
-								<!-- #endif -->
-								
-								<!-- #ifdef MP-TOUTIAO -->
-								<view class="cu-avatar radius lg" style="background-image:url(static/images/home/goods/1.png);"/>
-								<!-- #endif -->
+								<view class="cu-avatar radius lg" style="background-image:url(/static/images/home/goods/1.png);"/>
 								<view class="content">
 									<view class="text-price-view">
 										<text class="text-price text-red margin-right-xs">2699</text>
 										<text class="text-sm text-gray text-through">￥6999</text>
 										<text class="cu-tag bg-gradual-red radius sm">
-											<text class="cuIcon-hotfill"></text>
+											<text class="cuIcon-hotfill"/>
 											<text>秒杀中</text>
 										</text>
 									</view>
@@ -521,9 +497,6 @@
 			});
 		},
 		methods: {
-			getttImgUrl(url) {
-				return _tool.getttImgUrl(url);
-			},
 			bannerSwiper(e) {
 				this.bannerCur = e.detail.current;
 			},

@@ -21,7 +21,7 @@
 						<view class="light goods-list-item-view">
 							<checkbox class='round red sm zaiui-checked' :class="items.checked?'checked':''" 
 							:checked="items.checked?true:false" :value="items.id + ''"/>
-							<view class="cu-avatar radius lg" :style="[{backgroundImage:'url('+ getttImgUrl(items.img) +')'}]"></view>
+							<view class="cu-avatar radius lg" :style="[{backgroundImage:'url('+ items.img +')'}]"/>
 							<view class="goods-info-view">
 								<view class="text-cut text-black">{{items.name}}</view>
 								<view class="text-sm text-gray">{{items.rule}}</view>
@@ -47,7 +47,7 @@
 		</view>
 		
 		<!--占位底部距离-->
-		<view class="cu-tabbar-height"></view>
+		<view class="cu-tabbar-height"/>
 		
 		<!--底部操作-->
 		<view class="zaiui-footer-fixed">
@@ -102,9 +102,6 @@
 			});
 		},
 		methods: {
-			getttImgUrl(url) {
-				return _tool.getttImgUrl(url);
-			},
 			CheckboxChange(e) {
 				let items = this.goodsList, values = e.detail.value;
 				for (let i = 0; i < items.length; i++) {

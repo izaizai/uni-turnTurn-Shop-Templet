@@ -51,7 +51,7 @@
 				<swiper class="screen-swiper square-dot c" autoplay circular indicator-dots :current="swiperInfo.index"  @change="swiperChange">
 					<swiper-item v-for="(item,index) in swiperInfo.list" :key="index">
 						<view class="swiper-padding">
-							<image :src="getImgUrl(item.swiper)" mode="widthFix"/>
+							<image :src="item.swiper" mode="widthFix"/>
 						</view>
 					</swiper-item>
 				</swiper>
@@ -61,17 +61,9 @@
 			<grid-menu-list :list_data='gridMenuData' @listTap='gridMenuTap'/>
 			
 			<!--红包块-->
-			<!-- #ifndef APP-PLUS -->
 			<view class="bg-red margin radius padding-sm">
-				<image class="red-envelopes" src="../../../static/images/home/sundry/2.png" mode="widthFix"/>
+				<image class="red-envelopes" src="/static/images/home/sundry/2.png" mode="widthFix"/>
 			</view>
-			<!-- #endif -->
-			
-			<!-- #ifdef APP-PLUS -->
-			<view class="bg-red margin radius padding-sm">
-				<image class="red-envelopes" src="../../static/images/home/sundry/2.png" mode="widthFix"/>
-			</view>
-			<!-- #endif -->
 			
 			<!--免费鉴别-->
 			<identify-list :list_data='identifyData' @listTap='identifyTap'/>
@@ -120,41 +112,21 @@
 			
 			<!--广告-->
 			
-			<!-- #ifndef APP-PLUS -->
 			<view class="margin">
-				<image class="zaiui-ad-img" src="../../../static/images/home/swiper/swiper-1.png" mode="widthFix"/>
+				<image class="zaiui-ad-img" src="/static/images/home/swiper/swiper-1.png" mode="widthFix"/>
 			</view>
-			<!-- #endif -->
-			
-			<!-- #ifdef APP-PLUS -->
-			<view class="margin">
-				<image class="zaiui-ad-img" src="../../static/images/home/swiper/swiper-1.png" mode="widthFix"/>
-			</view>
-			<!-- #endif -->
 			
 			<!--标题-->
 			<view class="margin-bottom-sm zaiui-tab-list-title">
 				<view class="flex flex-wrap">
 					<view class="basis-sm text-right">
-						<!-- #ifndef APP-PLUS -->
-						<image class="img-aau" src="../../../static/zaiui-img/aau.png" lazy-load mode="widthFix"/>
-						<!-- #endif -->
-						
-						<!-- #ifdef APP-PLUS -->
-						<image class="img-aau" src="../../static/zaiui-img/aau.png" lazy-load mode="widthFix"/>
-						<!-- #endif -->
+						<image class="img-aau" src="/static/zaiui-img/aau.png" lazy-load mode="widthFix"/>
 					</view>
 					<view class="basis-xs text-center">
 						<text class="text-black text-xl text-bold">为您推荐</text>
 					</view>
 					<view class="basis-sm text-left">
-						<!-- #ifndef APP-PLUS -->
-						<image class="img-aau" src="../../../static/zaiui-img/aau.png" lazy-load mode="widthFix"/>
-						<!-- #endif -->
-						
-						<!-- #ifdef APP-PLUS -->
-						<image class="img-aau" src="../../static/zaiui-img/aau.png" lazy-load mode="widthFix"/>
-						<!-- #endif -->
+						<image class="img-aau" src="/static/zaiui-img/aau.png" lazy-load mode="widthFix"/>
 					</view>
 				</view>
 			</view>
@@ -167,13 +139,7 @@
 		</view>
 		
 		<!--弹出框-->
-		<!-- #ifdef MP -->
-		<modal-img :show="modalShow" src="../../../static/images/home/sundry/reward.png" @imgTap="imgTap" @closeTap="closeTap"/>
-		<!-- #endif -->
-		
-		<!-- #ifdef APP-PLUS || H5 -->
-		<modal-img :show="modalShow" src="../../static/images/home/sundry/reward.png" @imgTap="imgTap" @closeTap="closeTap"/>
-		<!-- #endif -->
+		<modal-img :show="modalShow" src="/static/images/home/sundry/reward.png" @imgTap="imgTap" @closeTap="closeTap"/>
 		
 		<!--打赏-->
 		<view class="zaiui-add-btn-view-box" @tap="rewardTap">
@@ -270,9 +236,6 @@
 			this.gridSortData = _home_data.gridSortData();
 		},
 		methods: {
-			getImgUrl(url) {
-				return _tool.getImgUrl(url);
-			},
 			//页面被滚动
 			setPageScroll(scrollTop) {
 				//console.log(scrollTop);

@@ -2,7 +2,7 @@
 	<view class="bg-white margin padding-sm radius zaiui-activity">
 		<view class="cu-list grid col-2">
 			<view class="cu-item">
-				<view class="text-black text-lg text-bold text-left margin-left-xs">附近的人</view>
+				<view class="text-black text-bold text-left margin-left-xs">附近的人</view>
 				<view class="flex p-xs margin-tb mb-sm">
 					<view class="flex-twice text-left">
 						<button class="cu-btn bg-blue sm round margin-top margin-left-xs">
@@ -12,13 +12,7 @@
 					</view>
 					<view class="flex-sub">
 						<view class="padding-right-sm">
-							<!-- #ifndef APP-PLUS -->
-							<image class="location-img"  src="../../../static/images/home/sundry/9.png" mode="widthFix"></image>
-							<!-- #endif -->
-							
-							<!-- #ifdef APP-PLUS -->
-							<image class="location-img" src="../../static/images/home/sundry/9.png" mode="widthFix"></image>
-							<!-- #endif -->
+							<image class="location-img" src="/static/images/home/sundry/9.png" mode="widthFix"></image>
 						</view>
 					</view>
 				</view>
@@ -26,10 +20,10 @@
 			<view class="cu-item">
 				<view class="grid col-2">
 					<view class="padding-left-sm" v-for="(item,index) in list_data" :key="index" v-if="index < 2" @tap="listTap(item,index)">
-						<view class="text-black text-lg text-bold text-left">{{item.title}}</view>
+						<view class="text-black text-bold text-left">{{item.title}}</view>
 						<view class="text-orange text-sm text-left">{{item.text}}</view>
 						<view class="margin-tb-sm">
-							<image class="width-img" :src="getImgUrl(item.img)" mode="widthFix"></image>
+							<image class="width-img" :src="item.img" mode="widthFix"></image>
 						</view>
 					</view>
 				</view>
@@ -37,9 +31,9 @@
 			<view class="cu-item">
 				<view class="grid col-2 padding-right-sm margin-top-sm">
 					<view class="padding-lr-xs" v-for="(item,index) in list_data" :key="index" v-if="index >= 2 && index < 4" @tap="listTap(item,index)">
-						<view class="text-black text-lg text-bold text-left ">{{item.title}}</view>
+						<view class="text-black text-bold text-left ">{{item.title}}</view>
 						<view class="margin-top-sm">
-							<image class="width-img" :src="getImgUrl(item.img)" mode="widthFix"></image>
+							<image class="width-img" :src="item.img" mode="widthFix"></image>
 						</view>
 					</view>
 				</view>
@@ -47,9 +41,9 @@
 			<view class="cu-item">
 				<view class="grid col-2 margin-top-sm">
 					<view class="padding-left-sm" v-for="(item,index) in list_data" :key="index" v-if="index >= 4 && index < 6" @tap="listTap(item,index)">
-						<view class="text-black text-lg text-bold text-left ">{{item.title}}</view>
+						<view class="text-black text-bold text-left ">{{item.title}}</view>
 						<view class="margin-top-sm">
-							<image class="width-img" :src="getImgUrl(item.img)" mode="widthFix"></image>
+							<image class="width-img" :src="item.img" mode="widthFix"></image>
 						</view>
 					</view>
 				</view>
@@ -71,9 +65,6 @@
 			}
 		},
 		methods: {
-			getImgUrl(url) {
-				return _tool.getImgUrl(url);
-			},
 			listTap(data,index) {
 				this.$emit('listTap', {
 					data,

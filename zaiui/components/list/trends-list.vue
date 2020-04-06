@@ -5,7 +5,7 @@
 				<!--用户信息-->
 				<view class="cu-list menu-avatar">
 					<view class="cu-item">
-						<view class="cu-avatar round" :style="[{backgroundImage:'url('+ getttImgUrl(item.avatar) +')'}]" @tap="listTap('userTap',item,index)"></view>
+						<view class="cu-avatar round" :style="[{backgroundImage:'url('+ item.avatar +')'}]" @tap="listTap('userTap',item,index)"/>
 						<view class="content" @tap="listTap('userTap',item,index)">
 							<view class="text-black">
 								<view class="text-cut">{{item.username}}</view>
@@ -16,7 +16,7 @@
 						</view>
 						<view class="action">
 							<button class="cu-btn sm line-red" @tap="listTap('viewBtnTap',item,index)" v-if="viewBtn">
-								<text class="cuIcon-goods"></text>
+								<text class="cuIcon-goods"/>
 								<text class="margin-left-xs">看TA</text>
 							</button>
 							
@@ -31,36 +31,36 @@
 				
 				<!--内容-->
 				<view class="margin-tb text-black zaiui-text-content" @tap="listTap('contentTap',item,index)">
-					<text v-html="item.text"></text>
+					<text v-html="item.text">{{item.text}}</text>
 					<text class="text-blue margin-left-xs" v-if="item.text_btn">
 						<text>查看全文</text>
-						<text class="cuIcon-right"></text>
+						<text class="cuIcon-right"/>
 					</text>
 				</view>
 				
 				<!-- #ifndef APP-PLUS -->
 				<view class="zaiui-video-box" v-if="item.video">
-					<video class="video-view" :src="item.video" @error="videoErrorCallback"></video>
+					<video class="video-view" :src="item.video" @error="videoErrorCallback"/>
 				</view>
 				<!-- #endif -->
 				
 				<!-- #ifdef APP-PLUS -->
 				<view class="zaiui-video-box" v-if="item.video">
-					<video-render :isCover="item.cover" :isSrc="item.video" :isNum="(index+1)"></video-render>
+					<video-render :isCover="item.cover" :isSrc="item.video" :isNum="(index+1)"/>
 				</view>
 				<!-- #endif -->
 				
 				<view class="zaiui-img-grid-col" v-if="item.img.length > 0">
 					<!--单图-->
 					<view class="one-img" v-if="item.img.length == 1" @tap="imgTap(item.img[0],item.img,0)">
-						<view class="img-grid" :style="[{backgroundImage:'url('+ getttImgUrl(item.img[0]) +')'}]"></view>
+						<view class="img-grid" :style="[{backgroundImage:'url('+ item.img[0] +')'}]"/>
 					</view>
 					
 					<!--两图-->
 					<view class="grid col-2" v-if="item.img.length == 2">
 						<block v-for="(items,indexs) in item.img" :key="indexs">
 							<view class="img-grid-view" @tap="imgTap(items,items,indexs)">
-								<view class="img-grid" :style="[{backgroundImage:'url('+ getttImgUrl(items) +')'}]"></view>
+								<view class="img-grid" :style="[{backgroundImage:'url('+ items +')'}]"/>
 							</view>
 						</block>
 					</view>
@@ -69,7 +69,7 @@
 					<view class="grid col-3" v-if="item.img.length > 2">
 						<block v-for="(items,indexs) in item.img" :key="indexs" v-if="indexs < 9">
 							<view class="img-grid-view" @tap="imgTap(items,items,indexs)">
-								<view class="img-grid" :style="[{backgroundImage:'url('+ getttImgUrl(items) +')'}]"></view>
+								<view class="img-grid" :style="[{backgroundImage:'url('+ items +')'}]"/>
 							</view>
 						</block>
 					</view>
@@ -89,11 +89,11 @@
 					</view>
 					<view class="flex-twice text-right">
 						<text class="text-right margin-right-lg" @tap="listTap('commentTap',item,index)">
-							<text class="cuIcon-comment icon"></text>
+							<text class="cuIcon-comment icon"/>
 							<text class="margin-left-xs">{{item.comment}}</text>
 						</text>
 						<text class="text-right" :class="item.appreciate_btn?'text-red':''" @tap="listTap('appreciateTap',item,index)">
-							<text class="cuIcon-appreciate icon"></text>
+							<text class="cuIcon-appreciate icon"/>
 							<text class="margin-left-xs">{{item.appreciate}}</text>
 						</text>
 					</view>
@@ -132,9 +132,6 @@
 			}
 		},
 		methods: {
-			getttImgUrl(url) {
-				return _tool.getttImgUrl(url);
-			},
 			listTap(tap,data,index) {
 				this.$emit(tap, {
 					data,
@@ -202,7 +199,8 @@
 					line-height: 1.5em;
 				}
 				.action {
-					width: 119.99rpx;
+					width: 154.54rpx;
+					text-align: right;
 					.cu-btn {
 						&:after {
 							border-radius: 18.18rpx;

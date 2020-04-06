@@ -1,7 +1,7 @@
 <template>
 	<view class="zaiui-swiper-background-box" :class="[show?'show':'',welcome?'welcome':'']">
 		<block v-for="(item,index) in list_data" :key="index">
-			<view class="swiper-background" :style="[{backgroundImage:'url('+ getttImgUrl(item.background) +')'}]"
+			<view class="swiper-background" :style="[{backgroundImage:'url('+ item.background +')'}]"
 			:class="index == indexs?'show':''"></view>
 		</block>
 	</view>
@@ -32,9 +32,7 @@
 			}
 		},
 		methods: {
-			getttImgUrl(url) {
-				return _tool.getttImgUrl(url);
-			},
+			
 		}
 	}
 </script>

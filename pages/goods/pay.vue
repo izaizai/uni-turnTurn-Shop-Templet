@@ -6,7 +6,7 @@
 		</bar-title>
 		<!--商品信息-->
 		<view class="bg-white zaiui-goods-details-box">
-			<view class="cu-avatar radius" :style="[{backgroundImage:'url('+ getttImgUrl(goods_img) +')'}]"></view>
+			<view class="cu-avatar radius" :style="[{backgroundImage:'url('+ goods_img +')'}]"/>
 			<view class="goods-info-view">
 				<view class="text-cut text-black">商品名称 99新 苹果 iPhoneX 256G 银色</view>
 				<view class="text-sm text-gray">测试内容1</view>
@@ -21,13 +21,7 @@
 		<view class="bg-white zaiui-pay-view">
 			<radio-group class="block" @change="RadioChange">
 				<view class="zaiui-pay-bar" @tap="payTap('wechat')">
-					<!-- #ifndef MP-TOUTIAO -->
-					<view class="cu-avatar sm" style="background-image:url(../../static/zaiui-img/wechat.png)"/>
-					<!-- #endif -->
-					
-					<!-- #ifdef MP-TOUTIAO -->
-					<view class="cu-avatar sm" style="background-image:url(static/zaiui-img/wechat.png)"/>
-					<!-- #endif -->
+					<view class="cu-avatar sm" style="background-image:url(/static/zaiui-img/wechat.png)"/>
 					<view class="content">
 						<view class="text-black">
 							<text class="margin-right-sm">微信支付</text>
@@ -41,13 +35,7 @@
 				</view>
 				
 				<view class="zaiui-pay-bar" @tap="payTap('alipay')">
-					<!-- #ifndef MP-TOUTIAO -->
-					<view class="cu-avatar sm" style="background-image:url(../../static/zaiui-img/alipay.png)"/>
-					<!-- #endif -->
-					
-					<!-- #ifdef MP-TOUTIAO -->
-					<view class="cu-avatar sm" style="background-image:url(static/zaiui-img/alipay.png)"/>
-					<!-- #endif -->
+					<view class="cu-avatar sm" style="background-image:url(/static/zaiui-img/alipay.png)"/>
 					<view class="content">
 						<view class="text-black">
 							<text class="margin-right-sm">支付宝支付</text>
@@ -86,7 +74,7 @@
 		},
 		data() {
 			return {
-				goodsList: [], checkAll: true, goods_img: '../../static/images/home/goods/1.png', radio: 'wechat',
+				goodsList: [], checkAll: true, goods_img: '/static/images/home/goods/1.png', radio: 'wechat',
 			}
 		},
 		onLoad() {
@@ -100,9 +88,6 @@
 			});
 		},
 		methods: {
-			getttImgUrl(url) {
-				return _tool.getttImgUrl(url);
-			},
 			RadioChange(e) {
 				this.radio = e.detail.value;
 			},

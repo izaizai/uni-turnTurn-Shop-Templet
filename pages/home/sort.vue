@@ -3,17 +3,17 @@
 		<view class="zaiui-bar-search-title-box">
 			<view class="cu-bar fixed no-shadow bg-white">
 				<view class="action" @tap="BackPage">
-					<text class="cuIcon-back"></text>
+					<text class="cuIcon-back"/>
 				</view>
 				<view class="content search" @tap="searchTap">
 					<view class="search-form round">
-						<text class="cuIcon-search"></text>
+						<text class="cuIcon-search"/>
 						<text class="margin-left-xs">输入您正在找的宝贝</text>
 					</view>
 				</view>
 			</view>
 			<!--占位的-->
-			<view class="zaiui-seat-height"></view>
+			<view class="zaiui-seat-height"/>
 		</view>
 		
 		<view class="VerticalBox">
@@ -31,7 +31,7 @@
 						<!--标题栏-->
 						<view class="cu-bar bg-white">
 							<view class="action">
-								<text class="cuIcon-title text-red"></text>
+								<text class="cuIcon-title text-red"/>
 								<text>标题栏-{{item.name}}</text>
 							</view>
 						</view>
@@ -42,7 +42,7 @@
 								<block v-for="(items,indexs) in sortList" :key="indexs">
 									<view class="cu-item">
 										<view class="grid-icon">
-											<image class="icon" :src="items.img" mode="widthFix"></image>
+											<image class="icon" :src="items.img" lazy-load mode="widthFix"/>
 										</view>
 										<text class="text-black">{{items.name}}</text>
 									</view>

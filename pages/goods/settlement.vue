@@ -27,7 +27,7 @@
 						</view>
 					</view>
 				</view>
-				<view class="address-line"></view>
+				<view class="address-line"/>
 			</view>
 		</view>
 		
@@ -35,13 +35,7 @@
 		<view class="margin-tb-sm zaiui-view-box">
 			<view class="bg-white zaiui-card goods-view">
 				<view class="margin-bottom-sm title-view">
-					<!-- #ifndef MP-TOUTIAO -->
-					<view class="cu-avatar sm round" style="background-image:url(../../static/images/avatar/1.jpg)"/>
-					<!-- #endif -->
-					
-					<!-- #ifdef MP-TOUTIAO -->
-					<view class="cu-avatar sm round" style="background-image:url(static/images/avatar/1.jpg)"/>
-					<!-- #endif -->
+					<view class="cu-avatar sm round" style="background-image:url(/static/images/avatar/1.jpg)"/>
 					<view class="title-box">
 						<text class="text-black margin-right-xs">仔仔自营</text>
 						<text class="bg-red cu-tag sm radius">自营</text>
@@ -49,7 +43,7 @@
 				</view>
 				
 				<view class="goods-info-view-box solid-bottom">
-					<view class="cu-avatar radius lg" :style="[{backgroundImage:'url('+ getttImgUrl(goods_img) +')'}]"></view>
+					<view class="cu-avatar radius lg" :style="[{backgroundImage:'url('+ goods_img +')'}]"/>
 					<view class="goods-info-view">
 						<view class="text-cut text-black">商品名称 99新 苹果 iPhoneX 256G 银色</view>
 						<view class="text-sm text-gray">比加入时降￥50元</view>
@@ -89,7 +83,7 @@
 							<text class="margin-right-xs">￥ 95.00</text>
 							<text class="cu-tag line-red sm radius">限时5折</text>
 						</view>
-						<view class="zaiui-corner-mark"></view>
+						<view class="zaiui-corner-mark"/>
 						<text class="cuIcon-check check-icon"/>
 					</view>
 					<view class="flex-sub bg-page padding-sm margin-xs radius">
@@ -99,7 +93,7 @@
 							<text class="margin-right-xs">￥ 65.00</text>
 							<text class="cu-tag line-red sm radius">限时5折</text>
 						</view>
-						<view class="zaiui-corner-mark check"></view>
+						<view class="zaiui-corner-mark check"/>
 						<text class="cuIcon-check check-icon check"/>
 					</view>
 				</view>
@@ -185,7 +179,7 @@
 		
 		
 		<!--占位底部距离-->
-		<view class="cu-tabbar-height"></view>
+		<view class="cu-tabbar-height"/>
 		
 		<!--底部操作-->
 		<view class="zaiui-footer-fixed">
@@ -211,7 +205,7 @@
 		},
 		data() {
 			return {
-				goodsList: [], checkAll: true, goods_img: '../../static/images/home/goods/1.png',
+				goodsList: [], checkAll: true, goods_img: '/static/images/home/goods/1.png',
 			}
 		},
 		onLoad() {
@@ -225,9 +219,6 @@
 			});
 		},
 		methods: {
-			getttImgUrl(url) {
-				return _tool.getttImgUrl(url);
-			},
 			payTap() {
 				uni.navigateTo({
 					url: "/pages/goods/pay"

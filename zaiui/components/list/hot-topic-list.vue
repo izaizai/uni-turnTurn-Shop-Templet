@@ -25,7 +25,7 @@
 						<view class="cu-list menu-avatar">
 							<block v-for="(items,indexs) in list_data" :key="indexs" v-if="getItmeList(index,indexs)">
 								<view class="cu-item" @tap="listTap(items,indexs)">
-									<view class="cu-avatar radius xl" :style="[{backgroundImage:'url('+ getttImgUrl(items.img) +')'}]"></view>
+									<view class="cu-avatar radius xl" :style="[{backgroundImage:'url('+ items.img +')'}]"></view>
 									<view class="content">
 										<view class="text-black">
 											<view class="text-cut">{{items.title}}</view>
@@ -78,12 +78,6 @@
 			this.getScrollPageNum(this.list_data);
 		},
 		methods: {
-			getttImgUrl(url) {
-				return _tool.getttImgUrl(url);
-			},
-			getImgUrl(url) {
-				return _tool.getImgUrl(url);
-			},
 			listTap(data,index) {
 				this.$emit('listTap', {
 					data,

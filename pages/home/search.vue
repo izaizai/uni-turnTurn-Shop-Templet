@@ -3,12 +3,12 @@
 		<view class="zaiui-bar-search-title-box">
 			<view class="cu-bar search bg-white fixed no-shadow">
 				<view class="action" @tap="BackPage">
-					<text class="cuIcon-back"></text>
+					<text class="cuIcon-back"/>
 				</view>
 				<view class="search-form round">
-					<text class="cuIcon-search"></text>
-					<input @input="searchInput" :value="searchKey" :adjust-position="false" type="text" placeholder="苹果7" confirm-type="search"></input>
-					<text class="cuIcon-close close-icon" v-if="search_close" @tap="closeInput"></text>
+					<text class="cuIcon-search"/>
+					<input @input="searchInput" :value="searchKey" :adjust-position="false" type="text" placeholder="苹果7" confirm-type="search"/>
+					<text class="cuIcon-close close-icon" v-if="search_close" @tap="closeInput"/>
 				</view>
 				<view class="action">
 					<!--小程序端不显示-->
@@ -18,7 +18,7 @@
 				</view>
 			</view>
 			<!--占位的-->
-			<view class="zaiui-seat-height"></view>
+			<view class="zaiui-seat-height"/>
 		</view>
 		
 		<!--搜索区域-->
@@ -27,7 +27,7 @@
 			<view class="search-list-view">
 				<view class="search-bar-view">
 					<text class="text-black">历史搜索</text>
-					<text class="cuIcon-delete text-gray icon-right" @tap="deleteTap"></text>
+					<text class="cuIcon-delete text-gray icon-right" @tap="deleteTap"/>
 				</view>
 				<view class="btn-view">
 					<button class="cu-btn round">耳机</button>
@@ -69,15 +69,15 @@
 				<view class="btn-view">
 					<button class="cu-btn round">
 						<text>耳机</text>
-						<text class="cuIcon-roundclosefill close-icon"></text>
+						<text class="cuIcon-roundclosefill close-icon"/>
 					</button>
 					<button class="cu-btn round">
 						<text>苹果手机</text>
-						<text class="cuIcon-roundclosefill close-icon"></text>
+						<text class="cuIcon-roundclosefill close-icon"/>
 					</button>
 					<button class="cu-btn round">
 						<text>电动车</text>
-						<text class="cuIcon-roundclosefill close-icon"></text>
+						<text class="cuIcon-roundclosefill close-icon"/>
 					</button>
 				</view>
 			</view>

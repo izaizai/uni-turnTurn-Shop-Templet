@@ -6,8 +6,8 @@
 			<!-- #ifndef MP -->
 			<bar-title :isBack="false" :fixed="false">
 				<block slot="right">
-					<text class="cuIcon-camera"></text>
-					<text class="cuIcon-settings"></text>
+					<text class="cuIcon-camera"/>
+					<text class="cuIcon-settings"/>
 				</block>
 			</bar-title>
 			<!-- #endif -->
@@ -16,13 +16,7 @@
 			<view class="zaiui-user-info-box">
 				<view class="cu-list menu-avatar">
 					<view class="cu-item">
-						<!-- #ifndef MP-TOUTIAO -->
-						<view class="cu-avatar round lg" style="background-image:url(../../static/images/avatar/1.jpg);"/>
-						<!-- #endif -->
-						
-						<!-- #ifdef MP-TOUTIAO -->
-						<view class="cu-avatar round lg" style="background-image:url(static/images/avatar/1.jpg);"/>
-						<!-- #endif -->
+						<view class="cu-avatar round lg" style="background-image:url(/static/images/avatar/1.jpg);"/>
 						<view class="content text-xl">
 							<view class="text-white">凯尔</view>
 							<view class="text-white-bg text-sm">
@@ -59,7 +53,7 @@
 			<!--用户提示-->
 			<view class="text-sm zaiui-user-info-tip-box">
 				<view class="text-cut">偷偷告诉你，实名认证后宝贝更易卖出哦~</view>
-				<text class="cuIcon-right icon"></text>
+				<text class="cuIcon-right icon"/>
 			</view>	
 		</view>
 		
@@ -94,13 +88,7 @@
 				<view class="grid col-2 money-col">
 					<view class="money-item">
 						<view class="money-item-view">
-							<!-- #ifndef MP-TOUTIAO -->
-							<view class="cu-avatar lg" style="background-image:url(../../static/images/my/1.png);"/>
-							<!-- #endif -->
-							
-							<!-- #ifdef MP-TOUTIAO -->
-							<view class="cu-avatar lg" style="background-image:url(static/images/my/1.png);"/>
-							<!-- #endif -->
+							<view class="cu-avatar lg" style="background-image:url(/static/images/my/1.png);"/>
 							<view class="money-content">
 								<view class="text-black text-cut">边逛边赚钱</view>
 								<view class="text-gray text-sm text-cut">最高提现20元</view>
@@ -109,13 +97,7 @@
 					</view>
 					<view class="money-item">
 						<view class="money-item-view">
-							<!-- #ifndef MP-TOUTIAO -->
-							<view class="cu-avatar lg" style="background-image:url(../../static/images/my/2.png);"/>
-							<!-- #endif -->
-							
-							<!-- #ifdef MP-TOUTIAO -->
-							<view class="cu-avatar lg" style="background-image:url(static/images/my/2.png);"/>
-							<!-- #endif -->
+							<view class="cu-avatar lg" style="background-image:url(/static/images/my/2.png);"/>
 							<view class="money-content">
 								<view class="text-black text-cut">发条借钱</view>
 								<view class="text-gray text-sm text-cut">最高额度50000</view>
@@ -131,14 +113,14 @@
 					<view class="text-black text-bold text-lg tools-title">推荐工具</view>
 					<view class="text-gray text-sm tools-right">
 						<text>更多</text>
-						<text class="cuIcon-right"></text>
+						<text class="cuIcon-right"/>
 					</view>
 				</view>
 				
 				<view class="zaiui-tools-list-box">
 					<view class="cu-list grid col-4 no-border">
 						<view class="cu-item" v-for="(item,index) in toolsList" :key="index" v-if="index < 12">
-							<view class="text-black" :class="['cuIcon-' + item.icon]"></view>
+							<view class="text-black" :class="['cuIcon-' + item.icon]"/>
 							<text>{{item.name}}</text>
 						</view>
 					</view>

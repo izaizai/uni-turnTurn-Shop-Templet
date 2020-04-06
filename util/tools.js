@@ -1,26 +1,6 @@
 //工具函数库，仔仔编写。
 
 let _tool = {
-	//处理头条图片地址
-	getttImgUrl(url) {
-		// #ifndef MP-TOUTIAO
-			return url;
-		// #endif
-		
-		// #ifdef MP-TOUTIAO
-			return url.replace('../../','');
-		// #endif
-	},
-	//处理图片地址
-	getImgUrl(url) {
-		// #ifndef MP
-			return url;
-		// #endif
-		
-		// #ifdef MP
-			return '../' + url;
-		// #endif
-	},
 	//获取字符串的真实长度（字节长度）
 	strLeng(str) {
 		if(str) {

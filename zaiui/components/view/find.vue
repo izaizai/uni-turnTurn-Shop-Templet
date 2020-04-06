@@ -160,9 +160,6 @@
 			});
 		},
 		methods: {
-			getImgUrl(url) {
-				return _tool.getImgUrl(url);
-			},
 			//页面被滚动
 			setPageScroll(scrollTop) {
 				//console.log(scrollTop);

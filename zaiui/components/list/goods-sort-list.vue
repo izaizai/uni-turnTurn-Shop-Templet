@@ -3,25 +3,25 @@
 		<view class="cu-list menu-avatar">
 			<block v-for="(item,index) in list_data" :key="index">
 				<view class="cu-item" @tap="listTap(item,index)">
-					<view class="cu-avatar radius lg" :style="[{backgroundImage:'url('+ getttImgUrl(item.img) +')'}]"></view>
+					<view class="cu-avatar radius lg" :style="[{backgroundImage:'url('+ item.img +')'}]"></view>
 					<view class="content">
 						<view class="text-black text-cut">
 							<text class="cu-tag bg-red radius sm" v-if="item.autarky">自营</text>
 							<text>{{item.title}}</text>
 						</view>
-						<view class="text-gray text-sm">
+						<view class="text-gray text-cut text-sm">
 							<block v-for="(items,indexs) in item.type" :key="indexs">
 								<text class="cu-tag radius sm">{{items}}</text>
 							</block>
 						</view>
-						<view class="text-gray text-sm zaiui-tag-view">
+						<view class="text-gray text-cut text-sm zaiui-tag-view">
 							<text class="text-red text-price text-lg">{{item.price}}</text>
 							<text class="text-gray through" v-if="item.cost_price">￥{{item.cost_price}}</text>
 							<block v-for="(items,indexs) in item.discount" :key="indexs">
 								<text class="cu-tag line-orange radius sm">{{items}}</text>
 							</block>
 						</view>
-						<view class="text-gray text-sm ">
+						<view class="text-gray text-cut text-sm ">
 							<text class="cu-tag light bg-red radius sm" v-if="item.quv">已验机</text>
 							<block v-for="(items,indexs) in item.style" :key="indexs">
 								<text class="cu-tag line-blue radius sm">{{items}}</text>
@@ -51,9 +51,6 @@
 			}
 		},
 		methods: {
-			getttImgUrl(url) {
-				return _tool.getttImgUrl(url);
-			},
 			listTap(data,index) {
 				this.$emit('listTap', {
 					data,

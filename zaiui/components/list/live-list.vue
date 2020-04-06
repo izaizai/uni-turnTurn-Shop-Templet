@@ -5,12 +5,12 @@
 				<block v-for="(item,index) in list_data" :key="index" v-if="index%2==0">
 					<view class="margin-bottom-sm img-itme" @tap="listTap(item,index)">
 						<!--背景图-->
-						<image class="cover-img" :src="getImgUrl(item.cover_img)" lazy-load mode="widthFix"></image>
+						<image class="cover-img" :src="item.cover_img" lazy-load mode="widthFix"/>
 						
 						<!--观看人数-->
 						<view class="cu-capsule round live-tag" v-if="item.tag">
 							<view class='cu-tag bg-red sm'>
-								<text class='cuIcon-all'></text>
+								<text class='cuIcon-all'/>
 							</view>
 							<view class="cu-tag sm">{{item.tag}}</view>
 						</view>
@@ -18,7 +18,7 @@
 						<!--鉴别中-->
 						<view class="cu-capsule round live-tag-title" v-if="item.tag_title.length > 0">
 							<view class='cu-tag bg-red sm'>
-								<text class='cuIcon-all'></text>
+								<text class='cuIcon-all'/>
 								<text>{{item.tag_title[0]}}</text>
 							</view>
 							<view class="cu-tag sm">{{item.tag_title[1]}}</view>
@@ -26,7 +26,7 @@
 						
 						<!--预约中-->
 						<view class='cu-tag sm bg-red round live-time-tag' v-if="item.tag_time">
-							<text class='cuIcon-timefill'></text>
+							<text class='cuIcon-timefill'/>
 							<text class="margin-left-xs">{{item.tag_time}}</text>
 						</view>
 						
@@ -43,12 +43,12 @@
 						<view class="live-user-info-box" v-if="item.name">
 							<view class="user-box">
 								<!--头像-->
-								<image :src="getImgUrl(item.avatar)" mode="aspectFill" lazy-load class="cu-avatar sm round" v-if="item.avatar"></image>
+								<image :src="item.avatar" mode="aspectFill" lazy-load class="cu-avatar sm round" v-if="item.avatar"/>
 								<!--名称-->
 								<view class="text-cut text-sm user-name">{{item.name}}</view>
 								<!--点赞-->
 								<view class="text-sm text-right live-appreciate" v-if="item.appreciate">
-									<text class="cuIcon-appreciate"></text>
+									<text class="cuIcon-appreciate"/>
 									<text class="margin-left-xs">{{item.appreciate}}</text>
 								</view>
 							</view>
@@ -60,12 +60,12 @@
 				<block v-for="(item,index) in list_data" :key="index" v-if="index%2!=0">
 					<view class="margin-bottom-sm img-itme" @tap="listTap(item,index)">
 						<!--背景图-->
-						<image class="cover-img" :src="getImgUrl(item.cover_img)" lazy-load mode="widthFix"></image>
+						<image class="cover-img" :src="item.cover_img" lazy-load mode="widthFix"/>
 						
 						<!--观看人数-->
 						<view class="cu-capsule round live-tag" v-if="item.tag">
 							<view class='cu-tag bg-red sm'>
-								<text class='cuIcon-all'></text>
+								<text class='cuIcon-all'/>
 							</view>
 							<view class="cu-tag sm">{{item.tag}}</view>
 						</view>
@@ -73,7 +73,7 @@
 						<!--鉴别中-->
 						<view class="cu-capsule round live-tag-title" v-if="item.tag_title.length > 0">
 							<view class='cu-tag bg-red sm'>
-								<text class='cuIcon-all'></text>
+								<text class='cuIcon-all'/>
 								<text>{{item.tag_title[0]}}</text>
 							</view>
 							<view class="cu-tag sm">{{item.tag_title[1]}}</view>
@@ -81,7 +81,7 @@
 						
 						<!--预约中-->
 						<view class='cu-tag bg-red sm round live-time-tag' v-if="item.tag_time">
-							<text class='cuIcon-timefill'></text>
+							<text class='cuIcon-timefill'/>
 							<text class="margin-left-xs">{{item.tag_time}}</text>
 						</view>
 						
@@ -98,12 +98,12 @@
 						<view class="live-user-info-box" v-if="item.name">
 							<view class="user-box">
 								<!--头像-->
-								<image :src="getImgUrl(item.avatar)" mode="aspectFill" lazy-load class="cu-avatar sm round" v-if="item.avatar"></image>
+								<image :src="item.avatar" mode="aspectFill" lazy-load class="cu-avatar sm round" v-if="item.avatar"/>
 								<!--名称-->
 								<view class="text-cut text-sm user-name">{{item.name}}</view>
 								<!--点赞-->
 								<view class="text-sm text-right live-appreciate" v-if="item.appreciate">
-									<text class="cuIcon-appreciate"></text>
+									<text class="cuIcon-appreciate"/>
 									<text class="margin-left-xs">{{item.appreciate}}</text>
 								</view>
 							</view>
@@ -132,9 +132,6 @@
 			}
 		},
 		methods: {
-			getImgUrl(url) {
-				return _tool.getImgUrl(url);
-			},
 			listTap(data,index) {
 				this.$emit('listTap', {
 					data,

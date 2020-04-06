@@ -3,8 +3,8 @@
 		<scroll-view class="scroll-view" scroll-x>
 			<block v-for="(item,index) in list_data" :key="item.id">
 				<view :id="['topicGrid' + (index + 1 )]" class="scroll-item" @tap="listTap(items,index)">
-					<view class="cu-avatar radius" :style="[{backgroundImage:'url('+ getttImgUrl(item.img) +')'}]"></view>
-					<view class="bg-shade"></view>
+					<view class="cu-avatar radius" :style="[{backgroundImage:'url('+ item.img +')'}]"/>
+					<view class="bg-shade"/>
 					<view class="text-sm text">{{item.title}}</view>
 				</view>
 			</block>
@@ -25,9 +25,6 @@
 			}
 		},
 		methods: {
-			getttImgUrl(url) {
-				return _tool.getttImgUrl(url);
-			},
 			listTap(data,index) {
 				this.$emit('listTap', {
 					data,

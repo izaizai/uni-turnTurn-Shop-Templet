@@ -6,7 +6,7 @@
 			<!--小程序端不显示-->
 			<!-- #ifndef MP -->
 			<block slot="right">
-				<text class="cuIcon-forward"></text>
+				<text class="cuIcon-forward"/>
 			</block>
 			<!-- #endif -->
 		</bar-title>
@@ -33,7 +33,7 @@
 				助大家提升居家幸福感!
 			</view>
 			<view class="font-view">
-				<image src="../../static/images/home/goods/13.png" mode="widthFix"></image>
+				<image src="/static/images/home/goods/13.png" mode="widthFix"/>
 			</view>
 			<view class="font-view">
 				想不想在每天早上都拥有可口的早餐呢，那就快入手这款
@@ -41,9 +41,9 @@
 				多时间，长期来看也节省了不少金钱成本!轻松按一下就
 				可以拥有可口美味的早餐啦!
 			</view>
-			<image src="../../static/images/home/goods/10.png" mode="widthFix"></image>
+			<image src="/static/images/home/goods/10.png" mode="widthFix"/>
 		</view>
-		<view class="zaiui-hight-view"></view>
+		<view class="zaiui-hight-view"/>
 		
 		<!--评论头部-->
 		<view class="cu-bar bg-white solid-bottom">
@@ -52,11 +52,11 @@
 			</view>
 			<view class="action">
 				<view class="text-red">
-					<text class="cuIcon-hot"></text>
+					<text class="cuIcon-hot"/>
 					<text class="margin-left-xs">按热度</text>
 				</view>
 				<view class="margin-left">
-					<text class="cuIcon-time"></text>
+					<text class="cuIcon-time"/>
 					<text class="margin-left-xs">按时间</text>
 				</view>
 			</view>
@@ -67,13 +67,7 @@
 			<view class="zaiui-view-box">
 				<view class="flex flex-wrap">
 					<view class="basis-1">
-						<!-- #ifndef MP-TOUTIAO -->
-						<view class="cu-avatar round" style="background-image:url(../../static/images/avatar/1.jpg)"/>
-						<!-- #endif -->
-						
-						<!-- #ifdef MP-TOUTIAO -->
-						<view class="cu-avatar round" style="background-image:url(static/images/avatar/1.jpg)"/>
-						<!-- #endif -->
+						<view class="cu-avatar round" style="background-image:url(/static/images/avatar/1.jpg)"/>
 					</view>
 					<view class="basis-9">
 						<view class="text-black">仔仔</view>
@@ -85,22 +79,16 @@
 					</view>
 				</view>
 				<view class="text-lg text-gray text-right tools-icon-view">
-					<text class="cuIcon-comment"></text>
+					<text class="cuIcon-comment"/>
 					<text class="cuIcon-appreciate">20</text>
 				</view>
 			</view>
-			<view class="zaiui-border-view"></view>
+			<view class="zaiui-border-view"/>
 			
 			<view class="zaiui-view-box">
 				<view class="flex flex-wrap">
 					<view class="basis-1">
-						<!-- #ifndef MP-TOUTIAO -->
-						<view class="cu-avatar round" style="background-image:url(../../static/images/avatar/2.jpg)"/>
-						<!-- #endif -->
-						
-						<!-- #ifdef MP-TOUTIAO -->
-						<view class="cu-avatar round" style="background-image:url(static/images/avatar/2.jpg)"/>
-						<!-- #endif -->
+						<view class="cu-avatar round" style="background-image:url(/static/images/avatar/2.jpg)"/>
 					</view>
 					<view class="basis-9">
 						<view class="text-black">仔仔</view>
@@ -112,22 +100,16 @@
 					</view>
 				</view>
 				<view class="text-lg text-gray text-right tools-icon-view">
-					<text class="cuIcon-comment"></text>
+					<text class="cuIcon-comment"/>
 					<text class="cuIcon-appreciate">4</text>
 				</view>
 			</view>
-			<view class="zaiui-border-view"></view>
+			<view class="zaiui-border-view"/>
 			
 			<view class="zaiui-view-box">
 				<view class="flex flex-wrap">
 					<view class="basis-1">
-						<!-- #ifndef MP-TOUTIAO -->
-						<view class="cu-avatar round" style="background-image:url(../../static/images/avatar/3.jpg)"/>
-						<!-- #endif -->
-						
-						<!-- #ifdef MP-TOUTIAO -->
-						<view class="cu-avatar round" style="background-image:url(static/images/avatar/3.jpg)"/>
-						<!-- #endif -->
+						<view class="cu-avatar round" style="background-image:url(/static/images/avatar/3.jpg)"/>
 					</view>
 					<view class="basis-9">
 						<view class="text-black">仔仔</view>
@@ -139,13 +121,13 @@
 					</view>
 				</view>
 				<view class="text-lg text-gray text-right tools-icon-view">
-					<text class="cuIcon-comment"></text>
+					<text class="cuIcon-comment"/>
 					<text class="cuIcon-appreciate">6</text>
 				</view>
 			</view>
 		</view>
 		
-		<view class="foot-hight-view"></view>
+		<view class="foot-hight-view"/>
 		
 		<view class="bg-white zaiui-footer-fixed">
 			<view class="flex flex-direction">
@@ -165,7 +147,7 @@
 		},
 		data() {
 			return {
-				bg_img: '../../static/images/home/goods/1.png', content: {},
+				bg_img: '/static/images/home/goods/1.png', content: {},
 			}
 		},
 		onLoad() {
@@ -179,7 +161,6 @@
 			});
 		},
 		methods: {
-			
 			
 		}
 	}

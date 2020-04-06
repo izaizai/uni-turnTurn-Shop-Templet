@@ -13,11 +13,11 @@
 			<view class="padding-xs live-box" v-for="(item,index) in list_data" :key="index" @tap="listTap(item,index)">
 				<view class="flex flex-wrap">
 					<view class="basis-xs">
-						<image class="img" :src="getImgUrl(item.img)" mode="widthFix"/>
+						<image class="img" :src="item.img" mode="widthFix"/>
 					</view>
 					<view class="basis-xl">
 						<view class="text-black margin-left-xs">{{item.name}}</view>
-						<view class="text-xs text-gray margin-left-xs">{{item.text}}</view>
+						<view class="text-xs text-cut text-gray margin-left-xs">{{item.text}}</view>
 					</view>
 				</view>
 			</view>
@@ -38,9 +38,6 @@
 			}
 		},
 		methods: {
-			getImgUrl(url) {
-				return _tool.getImgUrl(url);
-			},
 			listTap(data,index) {
 				this.$emit('listTap', {
 					data,

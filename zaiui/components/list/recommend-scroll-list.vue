@@ -10,7 +10,7 @@
 					<view class="action">
 						<text class="text-gray text-sm" @tap="viewAllTap">
 							<text>查看全部</text>
-							<text class="cuIcon-right"></text>
+							<text class="cuIcon-right"/>
 						</text>
 					</view>
 				</view>
@@ -23,7 +23,7 @@
 				<block v-for="(items,indexs) in list_data" :key="indexs">
 					<view :id="['scroll' + (indexs + 1 )]" class="text-center recommend-scroll-item">
 						<view @tap="listTap('userTap',items,indexs)">
-							<view class="cu-avatar xl round" :style="[{backgroundImage:'url('+ getttImgUrl(items.avatar) +')'}]"></view>
+							<view class="cu-avatar xl round" :style="[{backgroundImage:'url('+ items.avatar +')'}]"/>
 							<view class="text-black text-cut margin-tb-sm">{{items.name}}</view>
 						</view>
 						
@@ -52,9 +52,6 @@
 			}
 		},
 		methods: {
-			getttImgUrl(url) {
-				return _tool.getttImgUrl(url);
-			},
 			listTap(tap,data,index) {
 				this.$emit(tap, {
 					data,

@@ -14,7 +14,7 @@ let _my_cart_data = {
 				tag: '比加入时降￥50元',
 				rule: '移动4G 联通4G 电信4G',
 				name: '商品名称 99新 苹果 iPhoneX 256G 银色',
-				img: '../../static/images/home/goods/1.png'
+				img: '/static/images/home/goods/1.png'
 			},{
 				id: 4,
 				num: 1,
@@ -25,7 +25,7 @@ let _my_cart_data = {
 				tag: '',
 				rule: '移动5G 联通5G 电信5G',
 				name: '商品名称 99新 小米 XiaoMI10 256G 银色',
-				img: '../../static/images/home/goods/2.png'
+				img: '/static/images/home/goods/2.png'
 			},{
 				id: 5,
 				num: 1,
@@ -36,7 +36,7 @@ let _my_cart_data = {
 				tag: '比加入时降￥50元',
 				rule: '移动4G 联通3G 电信5G',
 				name: '商品名称 99新 三星 XiaoMI10 256G 银色',
-				img: '../../static/images/home/goods/3.png'
+				img: '/static/images/home/goods/3.png'
 			}]
 		},{
 			id: 2,
@@ -52,7 +52,7 @@ let _my_cart_data = {
 				tag: '比加入时降￥50元',
 				rule: '移动4G 联通4G 电信4G',
 				name: '商品名称 99新 苹果 iPhoneX 256G 银色',
-				img: '../../static/images/home/goods/4.png'
+				img: '/static/images/home/goods/4.png'
 			},{
 				id: 7,
 				num: 1,
@@ -63,7 +63,7 @@ let _my_cart_data = {
 				tag: '',
 				rule: '移动5G 联通5G 电信5G',
 				name: '商品名称 99新 小米 XiaoMI10 256G 银色',
-				img: '../../static/images/home/goods/5.png'
+				img: '/static/images/home/goods/5.png'
 			},{
 				id: 8,
 				num: 1,
@@ -74,7 +74,7 @@ let _my_cart_data = {
 				tag: '比加入时降￥50元',
 				rule: '移动4G 联通3G 电信5G',
 				name: '商品名称 99新 三星 XiaoMI10 256G 银色',
-				img: '../../static/images/home/goods/6.png'
+				img: '/static/images/home/goods/6.png'
 			}]
 		}];
 	}

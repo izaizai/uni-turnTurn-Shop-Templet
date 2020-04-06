@@ -33,7 +33,7 @@
 				<view class="zaiui-goods-list-box">
 					<checkbox class='round red zaiui-checked' :class="checkbox_list[1].checked?'checked':''"
 					:checked="checkbox_list[1].checked?true:false" :value="checkbox_list[1].id + ''"/>
-					<view class="cu-avatar radius" :style="[{backgroundImage:'url('+ getttImgUrl(goods_img) +')'}]"/>
+					<view class="cu-avatar radius" :style="[{backgroundImage:'url('+ goods_img +')'}]"/>
 					<view class="goods-info-view">
 						<view class="text-cut-2 text-black">商品名称 99新 苹果 iPhoneX</view>
 						<view class="goods-info-tools">
@@ -45,7 +45,7 @@
 				<view class="zaiui-goods-list-box">
 					<checkbox class='round red zaiui-checked' :class="checkbox_list[2].checked?'checked':''"
 					:checked="checkbox_list[2].checked?true:false" :value="checkbox_list[2].id + ''"/>
-					<view class="cu-avatar radius" :style="[{backgroundImage:'url('+ getttImgUrl(goods_img) +')'}]"/>
+					<view class="cu-avatar radius" :style="[{backgroundImage:'url('+ goods_img +')'}]"/>
 					<view class="goods-info-view">
 						<view class="text-cut-2 text-black">商品名称 99新 苹果 iPhoneX 256G 银色 测试换行内容的 测试一下效果的</view>
 						<view class="goods-info-tools">
@@ -66,7 +66,7 @@
 				<view class="zaiui-goods-list-box zaiui-lower-shelf">
 					<checkbox class='round red zaiui-checked' :class="checkbox_list[4].checked?'checked':''"
 					:checked="checkbox_list[4].checked?true:false" :value="checkbox_list[4].id + ''"/>
-					<view class="cu-avatar radius" :style="[{backgroundImage:'url('+ getttImgUrl(goods_img_a) +')'}]"/>
+					<view class="cu-avatar radius" :style="[{backgroundImage:'url('+ goods_img_a +')'}]"/>
 					<view class="img-lower-box">已下架</view>
 					<view class="goods-info-view">
 						<view class="text-cut-2 text-black">商品名称 99新 苹果 iPhoneX</view>
@@ -79,7 +79,7 @@
 				<view class="zaiui-goods-list-box zaiui-lower-shelf">
 					<checkbox class='round red zaiui-checked' :class="checkbox_list[5].checked?'checked':''"
 					:checked="checkbox_list[5].checked?true:false" :value="checkbox_list[5].id + ''"/>
-					<view class="cu-avatar radius" :style="[{backgroundImage:'url('+ getttImgUrl(goods_img_a) +')'}]"/>
+					<view class="cu-avatar radius" :style="[{backgroundImage:'url('+ goods_img_a +')'}]"/>
 					<view class="img-lower-box">已下架</view>
 					<view class="goods-info-view">
 						<view class="text-cut-2 text-black">商品名称 99新 苹果 iPhoneX 256G 银色 测试换行内容的 测试一下效果的</view>
@@ -93,13 +93,13 @@
 		</checkbox-group>
 		
 		<!--占位底部距离-->
-		<view class="cu-tabbar-height" v-if="goods_checked"></view>
+		<view class="cu-tabbar-height" v-if="goods_checked"/>
 		
 		<!--底部操作-->
 		<view class="zaiui-footer-fixed" v-if="goods_checked">
 			<view class="cu-bar bg-white padding-lr">
 				<view class="checked-view" @tap="tapChecked"> 
-					<checkbox class='round red sm zaiui-checked' :class="checkbox_all?'checked':''" :checked="checkbox_all"></checkbox>
+					<checkbox class='round red sm zaiui-checked' :class="checkbox_all?'checked':''" :checked="checkbox_all"/>
 					<text class="text-black text-lg">全选</text>
 				</view>
 				<view class="btn-view">
@@ -112,8 +112,8 @@
 		<!-- #ifdef MP -->
 			<!--编辑-->
 			<view class="zaiui-add-btn-view-box" @tap="rightTap">
-				<button class="cu-btn cuIcon-check bg-red" v-if="goods_checked"></button>
-				<button class="cu-btn cuIcon-write bg-red" v-else></button>
+				<button class="cu-btn cuIcon-check bg-red" v-if="goods_checked"/>
+				<button class="cu-btn cuIcon-write bg-red" v-else/>
 			</view>
 		<!-- #endif -->
 	</view>
@@ -129,8 +129,8 @@
 		data() {
 			return {
 				headTab: {TabCur: 0, scrollLeft: 0, list: []},
-				goods_img: '../../static/images/home/goods/1.png',
-				goods_img_a: '../../static/images/home/goods/2.png',
+				goods_img: '/static/images/home/goods/1.png',
+				goods_img_a: '/static/images/home/goods/2.png',
 				checkbox_list: [], checkbox_all: false, goods_checked: false,
 			}
 		},
@@ -160,10 +160,6 @@
 				    scrollTop: 0,
 				    duration: 100
 				});
-			},
-			//处理头条图片
-			getttImgUrl(url) {
-				return _tool.getttImgUrl(url);
 			},
 			//编辑
 			rightTap() {

@@ -4,11 +4,11 @@
 			<view class="bg-white margin-bottom zaiui-type-list" @tap="listTap(items,indexs)">
 				<view class="cu-list menu-avatar">
 					<view class="cu-item">
-						<view class="cu-avatar round lg" :style="[{backgroundImage:'url('+ getttImgUrl(items.img) +')'}]"></view>
+						<view class="cu-avatar round lg" :style="[{backgroundImage:'url('+ items.img +')'}]"/>
 						<view class="content">
 							<view class="text-black">
 								<view class="text-cut">{{items.title}}</view>
-								<text class="margin-left-xs text-red cuIcon-roundright"></text>
+								<text class="margin-left-xs text-red cuIcon-roundright"/>
 							</view>
 							<view class="text-sm flex">
 								<view class="text-cut">{{items.text}}</view>
@@ -34,9 +34,6 @@
 			}
 		},
 		methods: {
-			getttImgUrl(url) {
-				return _tool.getttImgUrl(url);
-			},
 			listTap(data,index) {
 				this.$emit('listTap', {
 					data,

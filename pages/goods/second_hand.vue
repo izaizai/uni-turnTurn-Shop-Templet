@@ -9,8 +9,8 @@
 			<!--小程序端不显示-->
 			<!-- #ifndef MP -->
 			<block slot="right">
-				<text class="cuIcon-forward"></text>
-				<text class="cuIcon-more"></text>
+				<text class="cuIcon-forward"/>
+				<text class="cuIcon-more"/>
 			</block>
 			<!-- #endif -->
 		</bar-title>
@@ -21,25 +21,19 @@
 				<block v-for="(item,index) in tabListData" :key="index">
 					<view class="cu-item" :class="index==TabCur?'text-black select':''" @tap="tabSelect" :data-id="index">
 						<view>{{item}}</view>
-						<view class="tab-dot bg-red"></view>
+						<view class="tab-dot bg-red"/>
 					</view>
 				</block>
 			</scroll-view>
 		</view>
 		
 		<!--Tab栏占位-->
-		<view class="zaiui-scroll-height-view" v-if="!barShow"></view>
+		<view class="zaiui-scroll-height-view" v-if="!barShow"/>
 		
 		<!--商品简介-->
 		<view class="bg-white padding zaiui-goods-synopsis-view">
 			<view class="user-view">
-				<!-- #ifndef MP-TOUTIAO -->
-				<view class="cu-avatar sm round" style="background-image:url(../../static/images/avatar/1.jpg)"/>
-				<!-- #endif -->
-				
-				<!-- #ifdef MP-TOUTIAO -->
-				<view class="cu-avatar sm round" style="background-image:url(static/images/avatar/1.jpg)"/>
-				<!-- #endif -->
+				<view class="cu-avatar sm round" style="background-image:url(/static/images/avatar/1.jpg)"/>
 				<view class="text-black text-name">仔仔11</view>
 				<text class="text-gray text-sm text-right-view">当前在线</text>
 			</view>
@@ -53,7 +47,7 @@
 				<view class="text-cut cut-view">重庆 渝北区</view>
 				<view class="text-right-view">
 					<text class="text-view">查看宝贝位置</text>
-					<text class="cuIcon-right"></text>
+					<text class="cuIcon-right"/>
 				</view>
 			</view>
 		</view>
@@ -67,14 +61,14 @@
 				<view class="basis-7">
 					<view class="tag-view-box">
 						<text class="tag-view">
-							<text class="cuIcon-title text-red"></text>
+							<text class="cuIcon-title text-red"/>
 							<text>支持验机</text>
 						</text>
 					</view>
 				</view>
 				<view class="basis-2">
 					<view class="text-gray text-right icon-view">
-						<text class="cuIcon-right icon"></text>
+						<text class="cuIcon-right icon"/>
 					</view>
 				</view>
 			</view>
@@ -113,11 +107,11 @@
 			<view class="text-black zaiui-text-content-view">iphoneX,美版256G,原装正品，无拆修，配件齐全，功能正常使用</view>
 			
 			<view class="zaiui-img-box">
-				<image src="../../static/images/home/goods/11.png" mode="widthFix"></image>
-				<image src="../../static/images/home/goods/12.png" mode="widthFix"></image>
+				<image src="/static/images/home/goods/11.png" mode="widthFix"/>
+				<image src="/static/images/home/goods/12.png" mode="widthFix"/>
 			</view>
 			
-			<view class="zaiui-border-view"></view>
+			<view class="zaiui-border-view"/>
 			
 			<view class="title-view">
 				<text class="text-black">支持平台验机</text>
@@ -127,17 +121,17 @@
 			<view class="bg-white zaiui-steps-view">
 				<view class="cu-steps steps-arrow">
 					<view class="cu-item">
-						<text class="cuIcon-send text-blue"></text>
+						<text class="cuIcon-send text-blue"/>
 						<text class="text-black">卖家邮寄</text>
 						<view class="text-gray text-sm">至验机中心</view>
 					</view>
 					<view class="cu-item">
-						<text class="cuIcon-same text-blue"></text>
+						<text class="cuIcon-same text-blue"/>
 						<text class="text-black">平台验机</text>
 						<view class="text-gray text-sm">出具验机报告</view>
 					</view>
 					<view class="cu-item">
-						<text class="cuIcon-deliver text-blue"></text>
+						<text class="cuIcon-deliver text-blue"/>
 						<text class="text-black">买家确认</text>
 						<view class="text-gray text-sm">平台顺丰邮寄</view>
 					</view>
@@ -146,7 +140,7 @@
 			
 			<view class="text-right text-gray margin-top text-sm">
 				<text>1人想要</text>
-				<text class="cuIcon-titles margin-lr-xs"></text>
+				<text class="cuIcon-titles margin-lr-xs"/>
 				<text>106次浏览</text>
 			</view>
 		</view>
@@ -156,18 +150,12 @@
 			<view class="padding text-black text-lg">关于卖家</view>
 			<view class="cu-list menu-avatar ">
 				<view class="cu-item">
-					<!-- #ifndef MP-TOUTIAO -->
-					<view class="cu-avatar round" style="background-image:url(../../static/images/avatar/1.jpg);"/>
-					<!-- #endif -->
-					
-					<!-- #ifdef MP-TOUTIAO -->
-					<view class="cu-avatar round" style="background-image:url(static/images/avatar/1.jpg);"/>
-					<!-- #endif -->
+					<view class="cu-avatar round" style="background-image:url(/static/images/avatar/1.jpg);"/>
 					<view class="content">
 						<view class="text-black">
 							<view class="text-cut">仔仔</view>
 							<view class="cu-tag radius bg-blue sm">
-								<text class="cuIcon-myfill"></text>
+								<text class="cuIcon-myfill"/>
 							</view>
 						</view>
 						<view class="flex">
@@ -175,7 +163,7 @@
 						</view>
 					</view>
 					<view class="action">
-						<view class="cuIcon-right text-gray"></view>
+						<view class="cuIcon-right text-gray"/>
 					</view>
 				</view>
 			</view>
@@ -202,7 +190,7 @@
 						<view class="grid col-4">
 							<block v-for="(items,indexs) in goodsList" :key="indexs" v-if="setSwiperItem(indexs,index)">
 								<view class="goods-item">
-									<view class="cu-avatar radius xl" :style="[{backgroundImage:'url('+ getttImgUrl(items.img) +')'}]"></view>
+									<view class="cu-avatar radius xl" :style="[{backgroundImage:'url('+ items.img +')'}]"/>
 									<text class="text-sm text-price-view">￥{{items.price}}</text>
 								</view>
 							</block>
@@ -223,29 +211,16 @@
 			</view>
 			<view class="zaiui-interaction-view" v-else>
 				<view class="padding-tb-sm user-input-view">
-					<!-- #ifndef MP-TOUTIAO -->
-					<view class="cu-avatar round" style="background-image:url(../../static/images/avatar/1.jpg);"/>
-					<!-- #endif -->
-					
-					<!-- #ifdef MP-TOUTIAO -->
-					<view class="cu-avatar round" style="background-image:url(static/images/avatar/1.jpg);"/>
-					<!-- #endif -->
-					
+					<view class="cu-avatar round" style="background-image:url(/static/images/avatar/1.jpg);"/>
 					<view class="input-view-box">
-						<view class="arrow-view"></view>
+						<view class="arrow-view"/>
 						<input class="input-view" placeholder="问问更多细节吧~"></input>
 						<button class="cu-btn bg-red">留言</button>
 					</view>
 				</view>
 				<view class="zaiui-interaction-list-view">
 					<view class="list-itme">
-						<!-- #ifndef MP-TOUTIAO -->
-						<view class="cu-avatar round" style="background-image:url(../../static/images/avatar/2.jpg);"/>
-						<!-- #endif -->
-						
-						<!-- #ifdef MP-TOUTIAO -->
-						<view class="cu-avatar round" style="background-image:url(static/images/avatar/2.jpg);"/>
-						<!-- #endif -->
+						<view class="cu-avatar round" style="background-image:url(/static/images/avatar/2.jpg);"/>
 						<view class="view-box">
 							<view class="title-box">
 								<text class="margin-right-xs">仔仔</text>
@@ -269,13 +244,7 @@
 						</view>
 					</view>
 					<view class="list-itme">
-						<!-- #ifndef MP-TOUTIAO -->
-						<view class="cu-avatar round" style="background-image:url(../../static/images/avatar/3.jpg);"/>
-						<!-- #endif -->
-						
-						<!-- #ifdef MP-TOUTIAO -->
-						<view class="cu-avatar round" style="background-image:url(static/images/avatar/3.jpg);"/>
-						<!-- #endif -->
+						<view class="cu-avatar round" style="background-image:url(/static/images/avatar/3.jpg);"/>
 						<view class="view-box">
 							<view class="title-box">
 								<text class="margin-right-xs">仔仔33</text>
@@ -287,13 +256,7 @@
 						</view>
 					</view>
 					<view class="list-itme">
-						<!-- #ifndef MP-TOUTIAO -->
-						<view class="cu-avatar round" style="background-image:url(../../static/images/avatar/4.jpg);"/>
-						<!-- #endif -->
-						
-						<!-- #ifdef MP-TOUTIAO -->
-						<view class="cu-avatar round" style="background-image:url(static/images/avatar/4.jpg);"/>
-						<!-- #endif -->
+						<view class="cu-avatar round" style="background-image:url(/static/images/avatar/4.jpg);"/>
 						<view class="view-box">
 							<view class="title-box">
 								<text class="margin-right-xs">仔仔444</text>
@@ -307,24 +270,24 @@
 					<view class="padding-top text-center text-blue">展开更多</view>
 				</view>
 			</view>
-			<view class="zaiui-border-view"></view>
+			<view class="zaiui-border-view"/>
 			<view class="padding-bottom text-black text-lg">大家都想问</view>
 			<view class="zaiui-tag-view-box">
 				<view class="cu-tag light bg-red round">
 					<text class="margin-right-xs">有发票吗？</text>
-					<text class="cuIcon-creativefill"></text>
+					<text class="cuIcon-creativefill"/>
 				</view>
 				<view class="cu-tag light bg-red round">
 					<text class="margin-right-xs">是否包邮？</text>
-					<text class="cuIcon-creativefill"></text>
+					<text class="cuIcon-creativefill"/>
 				</view>
 				<view class="cu-tag light bg-red round">
 					<text class="margin-right-xs">包装小票还在吗？</text>
-					<text class="cuIcon-creativefill"></text>
+					<text class="cuIcon-creativefill"/>
 				</view>
 				<view class="cu-tag light bg-red round">
 					<text class="margin-right-xs">宝贝是全新的吗？</text>
-					<text class="cuIcon-creativefill"></text>
+					<text class="cuIcon-creativefill"/>
 				</view>
 			</view>
 			<view class="zaiui-tag-text-view-box">
@@ -339,7 +302,7 @@
 					<text class="text-gray text-sm">答：可以小刀</text>
 				</view>
 			</view>
-			<view class="zaiui-border-view"></view>
+			<view class="zaiui-border-view"/>
 			<view class="text-center text-blue">查看更多问答</view>
 		</view>
 		
@@ -348,13 +311,7 @@
 			<view class="text-black">为您推荐同型号已验机商品</view>
 			<view class="margin-top zaiui-goods-info-box">
 				<view class="goods-img-view">
-					<!-- #ifndef MP-TOUTIAO -->
-					<view class="cu-avatar radius lg" style="background-image:url(../../static/images/home/goods/1.png);"/>
-					<!-- #endif -->
-					
-					<!-- #ifdef MP-TOUTIAO -->
-					<view class="cu-avatar radius lg" style="background-image:url(static/images/home/goods/1.png);"/>
-					<!-- #endif -->
+					<view class="cu-avatar radius lg" style="background-image:url(/static/images/home/goods/1.png);"/>
 					<view class="cu-tag bg-cyan sm radius">已出报告</view>
 				</view>
 				<view class="goods-info-view">
@@ -379,13 +336,7 @@
 			<view class="grid col-2">
 				<view class="grid-item-box">
 					<view class="bg-white item-view">
-						<!-- #ifndef MP-TOUTIAO -->
-						<view class="cu-avatar radius lg" style="background-image:url(../../static/images/home/goods/1.png);"/>
-						<!-- #endif -->
-						
-						<!-- #ifdef MP-TOUTIAO -->
-						<view class="cu-avatar radius lg" style="background-image:url(static/images/home/goods/1.png);"/>
-						<!-- #endif -->
+						<view class="cu-avatar radius lg" style="background-image:url(/static/images/home/goods/1.png);"/>
 						<view class="padding-sm zaiui-text-view">
 							<view class="text-cut text-black text-sm">99新 苹果 iPhoneX 256G 银色</view>
 							<view class="text-sm text-gray text-cut tag-view-box">
@@ -405,13 +356,7 @@
 				</view>
 				<view class="grid-item-box">
 					<view class="bg-white item-view">
-						<!-- #ifndef MP-TOUTIAO -->
-						<view class="cu-avatar radius lg" style="background-image:url(../../static/images/home/goods/4.png);"/>
-						<!-- #endif -->
-						
-						<!-- #ifdef MP-TOUTIAO -->
-						<view class="cu-avatar radius lg" style="background-image:url(static/images/home/goods/4.png);"/>
-						<!-- #endif -->
+						<view class="cu-avatar radius lg" style="background-image:url(/static/images/home/goods/4.png);"/>
 						<view class="padding-sm zaiui-text-view">
 							<view class="text-cut text-black text-sm">99新 苹果 iPhoneX 256G 银色</view>
 							<view class="text-sm text-gray text-cut tag-view-box">
@@ -430,13 +375,7 @@
 				</view>
 				<view class="grid-item-box">
 					<view class="bg-white item-view">
-						<!-- #ifndef MP-TOUTIAO -->
-						<view class="cu-avatar radius lg" style="background-image:url(../../static/images/home/goods/11.png);"/>
-						<!-- #endif -->
-						
-						<!-- #ifdef MP-TOUTIAO -->
-						<view class="cu-avatar radius lg" style="background-image:url(static/images/home/goods/11.png);"/>
-						<!-- #endif -->
+						<view class="cu-avatar radius lg" style="background-image:url(/static/images/home/goods/11.png);"/>
 						<view class="padding-sm zaiui-text-view">
 							<view class="text-cut text-black text-sm">99新 苹果 iPhoneX 256G 银色</view>
 							<view class="text-sm text-gray text-cut tag-view-box">
@@ -456,13 +395,7 @@
 				</view>
 				<view class="grid-item-box">
 					<view class="bg-white item-view">
-						<!-- #ifndef MP-TOUTIAO -->
-						<view class="cu-avatar radius lg" style="background-image:url(../../static/images/home/goods/10.png);"/>
-						<!-- #endif -->
-						
-						<!-- #ifdef MP-TOUTIAO -->
-						<view class="cu-avatar radius lg" style="background-image:url(static/images/home/goods/10.png);"/>
-						<!-- #endif -->
+						<view class="cu-avatar radius lg" style="background-image:url(/static/images/home/goods/10.png);"/>
 						<view class="padding-sm zaiui-text-view">
 							<view class="text-cut text-black text-sm">99新 苹果 iPhoneX 256G 银色</view>
 							<view class="text-sm text-gray text-cut tag-view-box">
@@ -492,7 +425,7 @@
 				<view class="flex flex-wrap">
 					<view class="basis-xs">
 						<view class="text-center">
-							<view class="cuIcon-like"></view>
+							<view class="cuIcon-like"/>
 							<view class="text-sm">想要</view>
 						</view>
 					</view>
