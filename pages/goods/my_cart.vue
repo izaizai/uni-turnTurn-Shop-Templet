@@ -1,12 +1,12 @@
 <template>
 	<view>
 		<!--标题栏-->
-		<bar-title bgColor='bg-white' backText=' ' @rightTap="barEditTap">
+		<bar-title bgColor='bg-white' @rightTap="barEditTap">
 			<block slot="content">购物车</block>
-			<!--小程序端不显示-->
-			<!-- #ifndef MP -->
-			<block slot="right">编辑</block>
-			<!-- #endif -->
+			<block slot="right">
+				<text v-if="goods_checked">完成</text>
+				<text v-else>编辑</text>
+			</block>
 		</bar-title>
 		
 		<view class="bg-white zaiui-cart-list-view">
@@ -78,10 +78,10 @@
 </template>
 
 <script>
-	import barTitle from '@/zaiui/components/basics/bar-title';
+	import barTitle from '@/components/zaiui-common/basics/bar-title';
 	
-	import _my_cart_data from '@/zaiui/data/my_cart.js';	//虚拟数据
-	import _tool from '@/util/tools.js';	//工具函数
+	import _my_cart_data from '@/static/zaiui/data/my_cart.js';	//虚拟数据
+	import _tool from '@/static/zaiui/util/tools.js';	//工具函数
 	export default {
 		components: {
 			barTitle,
@@ -151,7 +151,7 @@
 	/* #ifdef APP-PLUS */
 		@import "../../static/colorui/main.css";
 		@import "../../static/colorui/icon.css";
-		@import "../../zaiui/style/app.scss";
+		@import "../../static/zaiui/style/app.scss";
 	/* #endif */
-	@import "../../zaiui/style/my_cart.scss";
+	@import "../../static/zaiui/style/my_cart.scss";
 </style>

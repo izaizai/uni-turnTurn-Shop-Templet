@@ -1,0 +1,172 @@
+page {
+	background-color: #FFFFFF;
+}
+
+.zaiui-sort-grid-box {
+	position: relative;
+	margin: 27.27rpx 0;
+	width: 100%;
+	.scroll-view {
+		position: relative;
+		white-space: nowrap;
+		width: 100%;
+		.scroll-item {
+			display: inline-block;
+			position: relative;
+			text-align: center;
+			margin: 0 21.81rpx;
+			width: 127.27rpx;
+			&:first-child {
+				margin-left: 18.18rpx;
+			}
+			&:last-child {
+				margin-right: 18.18rpx;
+			}
+			.cu-avatar {
+			    width: 99.99rpx;
+			    height: 99.99rpx;
+				border-radius: 50%;
+			}
+			.text {
+				position: relative;
+				padding: 14.54rpx 18.18rpx 0; 
+				width: 100%;	
+			}
+		}
+	}
+}
+
+.zaiui-nav-tab-view {
+	position: sticky;
+	padding: 2rpx 0 9.09rpx;
+	z-index: 9999;
+	
+	/* #ifndef MP */
+	top: calc(var(--status-bar-height) + 101rpx);
+	/* #endif */
+	
+	/* #ifdef MP */
+	top: calc(var(--status-bar-height) + 161rpx);
+	/* #endif */
+	
+	transition: all .25s;
+	.nav.z .cu-item.select .tab-dot {
+		height: 5.45rpx;	
+	}
+}
+.zaiui-order-tab-view {
+	position: relative;
+	margin: 0 27.27rpx;
+	margin-top: 27.27rpx;
+	border-radius: 9.09rpx;
+	padding: 27.27rpx 18.18rpx;
+	box-shadow: 0 0 14.54rpx #f1f1f1;
+	&:last-child {
+		margin-bottom: 27.27rpx;
+	}
+	.shop-title-view {
+		position: relative;
+		margin-bottom: 27.27rpx;
+		.cu-avatar {
+		    position: absolute;	
+		}
+		.shop-name {
+			position: relative;
+		    height: 47.27rpx;
+		    line-height: 47.27rpx;
+		    padding: 0 199.99rpx 0 61.81rpx;	
+		}
+		.text-right {
+		    position: absolute;
+			top: 7.27rpx;
+		    right: 0;
+		}
+	}
+	.goods-list-view {
+		position: relative;
+		margin-top: 27.27rpx;
+		.cu-avatar {
+		    position: absolute;
+		    width: 158.18rpx;
+		    height: 158.18rpx;
+		}
+		.goods-info-view {
+			position: relative;
+			padding-left: 176.36rpx;
+			height: 158.18rpx;
+			.name {
+			    position: relative;
+			    height: 36.36rpx;
+			}
+			.introduce {
+			    position: relative;
+			    height: 32.72rpx;
+			    margin-top: 9.09rpx;
+			}
+			.tag-view {
+				position: relative;
+				height: 30.9rpx;
+				margin-top: 9.09rpx;
+				.cu-tag {
+				    position: relative;
+				    top: -3.63rpx;
+				}
+			}
+			.text-price {
+				height: 30.9rpx;
+			    margin-top: 9.09rpx;
+			}
+		}
+	}
+	.statistics-view {
+		position: relative;
+		padding: 18.18rpx 0;
+		margin-top: 18.18rpx;
+		border-bottom: 2rpx solid #f3f3f3;
+	}
+	.zaiui-btn-view {
+		position: relative;
+		text-align: right;
+		margin-top: 18.18rpx;
+		.cu-btn {
+		    background: #FFFFFF;	
+		}
+		.cu-btn + .cu-btn {
+		    margin-left: 9.09rpx;
+		}
+	}
+}
+
+
+.zaiui-foot-tip-view {
+	position: relative;
+	text-align: center;
+	margin-top: 72.72rpx;
+	margin: 27.27rpx 0;
+	.img-view {
+		position: relative;
+		margin-bottom: 9.09rpx;
+		.cu-avatar {
+		    background: #FFFFFF;
+		    background-size: cover;
+		    background-position: center;
+		}
+	}
+}
+
+.zaiui-null-view {
+	position: relative;
+	text-align: center;
+	margin-top: 72.72rpx;
+	.img-view {
+		position: relative;
+		margin-bottom: 9.09rpx;
+		.cu-avatar {
+			width: 363.63rpx;
+			height: 363.63rpx;
+		    background: #FFFFFF;
+		    background-size: cover;
+		    background-position: center;
+		}
+	}
+}

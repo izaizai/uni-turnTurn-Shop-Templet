@@ -59,8 +59,8 @@
 </template>
 
 <script>
-	import _sort_data from '@/zaiui/data/sort_vue.js';	//虚拟数据
-	import _tool from '@/util/tools.js';	//工具函数
+	import _sort_data from '@/static/zaiui/data/sort_vue.js';	//虚拟数据
+	import _tool from '@/static/zaiui/util/tools.js';	//工具函数
 	export default {
 		data() {
 			return {
@@ -137,9 +137,9 @@
 	/* #ifdef APP-PLUS */
 		@import "../../static/colorui/main.css";
 		@import "../../static/colorui/icon.css";
-		@import "../../zaiui/style/app.scss";
+		@import "../../static/zaiui/style/app.scss";
 	/* #endif */
 	
-	@import "../../zaiui/style/sort_vue.scss";
+	@import "../../static/zaiui/style/sort_vue.scss";
 	
 </style>

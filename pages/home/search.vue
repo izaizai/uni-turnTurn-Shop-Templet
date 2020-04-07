@@ -11,10 +11,7 @@
 					<text class="cuIcon-close close-icon" v-if="search_close" @tap="closeInput"/>
 				</view>
 				<view class="action">
-					<!--小程序端不显示-->
-					<!-- #ifndef MP -->
 					<text class="text-red">搜索</text>
-					<!-- #endif -->
 				</view>
 			</view>
 			<!--占位的-->
@@ -87,7 +84,7 @@
 </template>
 
 <script>
-	import _tool from '@/util/tools.js';	//工具函数
+	import _tool from '@/static/zaiui/util/tools.js';	//工具函数
 	export default {
 		data() {
 			return {
@@ -135,7 +132,7 @@
 	/* #ifdef APP-PLUS */
 		@import "../../static/colorui/main.css";
 		@import "../../static/colorui/icon.css";
-		@import "../../zaiui/style/app.scss";
+		@import "../../static/zaiui/style/app.scss";
 	/* #endif */
-	@import "../../zaiui/style/search.scss";
+	@import "../../static/zaiui/style/search.scss";
 </style>

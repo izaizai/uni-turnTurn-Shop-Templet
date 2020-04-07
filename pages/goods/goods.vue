@@ -1,15 +1,12 @@
 <template>
 	<view>
 		<!--标题栏-->
-		<bar-title bgColor='bg-white' backText=' '>
+		<bar-title bgColor='bg-white'>
 			<block slot="content">商品详情</block>
-			<!--小程序端不显示-->
-			<!-- #ifndef MP -->
 			<block slot="right">
 				<text class="cuIcon-forward"/>
 				<text class="cuIcon-more"/>
 			</block>
-			<!-- #endif -->
 		</bar-title>
 		
 		<!--提示-->
@@ -269,13 +266,13 @@
 		<view class="margin-top zaiui-view-box zaiui-recommend-list-view-box">
 			<view class="flex flex-wrap">
 				<view class="basis-sm text-right">
-					<image class="img-aau" src="/static/zaiui-img/aau.png" lazy-load mode="widthFix"/>
+					<image class="img-aau" src="/static/zaiui/img/aau.png" lazy-load mode="widthFix"/>
 				</view>
 				<view class="basis-xs text-center">
 					<text class="text-black text-lg">相似推荐</text>
 				</view>
 				<view class="basis-sm text-left">
-					<image class="img-aau" src="/static/zaiui-img/aau.png" lazy-load mode="widthFix"/>
+					<image class="img-aau" src="/static/zaiui/img/aau.png" lazy-load mode="widthFix"/>
 				</view>
 			</view>
 			
@@ -471,10 +468,10 @@
 </template>
 
 <script>
-	import barTitle from '@/zaiui/components/basics/bar-title';
+	import barTitle from '@/components/zaiui-common/basics/bar-title';
 	
-	import _goods_data from '@/zaiui/data/goods.js';	//虚拟数据
-	import _tool from '@/util/tools.js';	//工具函数
+	import _goods_data from '@/static/zaiui/data/goods.js';	//虚拟数据
+	import _tool from '@/static/zaiui/util/tools.js';	//工具函数
 	export default {
 		components: {
 			barTitle,
@@ -537,7 +534,7 @@
 	/* #ifdef APP-PLUS */
 		@import "../../static/colorui/main.css";
 		@import "../../static/colorui/icon.css";
-		@import "../../zaiui/style/app.scss";
+		@import "../../static/zaiui/style/app.scss";
 	/* #endif */
-	@import "../../zaiui/style/goods.scss";
+	@import "../../static/zaiui/style/goods.scss";
 </style>

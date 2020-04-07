@@ -22,17 +22,17 @@
 
 <script>
 	//加载组件
-	import home from '@/zaiui/components/view/home';
-	import find from '@/zaiui/components/view/find';
-	import sell from '@/zaiui/components/view/sell';
-	import news from '@/zaiui/components/view/news';
-	import my from '@/zaiui/components/view/my';
+	import home from '@/components/zaiui-common/view/home';
+	import find from '@/components/zaiui-common/view/find';
+	import sell from '@/components/zaiui-common/view/sell';
+	import news from '@/components/zaiui-common/view/news';
+	import my from '@/components/zaiui-common/view/my';
 	
 	//固定组件
-	import footerTabbar from '@/zaiui/components/footer/footer-tabbar';
+	import footerTabbar from '@/components/zaiui-common/footer/footer-tabbar';
 	
 	//工具函数
-	import _tool from '@/util/tools.js';
+	import _tool from '@/static/zaiui/util/tools.js';
 	export default {
 		components: { 
 			home, find, sell, news, my, footerTabbar, 
@@ -100,6 +100,6 @@
 	/* #ifdef APP-PLUS */
 		@import "../../static/colorui/main.css";
 		@import "../../static/colorui/icon.css";
-		@import "../../zaiui/style/app.scss";
+		@import "../../static/zaiui/style/app.scss";
 	/* #endif */
 </style>

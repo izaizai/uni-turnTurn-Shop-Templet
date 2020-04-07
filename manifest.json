@@ -38,7 +38,9 @@
                 "idfa" : true
             },
             "sdkConfigs" : {
-                "ad" : null
+                "ad" : {
+                    "360" : {}
+                }
             }
         },
         "compilerVersion" : 3

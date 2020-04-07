@@ -1,0 +1,418 @@
+.zaiui-goods-synopsis-view {
+	.user-view {
+		position: relative;
+		width: 100%;
+		.cu-avatar {
+		    position: absolute;	
+		}
+		.text-name {
+			position: relative;
+			padding: 0 181.81rpx 0 61.81rpx;
+			line-height: 47.27rpx;
+			height: 47.27rpx;
+		}
+		.text-right-view {
+			position: absolute;
+		    right: 0;
+		    top: 7.27rpx;	
+		}
+	}
+	.price-view {
+		position: relative;
+		text {
+			margin-right: 9.09rpx;
+		}
+	}
+	.zaiui-map-view {
+		position: relative;
+		background-image: url('/static/images/home/sundry/map.png');
+		background-size: cover;
+		background-position: center;
+		padding: 10.9rpx 27.27rpx;
+		border-radius: 90.9rpx;
+		opacity: 0.8;
+		.cut-view {
+			padding-right: 218.18rpx;	
+		}
+		.text-right-view {
+			position: absolute;
+			right: 27.27rpx;
+			top: 10.9rpx;
+		}
+	}
+}
+
+.zaiui-service-view-box {
+	position: relative;
+	.flex {
+		.basis-1 {
+			flex-basis: 10%;
+		}
+		.basis-7 {
+			flex-basis: 70%;
+		}
+		.basis-2 {
+			flex-basis: 20%;
+		}
+	}
+	.tag-view-box {
+		.tag-view {
+			margin-right: 9.09rpx;
+		}
+	}
+	.icon-view {
+		height: 100%;
+		display: flex;
+		align-items: center;
+		.icon {
+			position: absolute;
+			right: 15px;
+		}
+	}
+}
+
+.zaiui-details-view-box {
+	position: relative;
+	.title-view {
+		padding: 9.09rpx 0 18.18rpx;
+	}
+	.col-item {
+		margin: 9.09rpx 0;
+	}
+	.zaiui-text-content-view {
+		margin: 27.27rpx 0;
+	}
+	.zaiui-img-box {
+		position: relative;
+		width: 100%;
+		image {
+			width: 100%;
+			border-radius: 18.18rpx;
+		}
+		image + image {
+			margin-top: 18.18rpx;
+		}
+	}
+}
+
+.zaiui-footer-fixed {
+	box-shadow: 0 -2rpx 9.09rpx 0 #ececec;
+	.cu-bar, .flex-wrap {
+		width: 100%;
+	}
+	.cu-bar {
+		padding-right: 18.18rpx;
+		.basis-xs {
+			flex-basis: 15%;
+		}
+		.basis-sm{
+			flex-basis: 42.5%;
+		}
+		.btn-view {
+			padding: 0 18.18rpx;
+			.cu-btn {
+				width: 100%;
+			}
+		}
+	}
+}
+
+.zaiui-border-view {
+	position: relative;
+	background: #efebeb;
+	margin: 36.36rpx 0;	
+	height: 2rpx;
+	width: 100%;
+}
+
+.zaiui-steps-view {
+	box-shadow: 0 0 14.54rpx rgba(26, 26, 26, 0.2);
+	margin: 9.09rpx 0 29.09rpx 0;
+	--ShadowSize: 0 1rpx 6rpx;
+    border-radius: 9.09rpx;
+    padding: 29.09rpx;
+	.cu-steps.steps-arrow .cu-item::before, .cu-steps.steps-arrow .cu-item::after {
+	    content: "\E7F6";
+		border-bottom-width: 0;
+	    font-family: 'cuIcon';
+		font-size: 36.36rpx;
+	    height: 29.09rpx;
+	    color: #D0E0FA;
+	    line-height: 0;
+	    top: -30.9rpx;
+		margin: auto;
+	    bottom: 0;
+	}
+}
+
+.zaiui-selll-user-view-box {
+	.cu-list.menu-avatar>.cu-item {
+		height: 99.99rpx;
+		.content {
+			left: 127.27rpx;
+			width: calc(100% - 94.54rpx - 127.27rpx);
+			.cu-tag.sm {
+				padding: 0;
+				width: 27.27rpx;
+				height: 27.27rpx;
+				text-align: center;
+				line-height: 27.27rpx;
+			}
+		}
+		&:after {
+			width: 0;
+			height: 0;
+			border-bottom: 0;
+		}
+	}
+	.cu-list.menu-avatar>.cu-item>.cu-avatar {
+	    width: 72.72rpx;
+	    height: 72.72rpx;	
+	}
+	.zaiui-grid-tab-view {
+		position: relative;
+		width: 100%;
+		.grid {
+			border-radius: 9.09rpx;
+			.item-view {
+				position: relative;
+				padding: 14.54rpx 0;
+			}
+			.item-view + .item-view {
+				&:before {
+					content: "";
+				    position: absolute;
+					background: #e2e2e2;
+				    height: 45.45rpx;
+					top: 27.27rpx;
+				    width: 2rpx;
+				    z-index: 0;
+				    left: 0;
+				}
+			}
+		}
+	}
+	.zaiui-goods-swiper-view {
+		.goods-item {
+			position: relative;
+			text-align: center;
+			.text-price-view {
+			    position: absolute;
+				bottom: 3.63rpx;
+				left: 36.36rpx;
+			    color: #fff;
+			}
+		}
+		.screen-swiper {
+		    min-height: 145.45rpx;
+		    height: 172.72rpx;
+		}
+	}
+}
+
+.zaiui-interaction-view-box {
+	.zaiui-null-view {
+		position: relative;
+		text-align: center;
+		height: 218.18rpx;
+		width: 100%;
+		.text-view-box {
+			padding: 45.45rpx 0 36.36rpx 0;
+		}
+		.cu-btn {
+		    height: 61.81rpx;
+		    font-size: 23.63rpx;
+		    padding: 0 45.45rpx;
+		}
+	}
+	.zaiui-interaction-view {
+		position: relative;
+		width: 100%;
+		.user-input-view {
+			position: relative;
+			width: 100%;
+			.cu-avatar {
+				position: absolute;	
+			}
+			.input-view-box {
+			    position: relative;
+			    padding-left: 99.99rpx;
+				.arrow-view {
+				    border-top: 18.18rpx solid transparent;
+				    border-bottom: 18.18rpx solid transparent;
+				    border-right: 18.18rpx solid #F8F8F8;
+				    position: absolute;
+				    left: 83.63rpx;
+				    top: 13.63rpx;
+					height: 0;
+					width: 0;
+				}
+				.input-view {
+					margin-right: 141.81rpx;
+					background: #F8F8F8;
+					font-size: 25.45rpx;
+					padding: 0 27.27rpx;
+				    height: 63.63rpx;
+				}
+				.cu-btn {
+					border-radius: 0 72.72rpx 72.72rpx 0;
+				    position: absolute;
+					padding: 0 45.45rpx;
+					font-size: 25.45rpx;
+				    right: 0;
+				    top: 0;
+				}
+			}
+		}
+	}
+	.zaiui-interaction-list-view {
+		position: relative;
+		width: 100%;
+		.list-itme {
+		    position: relative;
+		    width: 100%;
+		    padding: 27.27rpx 0;
+		    border-bottom: 2rpx solid #efebeb;
+			.cu-avatar {
+				position: absolute;	
+			}
+			.view-box {
+				position: relative;
+			    padding-left: 99.99rpx;
+				.content-box {
+				    line-height: 1.6;
+				    margin-top: 9.09rpx;
+				}
+			}
+			.zaiui-comment-view {
+				background: #F8F8F8;
+				margin-top: 27.27rpx;
+				.user-name-box {
+					.cu-tag {
+						position: relative;
+					    top: -2rpx;
+					    margin: 0 9.09rpx;	
+					}
+				}
+				.zaiui-reply-view {
+					margin-top: 9.09rpx;
+					text {
+						margin-right: 9.09rpx;
+					}
+				}
+			}
+		}
+	}
+	.zaiui-tag-view-box {
+		position: relative;
+		.cu-tag {
+			margin-bottom: 18.18rpx;
+			margin-right: 36.36rpx;
+		}
+		.cu-tag + .cu-tag {
+		    margin-left: 0;
+		}
+	}
+	.zaiui-tag-text-view-box {
+		position: relative;
+		padding: 18.18rpx 0;
+		.text-cut {
+		    padding: 9.09rpx 0;	
+			.cu-tag {
+				position: relative;
+			    top: -3.63rpx;	
+			}
+		}
+	}
+}
+
+.zaiui-recommend-goods-box {
+	.zaiui-goods-info-box {
+		position: relative;
+		.goods-img-view {
+			position: absolute;
+			.cu-avatar {
+			    width: 181.81rpx;
+			    height: 181.81rpx;
+				border-radius: 14.54rpx;
+			}
+			.cu-tag {
+			    position: absolute;
+			    left: 14.54rpx;
+			    top: 14.54rpx;	
+			}
+		}
+		.goods-info-view {
+			position: relative;
+			padding-left: 209.09rpx;
+			height: 181.81rpx;
+			line-height: 1.55;	
+			.tag-view-box {
+				.cu-tag {
+					margin-right: 9.09rpx;
+				}
+				.cu-tag + .cu-tag {
+					margin-left: 0;
+				}
+			}
+		}
+	}
+}
+
+.zaiui-resemble-goods-box {
+	position: relative;
+	.text-title-view {
+		background-image: linear-gradient(0deg, #FAFAFA, #ffffff);
+	}
+	.grid {
+		padding: 0 18.18rpx;
+		.grid-item-box {
+			padding: 9.09rpx;
+			.item-view {
+				border-radius: 10.9rpx;
+				.cu-avatar {
+					width: 100%;
+				    height: 309.09rpx;
+					border-radius: 10.9rpx 10.9rpx 0 0;
+				}
+				.zaiui-text-view {
+					line-height: 1.6;
+					.tag-view-box {
+						text {
+						    margin-right: 9.09rpx;	
+						}
+					}
+					.text-price-view {
+						position: relative;
+						.cu-tag {
+						    position: absolute;
+							top: 9.09rpx;
+						    right: 0;
+						}
+					}
+					.gps-right-view {
+						position: relative;
+						.text-right {
+						    position: absolute;
+						    right: 0;
+						    top: 7.27rpx;	
+						}
+					}
+				}
+			}
+		}
+	}
+}
+
+.zaiui-scroll-tab-view {
+	box-shadow: 0 2rpx 21.81rpx 0 rgba(136, 136, 136, 0.29);
+	position: fixed;
+	width: 100%;
+	z-index: 99;
+}
+
+.zaiui-scroll-height-view {
+	position: relative;
+	height: 63.63rpx;
+	width: 100%;
+}

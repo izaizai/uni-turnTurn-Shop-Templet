@@ -1,7 +1,7 @@
 <template>
 	<view>
 		<!--标题栏-->
-		<bar-title bgColor='bg-white' backText=' '>
+		<bar-title bgColor='bg-white'>
 			<block slot="content">立即支付</block>
 		</bar-title>
 		<!--商品信息-->
@@ -21,7 +21,7 @@
 		<view class="bg-white zaiui-pay-view">
 			<radio-group class="block" @change="RadioChange">
 				<view class="zaiui-pay-bar" @tap="payTap('wechat')">
-					<view class="cu-avatar sm" style="background-image:url(/static/zaiui-img/wechat.png)"/>
+					<view class="cu-avatar sm" style="background-image:url(/static/zaiui/img/wechat.png)"/>
 					<view class="content">
 						<view class="text-black">
 							<text class="margin-right-sm">微信支付</text>
@@ -35,7 +35,7 @@
 				</view>
 				
 				<view class="zaiui-pay-bar" @tap="payTap('alipay')">
-					<view class="cu-avatar sm" style="background-image:url(/static/zaiui-img/alipay.png)"/>
+					<view class="cu-avatar sm" style="background-image:url(/static/zaiui/img/alipay.png)"/>
 					<view class="content">
 						<view class="text-black">
 							<text class="margin-right-sm">支付宝支付</text>
@@ -58,7 +58,7 @@
 		<!--底部操作-->
 		<view class="zaiui-footer-fixed">
 			<view class="bg-white padding-sm flex flex-direction">
-				<button class="cu-btn radius bg-red">￥1 立即支付</button>
+				<button class="cu-btn radius bg-red" @tap="payBtnTap">￥1 立即支付</button>
 			</view>
 		</view>
 		
@@ -66,8 +66,8 @@
 </template>
 
 <script>
-	import barTitle from '@/zaiui/components/basics/bar-title';
-	import _tool from '@/util/tools.js';	//工具函数
+	import barTitle from '@/components/zaiui-common/basics/bar-title';
+	import _tool from '@/static/zaiui/util/tools.js';	//工具函数
 	export default {
 		components: {
 			barTitle,
@@ -91,6 +91,11 @@
 			RadioChange(e) {
 				this.radio = e.detail.value;
 			},
+			payBtnTap() {
+				uni.navigateTo({
+					url: "/pages/status/pay-status"
+				});
+			},
 			payTap(type) {
 				this.radio = type;
 			}
@@ -102,7 +107,7 @@
 	/* #ifdef APP-PLUS */
 		@import "../../static/colorui/main.css";
 		@import "../../static/colorui/icon.css";
-		@import "../../zaiui/style/app.scss";
+		@import "../../static/zaiui/style/app.scss";
 	/* #endif */
-	@import "../../zaiui/style/pay.scss";
+	@import "../../static/zaiui/style/pay.scss";
 </style>

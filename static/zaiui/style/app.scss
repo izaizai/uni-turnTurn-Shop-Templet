@@ -1,0 +1,154 @@
+//-------全局 CSS 样式-------
+//uni-turnTurn-Shop-Templet  v1.0 | by 仔仔 806606688@qq.com 2020-02-20 20:20:20
+//仅供学习交流，如作它用所承受的法律责任一概与作者无关 
+page, .bg-page {
+	background: #FAFAFA;
+}
+.zaiui-small-routine-title {
+	padding: 18.18rpx 0;
+}
+.zaiui-goods-swiper-view {
+	swiper.screen-swiper .uni-swiper-dot {
+		background: #f0f0f0;
+	}
+	swiper.screen-swiper.square-dot .uni-swiper-dot {
+		background-color: #aaaaaa;	
+	}
+}
+.zaiui-footer-fixed {
+	position: fixed;
+	z-index: 999999;
+	width: 100%;
+	bottom: 0;
+	left: 0;
+}
+.nav.z .cu-item {
+	height: 64rpx;
+	line-height: 64rpx;
+	position: relative;
+}
+.nav.z .cu-item.select {
+	font-size: 30rpx;
+	.tab-dot {
+		position: absolute;
+		height: 8rpx;
+		border-radius: 20rpx;
+		bottom: 0;
+		left: 0;
+		right: 0;
+		width: 40rpx;
+		margin: auto;
+	}
+}
+.nav.z .cu-item.nf.select {
+	font-size: inherit;
+}
+.nav.z .cu-item.cur {
+	border-bottom: 0;
+}
+.cu-tag.z {
+	border-radius: 200rpx 200rpx 200rpx 0;
+	top: 10rpx;
+	right: -10rpx;
+	padding: 19rpx 14rpx;
+	color: #f3f3f3;
+}
+
+.text-cut-2 {
+	overflow: hidden;
+	text-overflow: ellipsis;
+	display: -webkit-box;
+	-webkit-line-clamp: 2;
+	-webkit-box-orient: vertical;
+}
+
+.flex.flex-wrap.user-info {
+	position: relative;
+	border-radius: 16rpx 16rpx;
+	.basis-xs {
+		flex-basis: 30%;
+		width: 30%;
+	}
+	.basis-xl {
+		flex-basis: 70%;
+		width: 70%;
+	}
+	.line-height {
+		line-height: 47rpx;
+	}
+	.v-icon {
+		position: absolute;
+		width: 20rpx;
+		bottom: -4rpx;
+		left: 33rpx;
+	}
+}
+
+.zaiui-bar-title-box {
+	.cu-bar .action>text[class*="cuIcon-"]{
+		font-size: 36.36rpx;
+	}
+	.cu-bar .action>text[class*="cuIcon-"] + text[class*="cuIcon-"] {
+		margin-left: 1.5em;
+	}
+}
+.zaiui-bar-search-title-box {
+	.cu-bar .action>text[class*="cuIcon-"]{
+		font-size: 36.36rpx;
+	}
+}
+
+.text-through {
+	text-decoration:line-through;
+}
+
+.solid-line {
+	width: 100%;
+	height: 2rpx;
+	background: #f9f9f9;
+}
+.cu-modal {
+	z-index: 9999999;
+}
+
+.zaiui-reward-btn {
+	position: fixed;
+    right: 18.18rpx;
+    bottom: 181.81rpx;
+    width: 90.9rpx;
+    height: 90.9rpx;
+    border-radius: 654.54rpx;
+    text-align: center;
+    line-height: 90.9rpx;
+    box-shadow: 0 0 25.45rpx #cecece;
+    z-index: 99999;	
+}
+
+.zaiui-bar-title-box .cu-bar .content {
+	.cu-tag {
+		position: relative;
+		top: -2.72rpx;
+		padding: 0 5.45rpx;
+		text {
+			position: relative;
+			top: 0;
+		}
+	}
+}
+
+.zaiui-add-btn-view-box {
+	position: fixed;
+	z-index: 999999;
+	bottom: 181.81rpx;
+	right: 27.27rpx;
+	.cu-btn {
+		margin: auto;
+		width: 81.81rpx;
+		height: 81.81rpx;
+		font-weight: 800;
+		border-radius: 50%;
+		font-size: 36.36rpx;
+		border: 9.09rpx solid #fff;
+		box-shadow: 0 0 14.54rpx 7.27rpx #d0d0d0;
+	}
+}

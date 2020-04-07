@@ -1,19 +1,16 @@
 <template>
 	<view>
 		<!--标题栏-->
-		<bar-title bgColor="bg-white" isBack backText=' '>
+		<bar-title bgColor="bg-white" isBack>
 			<block slot="content">
 				<text class="margin-right-xs">仔仔</text>
 				<text class="cu-tag bg-blue sm radius">
 					<text class="cuIcon-male"/>
 				</text>
 			</block>
-			<!--小程序端不显示-->
-			<!-- #ifndef MP -->
 			<block slot="right">
 				<text class="cuIcon-more"/>
 			</block>
-			<!-- #endif -->
 		</bar-title>
 		
 		<!--商品信息-->
@@ -233,21 +230,21 @@
 			<!--表情栏-->
 			<view class="zaiui-emoji-view" :class="emojiShow?'show':''">
 				<view class="emoji-scroll-view-box">
-					<swiper class="emoji-swiper" indicator-dots>
+					<swiper class="emoji-swiper" :current="emoji_swiper" indicator-dots @change="emoji_change">
 						<swiper-item>
 							<view class="cu-list grid no-border">
 								<block v-for="(item,index) in emojiNum" :key="index" v-if="index < 20">
-									<image class="emoji" :src="getEmojiUrl(index)" mode="widthFix"/>
+									<image class="emoji" :src="getEmojiUrl(index)" mode="widthFix" @tap="emojiSelectTap('[表情' + index + ']')"/>
 								</block>
-								<image class="del_btn" src="/static/zaiui-img/aa2.png" mode="widthFix"/>
+								<image class="del_btn" src="/static/zaiui/img/aa2.png" mode="widthFix" @tap="emojiDelTap"/>
 							</view>
 						</swiper-item>
 						<swiper-item>
 							<view class="cu-list grid no-border">
 								<block v-for="(item,index) in emojiNum" :key="index" v-if="index >= 20 && index < 40">
-									<image class="emoji" :src="getEmojiUrl(index)" mode="widthFix"/>
+									<image class="emoji" :src="getEmojiUrl(index)" mode="widthFix" @tap="emojiSelectTap('[表情' + index + ']')"/>
 								</block>
-								<image class="del_btn" src="/static/zaiui-img/aa2.png" mode="widthFix"/>
+								<image class="del_btn" src="/static/zaiui/img/aa2.png" mode="widthFix" @tap="emojiDelTap"/>
 							</view>
 						</swiper-item>
 					</swiper>
@@ -317,16 +314,16 @@
 </template>
 
 <script>
-	import barTitle from '@/zaiui/components/basics/bar-title';
-	import _tool from '@/util/tools.js';	//工具函数
+	import barTitle from '@/components/zaiui-common/basics/bar-title';
+	import _tool from '@/static/zaiui/util/tools.js';	//工具函数
 	export default {
 		components: {
 			barTitle
 		},
 		data() {
 			return {
-				goods_img: '/static/images/home/goods/10.png', scroll_top: 0, tipShow: false, chatShow: false,
-				speedyShow: false, scrollHeight: 0, emojiShow: false, emojiNum: 40, emojiUrl: "emoji", toolsShow: false,
+				goods_img: '/static/images/home/goods/10.png', scroll_top: 0, tipShow: false, chatShow: false, speedyShow: false,
+				scrollHeight: 0, emojiShow: false, emojiNum: 40, emojiUrl: "emoji", toolsShow: false, emoji_swiper: 0,
 			}
 		},
 		onLoad() {
@@ -366,6 +363,12 @@
 					this.setChatShow(true);
 				}
 			},
+			emojiSelectTap(name) {
+				console.log(name);
+			},
+			emojiDelTap() {
+				console.log('点击了删除');
+			},
 			emojiTap() {
 				if(this.emojiShow) {
 					this.emojiShow = false;
@@ -401,6 +404,10 @@
 			},
 			emoji_tools_tap(type) {
 				this.emojiUrl = type;
+				this.emoji_swiper = 0;
+			},
+			emoji_change(event) {
+				this.emoji_swiper = event.detail.current;
 			}
 		}
 	}
@@ -411,7 +418,7 @@
 	/* #ifdef APP-PLUS */
 		@import "../../static/colorui/main.css";
 		@import "../../static/colorui/icon.css";
-		@import "../../zaiui/style/app.scss";
+		@import "../../static/zaiui/style/app.scss";
 	/* #endif */
-	@import "../../zaiui/style/chat.scss";
+	@import "../../static/zaiui/style/chat.scss";
 </style>

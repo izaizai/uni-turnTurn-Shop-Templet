@@ -1,7 +1,7 @@
 <template>
 	<view>
 		<!--标题栏-->
-		<bar-title bgColor="bg-red" >
+		<bar-title bgColor="bg-red">
 			<block slot="content">打赏</block>
 		</bar-title>
 		
@@ -14,8 +14,8 @@
 </template>
 
 <script>
-	import barTitle from '@/zaiui/components/basics/bar-title';
-	import _tool from '@/util/tools.js';	//工具函数
+	import barTitle from '@/components/zaiui-common/basics/bar-title';
+	import _tool from '@/static/zaiui/util/tools.js';	//工具函数
 	export default {
 		components: {
 			barTitle, 
@@ -39,7 +39,7 @@
 	/* #ifdef APP-PLUS */
 		@import "../../static/colorui/main.css";
 		@import "../../static/colorui/icon.css";
-		@import "../../zaiui/style/app.scss";
+		@import "../../static/zaiui/style/app.scss";
 	/* #endif */
 	
 	image {

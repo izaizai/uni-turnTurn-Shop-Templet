@@ -1,50 +1,22 @@
 {
 	"pages": [
-		{ 
-			"path": "pages/app/index"
-		},
-		{
-			"path": "pages/home/sort"
-		},
-		{
-			"path": "pages/home/search"
-		},
-		{
-			"path": "pages/home/sort_list"
-		},
-		{
-			"path": "pages/goods/reward"
-		},
-		{
-			"path": "pages/goods/goods"
-		},
-		{
-			"path": "pages/goods/second_hand"
-		},
-		{
-			"path": "pages/goods/second_terrace"
-		},
-		{
-			"path": "pages/goods/my_cart"
-		},
-		{
-			"path": "pages/goods/settlement"
-		},
-		{
-			"path": "pages/goods/pay"
-		},
-		{
-			"path": "pages/news/notice"
-		},
-		{
-			"path": "pages/news/details"
-		},
-		{
-			"path": "pages/news/chat"
-		},
-		{
-			"path": "pages/my/footmark"
-		}
+		{"path": "pages/app/index"},
+		{"path": "pages/home/sort"},
+		{"path": "pages/home/search"},
+		{"path": "pages/home/sort_list"},
+		{"path": "pages/goods/reward"},
+		{"path": "pages/goods/goods"},
+		{"path": "pages/goods/second_hand"},
+		{"path": "pages/goods/second_terrace"},
+		{"path": "pages/goods/my_cart"},
+		{"path": "pages/goods/settlement"},
+		{"path": "pages/goods/pay"},
+		{"path": "pages/status/pay-status"},
+		{"path": "pages/news/notice"},
+		{"path": "pages/news/details"},
+		{"path": "pages/news/chat"},
+		{"path": "pages/my/footmark"},
+		{"path": "pages/order/list"}
 	],
 	"globalStyle": {
 		"navigationStyle": "custom",

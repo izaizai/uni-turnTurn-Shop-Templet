@@ -1,0 +1,116 @@
+.zaiui-cart-list-view {
+	.zaiui-checkbox-title-view {
+		position: relative;
+		line-height: 1.6;
+		.zaiui-checked {
+			position: absolute;
+			top: 29.09rpx;
+			z-index: 999;
+			transform: scale(0.7);
+		}
+		.shop-title {
+			position: relative;
+		    padding-left: 63.63rpx;
+		}
+	}
+	.goods-list-item-view {
+		position: relative;
+		padding: 36.36rpx 27.27rpx;
+		.zaiui-checked {
+			position: absolute;
+			top: 90.9rpx;
+			z-index: 999;
+			transform: scale(0.7);
+		}
+		.cu-avatar {
+			position: absolute;
+			height: 163.63rpx;
+			width: 163.63rpx;
+			left: 90.9rpx;
+		}
+		.goods-info-view {
+			position: relative;
+			padding-left: 254.54rpx;
+			height: 163.63rpx;
+			line-height: 1.4;
+			.zaiui-tag-view {
+				position: relative;
+				height: 38.18rpx;
+			}
+			.goods-price-view {
+				position: relative;
+				line-height: 1.7;
+				top: 9.09rpx;
+				.text-price-view {
+					position: absolute;
+					.cu-tag {
+					    position: relative;
+					    top: -3.63rpx;
+					    left: 7.27rpx;	
+					}
+				}
+				.step-btn-view {
+					position: relative;
+					padding-left: 272.72rpx;
+					height: 45.45rpx;
+					.zaiui-btn {
+						border: 2rpx solid rgba(113, 113, 113, 0.2);
+						position: absolute;
+						background: initial;
+						text-align: center;
+						line-height: 32.72rpx;
+						border-radius: 0;
+						font-size: 45.45rpx;
+						height: 45.45rpx;
+						width: 45.45rpx;
+						right: 123.63rpx;
+					    padding: 0;
+						&:after {
+							width: 0;
+							height: 0;
+							border: 0;
+							border-radius: 0;
+						}
+					}
+					.zaiui-input {
+						width: 81.81rpx;
+						right: 43.63rpx;
+					    height: 45.45rpx;
+						position: absolute;
+					    text-align: center;
+					    border: 2rpx solid rgba(113, 113, 113, 0.2);
+						border-left: 0;
+						color: #333333;
+					}
+					.zaiui-input + .zaiui-btn {
+						border-left: 0;
+						right: 0;
+					}
+				}
+			}
+		}
+	}
+}
+
+.zaiui-footer-fixed {
+	box-shadow: 0 -2rpx 9.09rpx 0 #ececec;
+	z-index: 99999;
+	.cu-bar {
+		width: 100%;
+		.checked-view {
+			position: relative;
+			z-index: 999;
+			.zaiui-checked {
+				position: relative;
+				margin-right: 9.09rpx;
+			    top: -5.45rpx;
+				transform: scale(0.7);
+			}
+		}
+		.price-view {
+			position: absolute;
+			padding: 0 254.54rpx 0 127.27rpx;
+			width: 100%;
+		}
+	}
+}
