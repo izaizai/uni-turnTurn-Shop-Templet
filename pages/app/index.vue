@@ -1,22 +1,22 @@
 <template>
 	<view>
 		<!--首页-->
-		<home :scrollY="scrollY" :scrollBottom="scrollBottom" :show="tabID==0?true:false" v-if="loadOn.home"></home>
+		<home :scrollY="scrollY" :scrollBottom="scrollBottom" :show="tabID==0?true:false" v-if="loadOn.home"/>
 		
 		<!--发现-->
-		<find :scrollY="scrollY" :scrollBottom="scrollBottom" :show="tabID==1?true:false" v-if="loadOn.find"></find>
+		<find :scrollY="scrollY" :scrollBottom="scrollBottom" :show="tabID==1?true:false" v-if="loadOn.find"/>
 		
 		<!--卖二手-->
-		<sell :scrollY="scrollY" :scrollBottom="scrollBottom" :show="tabID==2?true:false" v-if="loadOn.sell" @closeTap="sellCloseTap"></sell>
+		<sell :scrollY="scrollY" :scrollBottom="scrollBottom" :show="tabID==2?true:false" v-if="loadOn.sell" @closeTap="sellCloseTap"/>
 		
 		<!--消息-->
-		<news :scrollY="scrollY" :scrollBottom="scrollBottom" :show="tabID==3?true:false" v-if="loadOn.news"></news>
+		<news :scrollY="scrollY" :scrollBottom="scrollBottom" :show="tabID==3?true:false" v-if="loadOn.news"/>
 		
 		<!--我的-->
-		<my :scrollY="scrollY" :scrollBottom="scrollBottom" :show="tabID==4?true:false" v-if="loadOn.my"></my>
+		<my :scrollY="scrollY" :scrollBottom="scrollBottom" :show="tabID==4?true:false" v-if="loadOn.my"/>
 		
 		<!--底部导航-->
-		<footer-tabbar :tabID='tabID' :msgDot='true' @tabTap='tabTap'></footer-tabbar>
+		<footer-tabbar :tabID='tabID' :msgDot='true' @tabTap='tabTap'/>
 	</view>
 </template>
 

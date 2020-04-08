@@ -152,3 +152,7 @@ page, .bg-page {
 		box-shadow: 0 0 14.54rpx 7.27rpx #d0d0d0;
 	}
 }
+
+.zaiui-foot-padding-bottom{
+	padding-bottom: calc(env(safe-area-inset-bottom) / 2);
+}

@@ -56,8 +56,8 @@
 		</view>
 		
 		<!--底部操作-->
-		<view class="zaiui-footer-fixed">
-			<view class="bg-white padding-sm flex flex-direction">
+		<view class="bg-white zaiui-footer-fixed zaiui-foot-padding-bottom">
+			<view class="padding-sm flex flex-direction">
 				<button class="cu-btn radius bg-red" @tap="payBtnTap">￥1 立即支付</button>
 			</view>
 		</view>
@@ -93,7 +93,7 @@
 			},
 			payBtnTap() {
 				uni.navigateTo({
-					url: "/pages/status/pay-status"
+					url: "/pages/status/pay_status"
 				});
 			},
 			payTap(type) {

@@ -182,8 +182,8 @@
 		<view class="cu-tabbar-height"/>
 		
 		<!--底部操作-->
-		<view class="zaiui-footer-fixed">
-			<view class="cu-bar bg-white padding-lr">
+		<view class="bg-white zaiui-footer-fixed zaiui-foot-padding-bottom">
+			<view class="cu-bar padding-lr">
 				<view class="text-black text-bold price-view">
 					<text>合计：￥9999.00</text>
 				</view>

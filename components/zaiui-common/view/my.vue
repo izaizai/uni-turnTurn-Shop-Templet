@@ -14,44 +14,60 @@
 			
 			<!--用户信息-->
 			<view class="zaiui-user-info-box">
-				<view class="cu-list menu-avatar">
+				<!--未登陆-->
+				<view class="login-user-view" v-if="login">
+					<view class="login-user-avatar-view">
+						<view class="cu-avatar round lg" style="background-image:url(/static/images/avatar/1.jpg);"/>
+					</view>
+					<button class="cu-btn sm radius" @tap="loginUrlTap">立即登录</button>
+				</view>
+				
+				<!--已登陆-->
+				<view class="cu-list menu-avatar" v-else>
 					<view class="cu-item">
 						<view class="cu-avatar round lg" style="background-image:url(/static/images/avatar/1.jpg);"/>
 						<view class="content text-xl">
-							<view class="text-white">凯尔</view>
+							<view class="text-white">
+								<text class="margin-right">仔仔</text>
+								<text class="text-sm" @tap="loginTap">切换未登陆页面</text>
+							</view>
 							<view class="text-white-bg text-sm">
 								<text class="text-border-x">关注 2</text>
 								<text>粉丝 9</text>
 							</view>
 						</view>
 					</view>
-				</view>	
+				</view>
 			</view>
 			
 			<!--用户数据-->
 			<view class="zaiui-user-info-num-box">
 				<view class="cu-list grid col-4 no-border">
 					<view class="cu-item" @tap="cartTap">
-						<view class="text-xl">0</view>
+						<view class="text-xl" v-if="login">-</view>
+						<view class="text-xl" v-else>0</view>
 						<text class="text-sm">购物车</text>
 					</view>
 					<view class="cu-item" @tap="footmarkTap">
-						<view class="text-xl">4</view>
+						<view class="text-xl" v-if="login">-</view>
+						<view class="text-xl" v-else>4</view>
 						<text class="text-sm">足迹</text>
 					</view>
 					<view class="cu-item">
-						<view class="text-xl">0</view>
+						<view class="text-xl" v-if="login">-</view>
+						<view class="text-xl" v-else>0</view>
 						<text class="text-sm">红包</text>
 					</view>
 					<view class="cu-item">
-						<view class="text-xl">0</view>
+						<view class="text-xl" v-if="login">-</view>
+						<view class="text-xl" v-else>0</view>
 						<text class="text-sm">账单</text>
 					</view>
 				</view>
 			</view>
 			
 			<!--用户提示-->
-			<view class="text-sm zaiui-user-info-tip-box">
+			<view class="text-sm zaiui-user-info-tip-box" v-if="!login">
 				<view class="text-cut">偷偷告诉你，实名认证后宝贝更易卖出哦~</view>
 				<text class="cuIcon-right icon"/>
 			</view>	
@@ -64,19 +80,31 @@
 				<view class="text-black text-lg text-bold padding-sm">我的交易</view>
 				<view class="cu-list grid col-4 no-border">
 					<view class="cu-item">
-						<view class="text-xxl text-black">0</view>
+						<view class="text-xxl text-red" v-if="login">
+							<text class="cuIcon-presentfill"></text>
+						</view>
+						<view class="text-xxl text-black" v-else>0</view>
 						<text class="text-sm">我发布的</text>
 					</view>
 					<view class="cu-item">
-						<view class="text-xxl text-black">1</view>
+						<view class="text-xxl text-red" v-if="login">
+							<text class="cuIcon-sponsorfill"></text>
+						</view>
+						<view class="text-xxl text-black" v-else>1</view>
 						<text class="text-sm">我卖出的</text>
 					</view>
 					<view class="cu-item" @tap="order_list_tap">
-						<view class="text-xxl text-black">2</view>
+						<view class="text-xxl text-red" v-if="login">
+							<text class="cuIcon-cartfill"></text>
+						</view>
+						<view class="text-xxl text-black" v-else>2</view>
 						<text class="text-sm">我买到的</text>
 					</view>
 					<view class="cu-item">
-						<view class="text-xxl text-black">3</view>
+						<view class="text-xxl text-red" v-if="login">
+							<text class="cuIcon-favorfill"></text>
+						</view>
+						<view class="text-xxl text-black" v-else>3</view>
 						<text class="text-sm">我收藏的</text>
 					</view>
 				</view>
@@ -147,7 +175,7 @@
 		},
 		data() {
 			return {
-				toolsList: [],
+				toolsList: [], login: false,
 			}
 		},
 		props: {
@@ -213,6 +241,18 @@
 				uni.navigateTo({
 					url: "/pages/order/list"
 				});
+			},
+			loginUrlTap() {
+				uni.navigateTo({
+					url: "/pages/my/login"
+				});
+			},
+			loginTap() {
+				if(this.login) {
+					this.login = false;
+				} else {
+					this.login = true;
+				}
 			}
 		}
 	}
@@ -229,6 +269,14 @@
 				/* #ifdef MP */
 				padding-top: calc(var(--status-bar-height) + 50rpx);
 				/* #endif */
+				.login-user-view {
+					position: relative;
+					text-align: center;
+					.login-user-avatar-view {
+						position: relative;
+						margin-bottom: 18.18rpx;
+					}
+				}
 				.cu-list.menu-avatar>.cu-item {
 					background-color: inherit;
 					.content {
@@ -305,6 +353,9 @@
 				.cu-list.grid.no-border>.cu-item {
 				    padding-bottom: 9.09rpx;
 				}
+			}
+			.cu-list.grid>.cu-item text {
+			    color: inherit;
 			}
 			.zaiui-user-info-money-box {
 				border-radius: 18.18rpx;

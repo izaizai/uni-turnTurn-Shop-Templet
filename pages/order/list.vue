@@ -70,8 +70,8 @@
 				<!--按钮-->
 				<view class="zaiui-btn-view" v-if="item.type == 1">
 					<button class="cu-btn line-black sm radius">联系卖家</button>
-					<button class="cu-btn line-black sm radius">查看钱款去向</button>
-					<button class="cu-btn line-red sm radius">查看评价</button>
+					<button class="cu-btn line-black sm radius" @tap="whereaboutsTap">查看钱款去向</button>
+					<button class="cu-btn line-red sm radius" @tap="appraiseTap">查看评价</button>
 				</view>
 				<!--按钮-->
 				<view class="zaiui-btn-view" v-if="item.type == 0">
@@ -150,6 +150,16 @@
 				} else {
 					this.goods_checked = true;
 				}
+			},
+			whereaboutsTap() {
+				uni.navigateTo({
+					url: "/pages/order/whereabouts"
+				});
+			},
+			appraiseTap() {
+				uni.navigateTo({
+					url: "/pages/order/view_appraise"
+				});
 			},
 		}
 	}

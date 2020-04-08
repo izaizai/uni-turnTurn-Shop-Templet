@@ -276,7 +276,7 @@
 }
 
 .zaiui-add-btn-view-box {
-	bottom: 27.27rpx;
+	bottom: calc(env(safe-area-inset-bottom) / 2);
 	text-align: center;
 	.cu-btn {
 		margin: auto;

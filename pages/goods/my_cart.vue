@@ -50,8 +50,8 @@
 		<view class="cu-tabbar-height"/>
 		
 		<!--底部操作-->
-		<view class="zaiui-footer-fixed">
-			<view class="cu-bar bg-white padding-lr">
+		<view class="bg-white zaiui-footer-fixed zaiui-foot-padding-bottom">
+			<view class="cu-bar padding-lr">
 				<view class="checked-view" @tap="tapChecked"> 
 					<checkbox class='round red sm zaiui-checked' :class="checkAll?'checked':''" :checked="checkAll"></checkbox>
 					<text class="text-black text-lg text-bold">全选</text>

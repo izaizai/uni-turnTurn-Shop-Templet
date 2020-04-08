@@ -11,12 +11,16 @@
 		{"path": "pages/goods/my_cart"},
 		{"path": "pages/goods/settlement"},
 		{"path": "pages/goods/pay"},
-		{"path": "pages/status/pay-status"},
+		{"path": "pages/status/pay_status"},
 		{"path": "pages/news/notice"},
 		{"path": "pages/news/details"},
 		{"path": "pages/news/chat"},
 		{"path": "pages/my/footmark"},
-		{"path": "pages/order/list"}
+		{"path": "pages/my/login"},
+		{"path": "pages/order/list"},
+		{"path": "pages/order/whereabouts"},
+		{"path": "pages/order/view_appraise"},
+		{"path": "pages/order/add_appraise"}
 	],
 	"globalStyle": {
 		"navigationStyle": "custom",

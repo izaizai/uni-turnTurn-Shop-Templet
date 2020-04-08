@@ -35,12 +35,10 @@
                 ]
             },
             "ios" : {
-                "idfa" : true
+                "idfa" : false
             },
             "sdkConfigs" : {
-                "ad" : {
-                    "360" : {}
-                }
+                "ad" : {}
             }
         },
         "compilerVersion" : 3

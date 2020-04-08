@@ -417,8 +417,8 @@
 		<view class="cu-tabbar-height"></view>
 		
 		<!--底部操作-->
-		<view class="zaiui-footer-fixed">
-			<view class="cu-bar bg-white">
+		<view class="bg-white zaiui-footer-fixed zaiui-foot-padding-bottom">
+			<view class="cu-bar">
 				<view class="flex flex-wrap">
 					<view class="basis-xs">
 						<view class="text-center">

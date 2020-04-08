@@ -45,9 +45,9 @@ let _tool = {
 			});
 		}
 	},
-	zaiui_log() {
+	zaiui_log(v) {
 		console.error("仅供学习交流，如作它用所承受的法律责任一概与作者无关!");
-		console.warn("如果您运行的时候，出现了报错，请自行解决,我使用的HBX版本号：2.6.9.20200403");
+		console.warn("如果您运行的时候，出现了报错，请自行解决,我使用的HBX版本号：" + v);
 		console.info("QQ交流群：707134214");
 	}
 };

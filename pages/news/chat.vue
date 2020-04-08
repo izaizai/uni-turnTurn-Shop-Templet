@@ -202,7 +202,7 @@
 		</view>
 		
 		<!--底部区域-->
-		<view class="bg-white zaiui-footer-fixed">
+		<view class="bg-white zaiui-footer-fixed zaiui-foot-padding-bottom">
 			<!--操作区域-->
 			<view class="cu-bar input zaiui-foot-bar-input-tools">
 				<view class="action">

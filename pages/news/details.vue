@@ -126,9 +126,9 @@
 		
 		<view class="foot-hight-view"/>
 		
-		<view class="bg-white zaiui-footer-fixed">
+		<view class="bg-white zaiui-footer-fixed zaiui-foot-padding-bottom">
 			<view class="flex flex-direction">
-				<button class="cu-btn bg-red lg">我也有话说</button>
+				<button class="cu-btn bg-red">我也有话说</button>
 			</view>
 		</view>
 		
