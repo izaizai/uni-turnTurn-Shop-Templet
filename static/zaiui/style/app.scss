@@ -156,3 +156,7 @@ page, .bg-page {
 .zaiui-foot-padding-bottom{
 	padding-bottom: calc(env(safe-area-inset-bottom) / 2);
 }
+
+.zaiui-modal {
+	z-index: 999999;
+}

@@ -1,0 +1,363 @@
+.cu-steps .cu-item {
+	&:before {
+		width: calc(100% - 72.72rpx);
+		border-bottom: 5.45rpx solid #FFF3F3;
+		left: calc(0px - (100% - 72.72rpx) / 2);
+		top: 34.54rpx;	
+	}
+	.icon-view {
+		border-radius: 181.81rpx;
+		height: 72.72rpx;
+		width: 72.72rpx;
+		margin: auto;
+		margin-bottom: 14.54rpx;
+		box-sizing: border-box;
+		border: 7.27rpx solid #FFF3F3;
+		text {
+			font-size: 36.36rpx;
+			line-height: 61.81rpx;
+		}
+	}
+}
+.cu-steps .cu-item.select {
+	&:before {
+		border-color: #e54d42;
+	}
+	.icon-view {
+		border: 7.27rpx solid #e54d42;
+	}
+}
+.zaiui-card-box {
+	padding: 27.27rpx 27.27rpx 0;
+}
+.zaiui-card-hight-box {
+    height: 45.45rpx;	
+}
+.zaiui-card-view {
+	position: relative;
+	border-radius: 9.09rpx;
+	padding: 18.18rpx;
+	box-shadow: 0 0 14.54rpx #f1f1f1;
+}
+.zaiui-goods-ad-view {
+	.cu-avatar {
+		position: absolute;
+		height: 136.36rpx;
+		width: 136.36rpx;
+	}
+	.goods-info-view {
+		position: relative;
+		padding-left: 154.54rpx;
+		padding-right: 145.45rpx;
+		height: 136.36rpx;
+		.cu-tag {
+			font-size: 21.81rpx;
+			padding: 0 18.18rpx;
+			height: 36.36rpx;
+			border-radius: 18.18rpx 3.63rpx;	
+		}
+		.text-black {
+			margin-top: 18.18rpx;
+			margin-bottom: 7.27rpx;
+		}
+	}
+	.goods-btn-view {
+		position: absolute;
+		line-height: 136.36rpx;
+		height: 136.36rpx;
+		right: 18.18rpx;
+		top: 18.18rpx;
+	}
+}
+.zaiui-shop-view {
+	position: relative;
+	.shop-info-view {
+		position: relative;
+		margin-bottom: 27.27rpx;
+		line-height: 47.27rpx;
+		height: 47.27rpx;
+		.cu-avatar {
+			position: absolute;
+		}
+		.title-view {
+		    position: relative;
+		    padding-left: 63.63rpx;
+		}
+	}
+	.goods-list-view {
+		position: relative;
+		margin: 18.18rpx 0;
+		.cu-avatar {
+		    position: absolute;
+			height: 154.54rpx;
+		    width: 154.54rpx;
+		}
+		.goods-info-view {
+			position: relative;
+			padding-left: 172.72rpx;
+			height: 154.54rpx;
+			.name {
+				position: relative;
+				height: 38.18rpx;
+			    width: 100%;
+			}
+			.introduce {
+				position: relative;
+				height: 32.72rpx;
+				width: 100%;
+			}
+			.tag-view {
+				position: relative;
+				margin-bottom: 9.09rpx;
+				margin-top: 7.27rpx;
+				height: 33.87rpx;
+				width: 100%;
+				.cu-tag {
+					position: relative;
+					top: -2rpx;
+				}
+			}
+			.text-price {
+				position: relative;
+				height: 36.36rpx;
+				width: 100%;
+			}
+		}
+	}
+	.zaiui-foot-view {
+		position: relative;
+		background: #FFFCFC;
+		margin: 0 -18.18rpx -18.18rpx -18.18rpx;
+		border-radius: 0 0 9.09rpx 9.09rpx;
+		padding: 18.18rpx;
+		.left-view {
+			position: relative;
+			padding-right: 181.81rpx;
+			.af5-img {
+				position: relative;
+				margin-right: 9.09rpx;
+				width: 36.36rpx;
+				top: 3.63rpx;
+			}
+		}
+		.text-right {
+			position: absolute;
+		    right: 18.18rpx;
+		    top: 18.18rpx;	
+		}
+	}
+}
+.zaiui-price-view {
+	position: relative;
+	.title-view {
+		position: relative;
+		margin-bottom: 18.18rpx;
+		.title {
+		    position: relative;
+		    padding-right: 181.81rpx;	
+		}
+		.text-right {
+		    position: absolute;
+			top: 3.63rpx;
+		    right: 0;
+		}
+	}
+	.title-right-view {
+		position: relative;
+	    margin-top: 27.27rpx;
+	    text-align: right;
+	}
+	.solid-line {
+	    margin: 27.27rpx 0;	
+	}
+}
+.zaiui-order-view {
+	position: relative;
+	.solid-line {
+	    margin: 27.27rpx 0;	
+	}
+	.title-view {
+		position: relative;
+		margin-bottom: 18.18rpx;
+		&:last-child {
+			margin-bottom: 12.72rpx;
+		}
+		.title {
+		    position: absolute;
+		    top: 3.63rpx;
+		    left: 0;
+		}
+		.text-right {
+		   position: relative;
+		   padding-left: 181.81rpx;
+			.cu-btn {
+			    padding: 0 10.9rpx;
+			    height: 30.9rpx;
+				top: -3.63rpx;
+			}
+		}
+	}
+}
+.zaiui-address-view {
+	position: relative;
+	.solid-line {
+	    margin: 18.18rpx 0;	
+	}
+	.cu-list.menu-avatar>.cu-item {
+		height: 55px;
+		&:after {
+			width: 0;
+			height: 0;
+			border-bottom: 0;
+		}
+		.icon-view {
+		    position: absolute;
+			border-radius: 100%;
+			text-align: center;
+			line-height: 45.45rpx;
+			height: 45.45rpx;
+			width: 45.45rpx;
+		    left: 9.09rpx;
+		    top: 25.45rpx;
+		}
+		.content {
+		    left: 72.72rpx;
+		    width: calc(100% - 94.54rpx);
+		}
+	}
+}
+.zaiui-status-img-view {
+	position: relative;
+	.are-img-view {
+		position: relative;
+		margin-bottom: 18.18rpx;
+		.are-img {
+		    width: 327.27rpx;	
+		}
+	}
+}
+.zaiui-title-view {
+	position: relative;
+	margin: 36.36rpx 0 0;
+	.img-anc {
+	    position: relative;
+	    width: 36.36rpx;
+	    top: 3.63rpx;
+	}
+}
+.zaiui-recommend-goods-list-view {
+	position: relative;
+	.flex-wrap {
+	    padding: 9.09rpx;	
+		.basis-df {
+			width: 50%;
+			padding: 0 9.09rpx;
+		}
+	}
+	.list-itme {
+		text-align: center;
+		margin-bottom: 18.18rpx;
+		.cu-avatar {
+			width: 347.27rpx;
+		    height: 347.27rpx;
+		}
+		.goods-info-view {
+			position: relative;
+			padding: 14.54rpx;
+			text-align: left;
+			.text-price {
+			    margin: 9.09rpx 0;
+			}
+			.foot-box {
+				position: relative;
+				.cu-tag {
+				    position: absolute;
+				    right: 0;
+				    top: 0;
+				}
+			}
+		}
+	}
+}
+.foot-hight-view {
+	width: 100%;
+	height: calc((env(safe-area-inset-bottom) / 2) + 109.09rpx);
+}
+.zaiui-footer-fixed {
+	box-shadow: 0 -3.63rpx 10.9rpx 0 #eaeaea;
+	padding: 18.18rpx 27.27rpx;
+	text-align: right;
+	.cu-btn {
+	    margin-left: 10px;	
+	}
+}
+.cu-modal.bottom-modal {
+	.cu-bar {
+		min-height: 81.81rpx;
+		.title {
+			position: relative;
+			width: 100%;
+		}
+		.close {
+		    position: absolute;
+			font-size: 36.36rpx;
+		    right: 27.27rpx;
+		}
+	}
+	.modal-view {
+		position: relative;
+		width: 100%;
+		.content {
+		    position: relative;
+			text-align: left;
+		    padding: 27.27rpx 18.18rpx;
+			.tel-btn-view {
+				position: relative;
+				width: 100%;
+				.tel-view {
+				    position: relative;
+					padding-right: 163.63rpx;
+					line-height: 47.27rpx;
+				    height: 47.27rpx;
+				}
+				.cu-btn {
+				    position: absolute;
+				    right: 0;
+				    top: 0;
+				}
+			}
+			.code-view {
+				position: relative;
+				text-align: center;
+				.code {
+				    font-size: 54.54rpx;
+				}
+				.code + .code {
+					margin-left: 18.18rpx;
+				}
+			}
+		}
+		.num-lock-view {
+			position: relative;
+			margin-bottom: -2rpx;
+			.solid-top::after {
+			    border-top: 2rpx solid rgba(0, 0, 0, 0.1);
+			}
+			.cu-list.grid>.cu-item {
+				text {
+					color: inherit;
+				}
+				.num {
+				    font-size: 40rpx;
+				}
+				.close {
+				    font-size: 32.72rpx;
+				    margin-top: 9.09rpx;
+				}
+				&:active {
+					background-color: #f0f0f0;
+				}
+			}
+		}
+	}
+}

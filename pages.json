@@ -20,7 +20,8 @@
 		{"path": "pages/order/list"},
 		{"path": "pages/order/whereabouts"},
 		{"path": "pages/order/view_appraise"},
-		{"path": "pages/order/add_appraise"}
+		{"path": "pages/order/add_appraise"},
+		{"path": "pages/order/details"}
 	],
 	"globalStyle": {
 		"navigationStyle": "custom",

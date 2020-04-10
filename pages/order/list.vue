@@ -35,7 +35,7 @@
 		
 		<!--订单列表-->
 		<block v-for="(item,index) in order_list" :key="index" v-if="tab_cur == 0">
-			<view class="bg-white zaiui-order-tab-view">
+			<view class="bg-white zaiui-order-tab-view" @tap="detailsTap">
 				<!--店铺名称-->
 				<view class="shop-title-view">
 					<view class="cu-avatar sm round" :style="[{backgroundImage:'url('+ item.img +')'}]"/>
@@ -161,6 +161,11 @@
 					url: "/pages/order/view_appraise"
 				});
 			},
+			detailsTap() {
+				uni.navigateTo({
+					url: "/pages/order/details"
+				});
+			}
 		}
 	}
 </script>
