@@ -4,6 +4,9 @@
 page, .bg-page {
 	background: #FAFAFA;
 }
+.cu-avatar {
+	background-color: #FFFFFF;
+}
 .zaiui-small-routine-title {
 	padding: 18.18rpx 0;
 }
@@ -159,4 +162,25 @@ page, .bg-page {
 
 .zaiui-modal {
 	z-index: 999999;
+}
+.solid-top::after {
+    border-top: 2rpx solid rgba(0, 0, 0, 0.1);
+}
+.zaiui-tip-view {
+	position: relative;
+	padding: 10.9rpx 21.81rpx;
+	.content {
+		position: relative;
+		padding-right: 54.54rpx;
+	}
+	.icon {
+	    position: absolute;
+		font-size: 32.72rpx;
+	    right: 27.27rpx;
+		color: #8799a3;
+	    top: 9.09rpx;
+	}
+}
+.input-placeholder {
+	color: #bfbfbf;
 }

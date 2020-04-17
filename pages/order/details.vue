@@ -322,7 +322,7 @@
 		
 		<view class="bg-white zaiui-footer-fixed zaiui-foot-padding-bottom" v-if="basics == 4">
 			<button class="cu-btn bg-orange sm" @tap="nextTap">测试第一步</button>
-			<button class="cu-btn line-black radius">发表评价</button>
+			<button class="cu-btn line-black radius" @tap="appraiseTap">发表评价</button>
 			<button class="cu-btn bg-red">查看钱款去向</button>
 		</view>
 		
@@ -447,6 +447,11 @@
 			},
 			getCodeKey() {
 				this.btnKey = false;
+			},
+			appraiseTap() {
+				uni.navigateTo({
+					url: "/pages/order/appraise"
+				});
 			}
 		}
 	}

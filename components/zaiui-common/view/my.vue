@@ -67,7 +67,7 @@
 			</view>
 			
 			<!--用户提示-->
-			<view class="text-sm zaiui-user-info-tip-box" v-if="!login">
+			<view class="text-sm zaiui-user-info-tip-box" v-if="!login" @tap="realNameTap">
 				<view class="text-cut">偷偷告诉你，实名认证后宝贝更易卖出哦~</view>
 				<text class="cuIcon-right icon"/>
 			</view>	
@@ -253,7 +253,12 @@
 				} else {
 					this.login = true;
 				}
-			}
+			},
+			realNameTap() {
+				uni.navigateTo({
+					url: "/pages/real_name/index"
+				});
+			},
 		}
 	}
 </script>

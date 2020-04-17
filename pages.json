@@ -17,11 +17,14 @@
 		{"path": "pages/news/chat"},
 		{"path": "pages/my/footmark"},
 		{"path": "pages/my/login"},
+		{"path": "pages/real_name/index"},
+		{"path": "pages/real_name/form"},
 		{"path": "pages/order/list"},
 		{"path": "pages/order/whereabouts"},
+		{"path": "pages/order/details"},
+		{"path": "pages/order/appraise"},
 		{"path": "pages/order/view_appraise"},
-		{"path": "pages/order/add_appraise"},
-		{"path": "pages/order/details"}
+		{"path": "pages/order/add_appraise"}
 	],
 	"globalStyle": {
 		"navigationStyle": "custom",

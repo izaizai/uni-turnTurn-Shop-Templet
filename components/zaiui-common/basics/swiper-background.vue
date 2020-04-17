@@ -49,7 +49,7 @@
 			opacity: 0;
 			top: 0;
 			background-size: cover;
-			transition: 0s;
+			transition: opacity .25s;
 		}
 		.swiper-background.show {
 			opacity: 1;

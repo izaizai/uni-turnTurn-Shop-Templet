@@ -1,13 +1,13 @@
 <script>
 	//仅供学习交流，如作它用所承受的法律责任一概与作者无关 !!!!
 	//----------------------------------------------------------------------
-	//如果您运行的时候，出现了报错，请自行解决,我使用的HBX版本号：2.6.10.20200403-alpha
+	//如果您运行的时候，出现了报错，请自行解决,我使用的HBX版本号：2.6.11.20200409
 	//推荐此项目运行到APP上，不推荐运行到小程序中，虽然已经做了简单的适配
 	//QQ交流群：707134214
 	import _tool from '@/static/zaiui/util/tools.js';
 	export default {
 		onLaunch: function() {
-			_tool.zaiui_log("2.6.10.20200403-alpha");
+			_tool.zaiui_log("2.6.11.20200409");
 			//console.log('App Launch')
 		},
 		onShow: function() {
