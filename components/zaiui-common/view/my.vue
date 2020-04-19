@@ -7,7 +7,7 @@
 			<bar-title :isBack="false" :fixed="false">
 				<block slot="right">
 					<text class="cuIcon-camera"/>
-					<text class="cuIcon-settings"/>
+					<text class="cuIcon-settings" @tap="setupTap"/>
 				</block>
 			</bar-title>
 			<!-- #endif -->
@@ -147,10 +147,12 @@
 				
 				<view class="zaiui-tools-list-box">
 					<view class="cu-list grid col-4 no-border">
-						<view class="cu-item" v-for="(item,index) in toolsList" :key="index" v-if="index < 12">
-							<view class="text-black" :class="['cuIcon-' + item.icon]"/>
-							<text>{{item.name}}</text>
-						</view>
+						<block v-for="(item,index) in toolsList" :key="index">
+							<view class="cu-item" v-if="index < 12" @tap="gridTap(item)">
+								<view class="text-black" :class="['cuIcon-' + item.icon]"/>
+								<text>{{item.name}}</text>
+							</view>
+						</block>
 					</view>
 				</view>
 				
@@ -259,6 +261,16 @@
 					url: "/pages/real_name/index"
 				});
 			},
+			setupTap() {
+				uni.navigateTo({
+					url: "/pages/my/set-up"
+				});
+			},
+			gridTap(item) {
+				if(item.name == '设置') {
+					this.setupTap();
+				}
+			}
 		}
 	}
 </script>

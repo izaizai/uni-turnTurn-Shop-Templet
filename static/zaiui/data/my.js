@@ -46,8 +46,8 @@ let _my_data = {
 			name: '垃圾分类'
 		},{
 			id: 12,
-			icon: 'mobile',
-			name: '租手机'
+			icon: 'settings',
+			name: '设置'
 		}];
 	}
 };

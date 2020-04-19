@@ -184,3 +184,19 @@ page, .bg-page {
 .input-placeholder {
 	color: #bfbfbf;
 }
+
+.cu-list.menu>.cu-item.arrow {
+    padding-right: 69.09rpx;
+}
+.cu-list.menu>.cu-item.arrow:before {
+    right: 27.27rpx;
+    width: 21.81rpx;
+    height: 27.27rpx;
+    color: #aaaaaa;
+    font-size: 25.45rpx;
+}
+.zaiui-progress-radius {
+	.uni-progress-bar,.uni-progress-inner-bar {
+		border-radius: 181.81rpx;
+	}
+}
