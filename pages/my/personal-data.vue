@@ -70,7 +70,7 @@
 					<text class="text-gray">太阳</text>
 				</view>
 			</view>
-			<view class="cu-item arrow">
+			<view class="cu-item arrow" @tap="addressTap">
 				<view class="content">收货地址</view>
 			</view>
 			<view class="cu-item arrow">
@@ -126,6 +126,11 @@
 					url: "/pages/my/edit-synopsis"
 				});
 			},
+			addressTap() {
+				uni.navigateTo({
+					url: "/pages/my/address"
+				});
+			}
 		}
 	}
 </script>

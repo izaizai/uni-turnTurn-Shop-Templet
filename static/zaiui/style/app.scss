@@ -200,3 +200,24 @@ page, .bg-page {
 		border-radius: 181.81rpx;
 	}
 }
+
+/*底部*/
+.wecanui-footer-fixed {
+	position: fixed;
+	z-index: 99999;
+	width: 100%;
+	bottom: 0;
+	left: 0;
+}
+.wecanui-footer-fixed.foot-pb {
+	padding-bottom: calc(env(safe-area-inset-bottom) / 2);
+}
+.wecanui-footer-tabbar-hight-view { 
+	position: relative;
+	width: 100%;
+	height: calc((env(safe-area-inset-bottom) / 2) + 136.36rpx);
+}
+
+.cu-form-group picker .picker {
+	text-align: left;
+}
