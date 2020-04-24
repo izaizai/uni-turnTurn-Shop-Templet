@@ -58,13 +58,13 @@
 		</view>
 		
 		<view class="cu-list menu sm-border margin-top">
-			<view class="cu-item arrow">
+			<view class="cu-item arrow" @tap="editPhoneTap">
 				<view class="content">手机号</view>
 				<view class="action">
 					<text class="text-gray">138****8000</text>
 				</view>
 			</view>
-			<view class="cu-item arrow">
+			<view class="cu-item arrow" @tap="regionTap">
 				<view class="content">地区</view>
 				<view class="action">
 					<text class="text-gray">太阳</text>
@@ -73,7 +73,7 @@
 			<view class="cu-item arrow" @tap="addressTap">
 				<view class="content">收货地址</view>
 			</view>
-			<view class="cu-item arrow">
+			<view class="cu-item arrow" @tap="editContactCardsTap">
 				<view class="content">联系卡</view>
 			</view>
 		</view>
@@ -130,7 +130,22 @@
 				uni.navigateTo({
 					url: "/pages/my/address"
 				});
-			}
+			},
+			editPhoneTap() {
+				uni.navigateTo({
+					url: "/pages/my/edit-phone"
+				});
+			},
+			editContactCardsTap() {
+				uni.navigateTo({
+					url: "/pages/my/contact-cards"
+				});
+			},
+			regionTap() {
+				uni.navigateTo({
+					url: "/pages/my/region"
+				});
+			},
 		}
 	}
 </script>

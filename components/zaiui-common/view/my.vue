@@ -53,7 +53,7 @@
 						<view class="text-xl" v-else>4</view>
 						<text class="text-sm">足迹</text>
 					</view>
-					<view class="cu-item">
+					<view class="cu-item" @tap="sponsoredTap">
 						<view class="text-xl" v-if="login">-</view>
 						<view class="text-xl" v-else>0</view>
 						<text class="text-sm">红包</text>
@@ -270,7 +270,12 @@
 				if(item.name == '设置') {
 					this.setupTap();
 				}
-			}
+			},
+			sponsoredTap() {
+				uni.navigateTo({
+					url: "/pages/my/sponsored"
+				});
+			},
 		}
 	}
 </script>
