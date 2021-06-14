@@ -118,10 +118,7 @@
 
 ****
 
-本来想仿一个完整的转转APP后，再发布的，但由于某些原因，我不得不提前发布了，具体原因和一些可能出现的问题，我写在代码里了。
+# ！！此项目不再进行更新！！
 
 ****
 
-打赏：
-
-<img title="" src="https://cdn.nlark.com/yuque/0/2020/png/285274/1585816251127-assets/web-upload/10f2801f-6083-4c03-858d-5dc84634cbc3.png" alt="" width="305">  <img title="" src="https://cdn.nlark.com/yuque/0/2020/png/285274/1585816251205-assets/web-upload/787365c3-1e5c-4be6-8acd-f4d6c1c4f874.png" alt="" width="311">
